@@ -34,7 +34,7 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
     ![location of clone button in GitHub](./images/clone_button.png)
 
 3. Create and activate a Python virtual environment:
-    - If you installed Anaconda/Miniconda, use `conda` (on Windows, type these commands in **Anaconda Prompt**):
+    - If you installed Anaconda/Miniconda, use `conda` (on Windows, these commands should be run in **Anaconda Prompt**):
 
         ```shell
         $ cd pandas-workshop
@@ -47,7 +47,7 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 
         ```shell
         $ cd pandas-workshop
-        ~/pandas-workshop$ python3 -m venv pandas_worskhop
+        ~/pandas-workshop$ python3 -m venv pandas_workshop
         ~/pandas-workshop$ source pandas_workshop/bin/activate
         (pandas_workshop) ~/pandas-workshop$ pip3 install -r requirements.txt
         ```
