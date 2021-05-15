@@ -21,15 +21,15 @@ The human brain excels at finding patterns in visual representations of the data
 We will practice all that you’ve learned in a hands-on lab. This section features a set of analysis tasks that provide opportunities to apply the material from the previous sections.
 
 ## Prerequisites
-You should have basic knowledge of Python and be comfortable working in Jupyter Notebooks. Check out [this notebook](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/blob/master/ch_01/python_101.ipynb) for a crash course in Python or work through the [official Python tutorial](https://docs.python.org/3/tutorial/) for a more formal introduction.
+You should have basic knowledge of Python and be comfortable working in Jupyter Notebooks. Check out [this notebook](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/blob/master/ch_01/python_101.ipynb) for a crash course in Python or work through the [official Python tutorial](https://docs.python.org/3/tutorial/) for a more formal introduction. The environment we will use for this workshop comes with JupyterLab, which is pretty intuitive, but be sure to familiarize yourself [using notebooks in JupyterLab](https://jupyterlab.readthedocs.io/en/latest/user/notebook.html) and [additional functionality in JupyterLab](https://dzone.com/articles/getting-started-with-jupyterlab).
 
 ## Setup Instructions
 0. Install Python >= version 3.7.1 and < version 3.9 OR install Anaconda/Miniconda. Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
-1. Fork this repository.
+1. Fork this repository:
 
     ![location of fork button in GitHub](./images/fork_button.png)
 
-2. Clone your forked repository.
+2. Clone your forked repository:
 
     ![location of clone button in GitHub](./images/clone_button.png)
 
@@ -58,13 +58,13 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
     (pandas_workshop) ~/pandas-workshop$ jupyter lab
     ```
 
-5. Navigate to the `0-check_your_env.ipynb` notebook.
+5. Navigate to the `0-check_your_env.ipynb` notebook:
 
     ![open 0-check_your_env.ipynb](./images/open_env_check_notebook.png)
 
-6. Run the notebook to confirm everything is set up properly.
+6. Run the notebook to confirm everything is set up properly:
 
     ![check env](./images/env_check.png)
 
 ## About the Author
-Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a data scientist and software engineer at Bloomberg in New York City, where she tackles tough problems in information security, particularly those revolving around anomaly detection, building tools for gathering data, and knowledge sharing. She is also the author of [Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/), which is currently on in its second edition. She holds a bachelor’s of science degree in operations research from Columbia University's Fu Foundation School of Engineering and Applied Science. She is currently pursuing a Master’s degree in computer science, with a specialization in machine learning, from Georgia Tech. In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken among both people and computers.
+Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a data scientist and software engineer at Bloomberg in New York City, where she tackles tough problems in information security, particularly those revolving around anomaly detection, building tools for gathering data, and knowledge sharing. She is also the author of [Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/), which is currently on in its second edition. She holds a bachelor’s of science degree in operations research from Columbia University's Fu Foundation School of Engineering and Applied Science. She is currently pursuing a master’s degree in computer science, with a specialization in machine learning, from Georgia Tech. In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken among both people and computers.
