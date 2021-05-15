@@ -1,0 +1,6 @@
+jupyterlab==3.0.15
+matplotlib==3.3.2
+numpy==1.19.2
+pandas==1.2.0
+requests==2.24.0
+seaborn==0.11.0
