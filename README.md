@@ -58,15 +58,14 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
     (pandas_workshop) ~/pandas-workshop$ jupyter lab
     ```
 
-5. Navigate to the `0-check_your_env.ipynb` notebook:
+5. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
 
     ![open 0-check_your_env.ipynb](./images/open_env_check_notebook.png)
 
 6. Run the notebook to confirm everything is set up properly:
 
     ![check env](./images/env_check.png)
-    
-7. (Optional) We will be making a request to the NYC Open Data API. If you would like to run that code yourself, you will need to create an **App Token** [here](https://data.cityofnewyork.us/profile/edit/developer_settings).
+
 
 ## About the Author
 Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a data scientist and software engineer at Bloomberg in New York City, where she tackles tough problems in information security, particularly those revolving around anomaly detection, building tools for gathering data, and knowledge sharing. She is also the author of [Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/), which is currently on in its second edition. She holds a bachelor’s of science degree in operations research from Columbia University's Fu Foundation School of Engineering and Applied Science. She is currently pursuing a master’s degree in computer science, with a specialization in machine learning, from Georgia Tech. In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken among both people and computers.
