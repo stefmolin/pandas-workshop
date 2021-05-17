@@ -24,7 +24,7 @@ We will practice all that you’ve learned in a hands-on lab. This section featu
 You should have basic knowledge of Python and be comfortable working in Jupyter Notebooks. Check out [this notebook](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/blob/master/ch_01/python_101.ipynb) for a crash course in Python or work through the [official Python tutorial](https://docs.python.org/3/tutorial/) for a more formal introduction. The environment we will use for this workshop comes with JupyterLab, which is pretty intuitive, but be sure to familiarize yourself [using notebooks in JupyterLab](https://jupyterlab.readthedocs.io/en/latest/user/notebook.html) and [additional functionality in JupyterLab](https://dzone.com/articles/getting-started-with-jupyterlab).
 
 ## Setup Instructions
-0. Install Python >= version 3.7.1 and < version 3.9 OR install Anaconda/Miniconda. Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
+0. Install Python >= version 3.7.1 and < version 3.9 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
 1. Fork this repository:
 
     ![location of fork button in GitHub](./images/fork_button.png)
