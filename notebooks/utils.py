@@ -20,7 +20,7 @@ def run_env_check():
         print(FAIL, 'Python version >= 3.7.1 and < 3.9.0 is required, but %s is installed.\n' % sys.version)
 
     # read in the requirements
-    with open('requirements.txt', 'r') as file:
+    with open('../requirements.txt', 'r') as file:
         requirements = {}
         for line in file.read().splitlines():
             if line.startswith('./'):
