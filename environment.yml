@@ -8,4 +8,5 @@ dependencies:
     - numpy=1.19.2
     - pandas=1.2.0
     - requests=2.24.0
+    - scipy=1.5.2
     - seaborn=0.11.0
