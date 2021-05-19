@@ -38,9 +38,9 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 
         ```shell
         $ cd pandas-workshop
-        ~/pandas-workshop$ conda create --name pandas_workshop python=3.8
+        ~/pandas-workshop$ conda create --file environment.yml
         ~/pandas-workshop$ conda activate pandas_workshop
-        (pandas_workshop) ~/pandas-workshop$ conda install --file requirements.txt
+        (pandas_workshop) ~/pandas-workshop$
         ```
 
     - Otherwise, use `venv`:
