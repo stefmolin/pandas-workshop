@@ -77,4 +77,4 @@ Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a data scientist 
 
 
 ## Related Content
-All examples herein were developed exclusively for this workshop. My book, [Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/), contains additional examples and exercises, as does [this](https://opendatascience.com/how-to-pivot-and-plot-data-with-pandas/) blog post.
+All examples herein were developed exclusively for this workshop. [Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/) contains additional examples and exercises, as does [this](https://opendatascience.com/how-to-pivot-and-plot-data-with-pandas/) blog post.
