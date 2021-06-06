@@ -66,6 +66,11 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 
     ![check env](./images/env_check.png)
 
+---
 
 ## About the Author
 Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a data scientist and software engineer at Bloomberg in New York City, where she tackles tough problems in information security, particularly those revolving around anomaly detection, building tools for gathering data, and knowledge sharing. She is also the author of [Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/), which is currently on in its second edition. She holds a bachelor’s of science degree in operations research from Columbia University's Fu Foundation School of Engineering and Applied Science. She is currently pursuing a master’s degree in computer science, with a specialization in machine learning, from Georgia Tech. In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken among both people and computers.
+
+
+## Related Content
+All examples herein were developed exclusively for this workshop. My book, [Hands-On Data Analysis with Pandas](https://www.amazon.com/dp/1800563450/), contains additional examples and exercises, as does [this](https://opendatascience.com/how-to-pivot-and-plot-data-with-pandas/) blog post.
