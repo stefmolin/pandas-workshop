@@ -8,7 +8,7 @@ Pandas makes it possible to work with tabular data and perform all parts of the 
 
 ## Session Outline
 
-This is a 3-hour workshop on pandas first delivered at [ODSC Europe 2021](https://odsc.com/speakers/introduction-to-data-analysis-using-pandas/). It's divided into the following sections:
+This is a 3-hour workshop on pandas first delivered at [ODSC Europe 2021](https://odsc.com/speakers/introduction-to-data-analysis-using-pandas/) and subsequently at the [5th Annual Toronto Machine Learning Summit](https://www.torontomachinelearning.com/events/introduction-to-data-analysis-using-pandas/) in 2021. It's divided into the following sections:
 
 ### Section 1: Getting Started With Pandas
 We will begin by introducing the `Series`, `DataFrame`, and `Index` classes, which are the basic building blocks of the pandas library, and showing how to work with them. By the end of this section, you will be able to create DataFrames and perform operations on them to inspect and filter the data.
