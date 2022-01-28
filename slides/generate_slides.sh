@@ -4,13 +4,13 @@
 SCRIPT=$(realpath "$0")
 SLIDES_DIR=$(dirname "$SCRIPT")
 REPO_DIR=$(dirname "$SLIDES_DIR")
-ACTIVE_ENV=$(basename $VIRTUAL_ENV)
+ACTIVE_ENV=$(basename "$VIRTUAL_ENV")
 
 
-if [[ "$ACTIVE_ENV" == "" ]]; then
+if [[ "$ACTIVE_ENV" == "" && "$CONDA_PREFIX" == "" ]]; then
     echo "Virtual environment is not enabled. Quitting...";
 else
-    if [[ "$ACTIVE_ENV" != "pandas_workshop" ]]; then
+    if [[ "$ACTIVE_ENV" != "pandas_workshop" && "$CONDA_PREFIX" != *"pandas_workshop" ]]; then
         echo "The pandas_workshop venv is not activated.";
     else
         # if nbmerge isn't installed, do so
