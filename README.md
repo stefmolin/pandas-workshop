@@ -8,7 +8,7 @@ Pandas makes it possible to work with tabular data and perform all parts of the 
 
 ## Session Outline
 
-This is a 3-hour workshop on pandas first delivered at [ODSC Europe 2021](https://odsc.com/speakers/introduction-to-data-analysis-using-pandas/) and subsequently at the [5th Annual Toronto Machine Learning Summit](https://www.torontomachinelearning.com/events/introduction-to-data-analysis-using-pandas/) in 2021. It's divided into the following sections:
+This is an introductory workshop on pandas first delivered at [ODSC Europe 2021](https://odsc.com/speakers/introduction-to-data-analysis-using-pandas/) and subsequently at the [5th Annual Toronto Machine Learning Summit](https://www.torontomachinelearning.com/events/introduction-to-data-analysis-using-pandas/) in 2021. It's divided into the following sections:
 
 ### Section 1: Getting Started With Pandas
 We will begin by introducing the `Series`, `DataFrame`, and `Index` classes, which are the basic building blocks of the pandas library, and showing how to work with them. By the end of this section, you will be able to create DataFrames and perform operations on them to inspect and filter the data.
@@ -30,7 +30,7 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 ---
 
 ## Setup Instructions
-0. Install Python >= version 3.7.1 and < version 3.9 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
+0. Install Python >= version 3.7.1 and < version 3.9 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line. Alternatively, you can use [this](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab) Binder environment if you don't want to install anything on your machine.
 1. Fork this repository:
 
     ![location of fork button in GitHub](./images/fork_button.png)
