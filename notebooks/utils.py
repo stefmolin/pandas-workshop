@@ -1,12 +1,13 @@
 """Utility functions for the workshop."""
 
 from __future__ import print_function
-from distutils.version import LooseVersion as Version
+from packaging.version import LegacyVersion as Version
 import importlib
 import sys
 
 OK = '\x1b[42m[ OK ]\x1b[0m'
 FAIL = '\x1b[41m[FAIL]\x1b[0m'
+MIN_PYTHON_VERSION, MAX_PYTHON_VERSION = Version('3.8.0'), Version('3.10.2')
 
 
 def run_env_check():
@@ -14,10 +15,10 @@ def run_env_check():
     # check the python version
     print('Using Python in %s:' % sys.prefix)
     python_version = Version(sys.version)
-    if python_version >= '3.7.1' and python_version < '3.9.0':
+    if python_version >= MIN_PYTHON_VERSION and python_version <= MAX_PYTHON_VERSION:
         print(OK, 'Python is version %s\n' % sys.version)
     else:
-        print(FAIL, 'Python version >= 3.7.1 and < 3.9.0 is required, but %s is installed.\n' % sys.version)
+        print(FAIL, f'Python version >= {MIN_PYTHON_VERSION} and <= {MAX_PYTHON_VERSION} is required, but %s is installed.\n' % sys.version)
 
     # read in the requirements
     with open('../requirements.txt', 'r') as file:
@@ -38,7 +39,7 @@ def run_env_check():
             mod = importlib.import_module(pkg)
             if req_version:
                 version = mod.__version__
-                if Version(version) != req_version:
+                if Version(version) != Version(req_version):
                     print(FAIL, '%s version %s is required, but %s installed.' % (pkg, req_version, version))
                     continue
             print(OK, '%s' % pkg)
