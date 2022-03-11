@@ -1,6 +1,6 @@
 # Pandas Workshop
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab) [![Nbviewer](https://img.shields.io/badge/render-nbviewer-lightgrey?logo=jupyter)](https://nbviewer.jupyter.org/github/stefmolin/pandas-workshop/tree/main/) [![View slides in browser](https://img.shields.io/badge/view-slides-orange?logo=github)](https://stefmolin.github.io/pandas-workshop/slides/html/combined.slides.html#/)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab) [![Nbviewer](https://img.shields.io/badge/render-nbviewer-lightgrey?logo=jupyter)](https://nbviewer.jupyter.org/github/stefmolin/pandas-workshop/tree/main/) [![View slides in browser](https://img.shields.io/badge/view-slides-orange?logo=github)](https://stefmolin.github.io/pandas-workshop/slides/html/workshop.slides.html#/)
 
 Working with data can be challenging: it often doesn’t come in the best format for analysis, and understanding it well enough to extract insights requires both time and the skills to filter, aggregate, reshape, and visualize it. This session will equip you with the knowledge you need to effectively use pandas – a powerful library for data analysis in Python – to make this process easier.
 

@@ -6,7 +6,6 @@ SLIDES_DIR=$(dirname "$SCRIPT")
 REPO_DIR=$(dirname "$SLIDES_DIR")
 ACTIVE_ENV=$(basename "$VIRTUAL_ENV")
 
-
 if [[ "$ACTIVE_ENV" == "" && "$CONDA_PREFIX" == "" ]]; then
     echo "Virtual environment is not enabled. Quitting...";
 else
@@ -19,7 +18,7 @@ else
 
         # use nbmerge to combine all slide notebooks into a single notebook
         echo "[nbmerge] Creating a combined notebook for all slides..."
-        COMBINED_NOTEBOOK="$SLIDES_DIR"/combined.ipynb
+        COMBINED_NOTEBOOK="$SLIDES_DIR"/workshop.ipynb
         nbmerge $SLIDES_DIR/*.ipynb -o $COMBINED_NOTEBOOK;
 
         # make all slide decks
