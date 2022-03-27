@@ -22271,7 +22271,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Crosstabs">Crosstabs<a class="anchor-link" href="#Crosstabs">&#182;</a></h3><p>The <code>pd.crosstab()</code> function provides an easy way to create a frequency table:</p>
+<h3 id="Crosstabs">Crosstabs<a class="anchor-link" href="#Crosstabs">&#182;</a></h3><p>The <code>pd.crosstab()</code> function provides an easy way to create a frequency table. Here, we count the number of low-, medium-, and high-volume travel days per year, using the <code>pd.cut()</code> function to create three travel volume bins of equal width:</p>
 
 </div>
 </div>
@@ -22380,12 +22380,24 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Tip: The <code>pd.crosstab()</code> function supports other aggregations provided you pass in the data to aggregate as <code>values</code> and specify the aggregation with <code>aggfunc</code>. You can also add subtotals and normalize the data. See the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.crosstab.html">documentation</a> for more information.</em></p>
+<p><em>Tip: The <code>pd.cut()</code> function can also be used to specify custom bin ranges. For equal-sized bins based on quantiles, use the <code>pd.qcut()</code> function instead.</em></p>
 
 </div>
 </div>
 </div>
 </div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Note that the <code>pd.crosstab()</code> function supports other aggregations provided you pass in the data to aggregate as <code>values</code> and specify the aggregation with <code>aggfunc</code>. You can also add subtotals and normalize the data. See the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.crosstab.html">documentation</a> for more information.</p>
+
+</div>
+</div>
+</div>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
