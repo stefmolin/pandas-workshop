@@ -22051,7 +22051,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's make one last pivot table with column and row subtotals along with some formatting improvements. First, we set a display option for all floats:</p>
+<p>Let's make one last pivot table with column and row subtotals, along with some formatting improvements. First, we set a display option for all floats:</p>
 
 </div>
 </div>
@@ -22894,7 +22894,7 @@ dtype: object</pre>
 <ul>
 <li>We can group by multiple columns &ndash; this creates a hierarchical index.</li>
 <li>Groups can be excluded from calculations with the <code>filter()</code> method.</li>
-<li>We can group on content in the index using the <code>level</code> or <code>name</code> parameters e.g. <code>groupby(level=0)</code> or <code>groupby(name='year')</code>.</li>
+<li>We can group on content in the index using the <code>level</code> or <code>name</code> parameters e.g., <code>groupby(level=0)</code> or <code>groupby(name='year')</code>.</li>
 <li>We can group by date ranges if we use a <code>pd.Grouper()</code> object.</li>
 </ul>
 
@@ -23467,7 +23467,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Tip: The <code>at_time()</code> method can be used to extract all entries at a given time (e.g. 12:35:27).</em></p>
+<p><em>Tip: The <code>at_time()</code> method can be used to extract all entries at a given time (e.g., 12:35:27).</em></p>
 
 </div>
 </div>
@@ -24060,7 +24060,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Window-calculations">Window calculations<a class="anchor-link" href="#Window-calculations">&#182;</a></h3><p>Window calculations are similar to group by calculations except the group over which the calculation is performed isn't static &ndash; it can move or expand. Pandas provides functionality for constructing a variety of windows, including moving/rolling windows, expanding windows (e.g. cumulative sum or mean up to the current date in a time series), and exponentially weighted moving windows (to weight closer observations higher than further ones). We will only look at rolling and expanding calculations here.</p>
+<h3 id="Window-calculations">Window calculations<a class="anchor-link" href="#Window-calculations">&#182;</a></h3><p>Window calculations are similar to group by calculations except the group over which the calculation is performed isn't static &ndash; it can move or expand. Pandas provides functionality for constructing a variety of windows, including moving/rolling windows, expanding windows (e.g., cumulative sum or mean up to the current date in a time series), and exponentially weighted moving windows (to weight closer observations more than further ones). We will only look at rolling and expanding calculations here.</p>
 
 </div>
 </div>
@@ -24086,7 +24086,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Performing a window calculation is very similar to a group by calculation: we first define the window, and then we specify the aggregation:</p>
+<p>Performing a window calculation is very similar to a group by calculation &ndash; we first define the window, and then we specify the aggregation:</p>
 
 </div>
 </div>
@@ -24357,10 +24357,10 @@ jp-needs-light-background
 <ol>
 <li>Read in the meteorite data from the <code>Meteorite_Landings.csv</code> file.</li>
 <li>Rename the <code>mass (g)</code> column to <code>mass</code>, and drop all the latitude and longitude columns.</li>
-<li>Update the <code>year</code> column to only contain the year, convert it to a numeric data type, and create a new column indicating if the year is unknown. Hint: Use <code>year.str.slice()</code> to grab a substring.</li>
+<li>Update the <code>year</code> column to only contain the year, convert it to a numeric data type, and create a new column indicating whether the year is unknown. Hint: Use <code>year.str.slice()</code> to grab a substring.</li>
 <li>There's a data entry error in the <code>year</code> column. Can you find it? (Don't spend too much time on this.)</li>
 <li>Compare summary statistics of the <code>mass</code> column for the meteorites that were found versus observed falling.</li>
-<li>Create a pivot table that shows both the number of meteorites and the 95th percentile of meteorite mass for those that were found versus observed falling per year from 1990 to 2000 (inclusive).</li>
+<li>Create a pivot table that shows both the number of meteorites and the 95th percentile of meteorite mass for those that were found versus observed falling per year from 1990 through 2000 (inclusive).</li>
 <li>Using the <code>taxis</code> data from earlier this section, resample the data to an hourly frequency based on the dropoff time. Calculate the total <code>trip_distance</code>, <code>fare_amount</code>, <code>tolls_amount</code>, and <code>tip_amount</code>, then find the 5 hours with the most tips.</li>
 </ol>
 
@@ -24534,7 +24534,7 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="3.-Update-the-year-column-to-only-contain-the-year,-convert-it-to-a-numeric-data-type,-and-create-a-new-column-indicating-if-the-year-is-unknown.">3. Update the <code>year</code> column to only contain the year, convert it to a numeric data type, and create a new column indicating if the year is unknown.<a class="anchor-link" href="#3.-Update-the-year-column-to-only-contain-the-year,-convert-it-to-a-numeric-data-type,-and-create-a-new-column-indicating-if-the-year-is-unknown.">&#182;</a></h5>
+<h5 id="3.-Update-the-year-column-to-only-contain-the-year,-convert-it-to-a-numeric-data-type,-and-create-a-new-column-indicating-whether-the-year-is-unknown.">3. Update the <code>year</code> column to only contain the year, convert it to a numeric data type, and create a new column indicating whether the year is unknown.<a class="anchor-link" href="#3.-Update-the-year-column-to-only-contain-the-year,-convert-it-to-a-numeric-data-type,-and-create-a-new-column-indicating-whether-the-year-is-unknown.">&#182;</a></h5>
 </div>
 </div>
 </div>
@@ -24955,7 +24955,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="6.-Create-a-pivot-table-that-shows-both-the-number-of-meteorites-and-the-95th-percentile-of-meteorite-mass-for-those-that-were-found-versus-observed-falling-per-year-from-1990-to-2000-(inclusive).">6. Create a pivot table that shows both the number of meteorites and the 95th percentile of meteorite mass for those that were found versus observed falling per year from 1990 to 2000 (inclusive).<a class="anchor-link" href="#6.-Create-a-pivot-table-that-shows-both-the-number-of-meteorites-and-the-95th-percentile-of-meteorite-mass-for-those-that-were-found-versus-observed-falling-per-year-from-1990-to-2000-(inclusive).">&#182;</a></h5>
+<h5 id="6.-Create-a-pivot-table-that-shows-both-the-number-of-meteorites-and-the-95th-percentile-of-meteorite-mass-for-those-that-were-found-versus-observed-falling-per-year-from-1990-through-2000-(inclusive).">6. Create a pivot table that shows both the number of meteorites and the 95th percentile of meteorite mass for those that were found versus observed falling per year from 1990 through 2000 (inclusive).<a class="anchor-link" href="#6.-Create-a-pivot-table-that-shows-both-the-number-of-meteorites-and-the-95th-percentile-of-meteorite-mass-for-those-that-were-found-versus-observed-falling-per-year-from-1990-through-2000-(inclusive).">&#182;</a></h5>
 </div>
 </div>
 </div>
