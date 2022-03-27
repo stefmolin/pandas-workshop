@@ -20655,8 +20655,9 @@ dtype: object</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted</span> <span class="o">=</span> <span class="n">tsa</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-    <span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="c1"># uniquely identifies a row</span>
-    <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;travelers&#39;</span>
+    <span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="c1"># column that uniquely identifies a row (can be multiple)</span>
+    <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="c1"># name for the new column created by melting</span>
+    <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;travelers&#39;</span> <span class="c1"># name for new column containing values from melted columns</span>
 <span class="p">)</span>
 <span class="n">tsa_melted</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># show some random entries</span>
 </pre></div>
