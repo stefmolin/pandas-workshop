@@ -14916,7 +14916,7 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <code>plot()</code> method returns an <code>Axes</code> object that can be modified further (e.g. to add reference lines, annotations, labels, etc.). Let's walk through an example.</p>
+<p>The <code>plot()</code> method returns an <code>Axes</code> object that can be modified further (e.g., to add reference lines, annotations, labels, etc.). Let's walk through an example.</p>
 
 </div>
 </div>
@@ -15097,7 +15097,7 @@ jp-needs-light-background
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.legend.Legend at 0x12f963f70&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x124024070&gt;</pre>
 </div>
 
 </div>
@@ -15244,7 +15244,7 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Tip: If you're new to <code>zip()</code>, check out <a href="https://realpython.com/python-zip-function/">this</a> article.</em></p>
+<p><em>Tip: If you're new to the <code>zip()</code> function, check out <a href="https://realpython.com/python-zip-function/">this</a> article.</em></p>
 
 </div>
 </div>
@@ -15299,7 +15299,7 @@ jp-needs-light-background
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tsa_melted_holiday_travel</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;travelers&#39;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tsa_melted_holiday_travel</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;travelers&#39;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15323,7 +15323,7 @@ jp-needs-light-background
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;seaborn.axisgrid.FacetGrid at 0x12f7ebee0&gt;</pre>
+<pre>&lt;seaborn.axisgrid.FacetGrid at 0x1240b4fd0&gt;</pre>
 </div>
 
 </div>
@@ -15358,7 +15358,7 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Heatmaps">Heatmaps<a class="anchor-link" href="#Heatmaps">&#182;</a></h3><p>We can use Seaborn to visualize pivot tables as heatmaps:</p>
+<h3 id="Heatmaps">Heatmaps<a class="anchor-link" href="#Heatmaps">&#182;</a></h3><p>We can also use Seaborn to visualize pivot tables as heatmaps:</p>
 
 </div>
 </div>
@@ -15636,7 +15636,7 @@ jp-needs-light-background
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Some things to keep in mind:</p>
 <ul>
-<li>We used <code>Axes</code> methods to customize our plots (i.e., an object-oriented approach), but the <code>pyplot</code> module provides equivalent functions (i.e., a functional approach) for adding shaded regions, reference lines, annotations, etc. &ndash; although the function names might be slightly different than their <code>Axes</code> method counterparts (e.g. <code>Axes.set_xlabel()</code> vs. <code>plt.xlabel()</code>). </li>
+<li>We used <code>Axes</code> methods to customize our plots (i.e., an object-oriented approach), but the <code>pyplot</code> module provides equivalent functions (i.e., a functional approach) for adding shaded regions, reference lines, annotations, etc. &ndash; although the function names might be slightly different than their <code>Axes</code> method counterparts (e.g., <code>Axes.set_xlabel()</code> vs. <code>plt.xlabel()</code>). </li>
 <li>In general, try to stick to either the object-oriented or functional approach rather than mixing the two. However, be careful when working with subplots &ndash; <code>pyplot</code> functions will only affect the last subplot.</li>
 <li>The <a href="https://matplotlib.org/stable/gallery/showcase/anatomy.html">anatomy of a figure</a> diagram in the Matplotlib documentation is a great resource for identifying which objects you will need to access for plot customizations.</li>
 </ul>
@@ -15760,7 +15760,7 @@ jp-needs-light-background
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.1f&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">calendar</span><span class="o">.</span><span class="n">month_abbr</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">calendar</span><span class="o">.</span><span class="n">day_abbr</span><span class="p">[:],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">calendar</span><span class="o">.</span><span class="n">day_abbr</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;2019 TSA Median Traveler Throughput</span><span class="se">\n</span><span class="s1">(in millions)&#39;</span><span class="p">)</span>
 </pre></div>
 
