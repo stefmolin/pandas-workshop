@@ -1,10 +1,15 @@
-{%- extends 'base.html.j2' -%}
+{%- extends 'reveal/index.html.j2' -%}
+{% set title = "Introduction to Data Analysis Using Pandas" %}
+{% set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] %}
+{% set repo_name = "pandas-workshop" %}
+
 {% from 'mathjax.html.j2' import mathjax %}
 {% from 'jupyter_widgets.html.j2' import jupyter_widgets %}
 
 {% set reveal_url_prefix = resources.reveal.url_prefix | default('https://unpkg.com/reveal.js@4.0.2', true) %}
 {% set reveal_theme = resources.reveal.theme | default('white', true) %}
 {% set reveal_transition = resources.reveal.transition | default('slide', true) %}
+{% set reveal_number = resources.reveal.number | default('', true) %}
 {% set reveal_scroll = resources.reveal.scroll | default(false, true) | json_dumps %}
 
 {%- block header -%}
@@ -19,8 +24,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-{% set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] %}
-<title>{{nb_title}} slides</title>
+<title>{{title}} {{nb_title}} slides &ndash; Stefanie Molin</title>
 
 {%- block html_head_js -%}
 {%- block html_head_js_jquery -%}
@@ -33,12 +37,13 @@
 
 {% block jupyter_widgets %}
   {%- if "widgets" in nb.metadata -%}
-    {{ jupyter_widgets(resources.jupyter_widgets_base_url, resources.html_manager_semver_range) }}
+    {{ jupyter_widgets(resources.jupyter_widgets_base_url, resources.html_manager_semver_range, resources.widget_renderer_url) }}
   {%- endif -%}
 {% endblock jupyter_widgets %}
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="{{ reveal_url_prefix }}/dist/reveal.css">
+<!-- Reveal Theme -->
 <link rel="stylesheet" href="{{ reveal_url_prefix }}/dist/theme/{{reveal_theme}}.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -50,9 +55,6 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 </script>
-
-<!-- Loading the mathjax macro -->
-{{ mathjax() }}
 
 {% for css in resources.inlining.css -%}
   <style type="text/css">
@@ -72,16 +74,50 @@ a.anchor-link {
    display: none;
 }
 .highlight  {
-    margin: 0.4em;
+    margin: 0.4em 0.4em 0em !important;
 }
 .jp-Notebook {
     padding: 0;
 }
+.CodeMirror pre {
+    padding: 0.4em !important;
+    overflow-x: scroll !important; /* allow scrolling to see full code block */
+}
+.jp-MarkdownOutput {
+    overflow: hidden !important;
+}
+.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
+    width: 75%;
+}
+.slide-number {
+    background-color: transparent !important;
+    color: black !important;
+    font-size: 18pt !important;
+}
+.slides { /* pull slides to left */
+  margin-left: -30px !important;
+}
+
+/* scrollbar formatting */
+::-webkit-scrollbar-thumb {
+    visibility: hidden; /* hide the scrollbar when not in use */
+}
+:hover::-webkit-scrollbar-thumb {
+    visibility: hidden; /* to show the scrollbar on hover, change to "visible" */
+}
+::-webkit-scrollbar-track-piece:start { /* make a little space at the top of the scrollbar */
+    background: transparent;
+    margin-top: 20px;
+}
+::-webkit-scrollbar-track-piece:end { /* leave enough space at the bottom of the scrollbar for the slide number */
+    background: transparent;
+    margin-bottom: 60px;
+}
 :root {
-    --jp-ui-font-size1: 20px;       /* instead of 14px */
-    --jp-content-font-size1: 20px;  /* instead of 14px */
-    --jp-code-font-size: 19px;      /* instead of 13px */
-    --jp-cell-prompt-width: 110px;  /* instead of 64px */
+    --jp-ui-font-size1: 18pt;       /* size of tables in outputs */
+    --jp-content-font-size1: 26pt;  /* base size of text */
+    --jp-code-font-size: 24pt;      /* size of code */
+    --jp-cell-prompt-width: 160px;  /* width of In[] labels */
 }
 @media print {
   body {
@@ -93,7 +129,12 @@ a.anchor-link {
 {{ resources.include_css("static/custom_reveal.css") }}
 
 {% endblock notebook_css %}
+{%- block html_head_js_mathjax -%}
+{{ mathjax(resources.mathjax_url) }}
+{%- endblock html_head_js_mathjax -%}
+
 {%- endblock html_head -%}
+
 </head>
 {% endblock header%}
 
@@ -104,13 +145,13 @@ a.anchor-link {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 {% endif %}
 <div class="reveal">
-<div class="footer" style="padding: 4px;">
-    Introduction to Data Analysis Using Pandas &ndash; Stefanie Molin
+<div class="footer" style="padding: 4px; font-size: 22px;">
+    {{title}} &ndash; Stefanie Molin
     <div style="float: right; margin-top: -18px;">
-        <a href="https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab" style="z-index: 1;" target="_blank" rel="noopener noreferrer">
+        <a href="https://mybinder.org/v2/gh/stefmolin/{{repo_name}}/main?urlpath=lab" style="z-index: 1;" target="_blank" rel="noopener noreferrer">
             <img src="https://camo.githubusercontent.com/581c077bdbc6ca6899c86d0acc6145ae85e9d80e6f805a1071793dbe48917982/68747470733a2f2f6d7962696e6465722e6f72672f62616467655f6c6f676f2e737667" alt="Binder" data-canonical-src="https://mybinder.org/badge_logo.svg" style="max-width: 100%;">
         </a>
-        <a href="https://github.com/stefmolin/pandas-workshop" style="z-index: 1;" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/stefmolin/{{repo_name}}" style="z-index: 1;" target="_blank" rel="noopener noreferrer">
             <img alt="View repo on GitHub" src="https://img.shields.io/badge/view-repo-orange?logo=github" style="max-width: 100%;">
         </a>
     </div>
@@ -118,13 +159,6 @@ a.anchor-link {
 <div class="slides">
 {%- endblock body_header -%}
 
-{% block body_footer %}
-</div>
-</div>
-</body>
-{% endblock body_footer %}
-
-{% block footer %}
 {% block footer_js %}
 <script>
 require(
@@ -134,16 +168,23 @@ require(
       waitSeconds: 15
     },
     [
-      "{{ reveal_url_prefix }}/dist/reveal.js"
+      "{{ reveal_url_prefix }}/dist/reveal.js",
+      "{{ reveal_url_prefix }}/plugin/notes/notes.js"
     ],
 
-    function(Reveal){
+    function(Reveal, RevealNotes){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
             controls: true,
             progress: true,
+            slideNumber: "c",
+            pdfSeparateFragments: false,
             history: true,
             transition: "{{reveal_transition}}",
+            plugins: [RevealNotes],
+            controls: false, // don't show for larger versions to have more room
+            width: 1600,
+            height: 900
         });
 
         var update = function(event){
@@ -155,17 +196,15 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = {{ reveal_scroll }}
-            if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
-              $('section.present').find('section')
-                .filter(function() {
-                  return $(this).height() > h;
-                })
-                .css('height', 'calc(95vh)')
-                .css('overflow-y', 'scroll')
-                .css('margin-top', '20px');
-            }
+            let scale = 100;
+            let h = $('.reveal').height() * scale / 100;
+            $('section.present').find('section')
+              .filter(function() {
+                return $(this).height() > h;
+              })
+              .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
+              .css('overflow', 'scroll')
+              .css('margin-top', '20px');
         }
 
         // check and set the scrolling slide every time the slide change
@@ -174,5 +213,3 @@ require(
 );
 </script>
 {% endblock footer_js %}
-</html>
-{% endblock footer %}
