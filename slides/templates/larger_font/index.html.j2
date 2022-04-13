@@ -1,7 +1,8 @@
 {%- extends 'reveal/index.html.j2' -%}
-{% set title = "Introduction to Data Analysis Using Pandas" %}
+{% set title = 'Introduction to Data Analysis Using Pandas' %}
 {% set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] %}
-{% set repo_name = "pandas-workshop" %}
+{% set repo_name = 'pandas-workshop' %}
+{% set svg_plot_max_height = 650 %}
 
 {% from 'mathjax.html.j2' import mathjax %}
 {% from 'jupyter_widgets.html.j2' import jupyter_widgets %}
@@ -86,8 +87,15 @@ a.anchor-link {
 .jp-MarkdownOutput {
     overflow: hidden !important;
 }
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
+    padding-right: 5px !important; /* padding after lead-in text */
+}
 .jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
     width: 75%;
+}
+.jp-OutputArea-executeResult > video { /* scale videos */
+    width: 900px;
+    height: 600px;
 }
 .slide-number {
     background-color: transparent !important;
@@ -95,9 +103,8 @@ a.anchor-link {
     font-size: 18pt !important;
 }
 .slides { /* pull slides to left */
-  margin-left: -30px !important;
+    margin-left: -30px !important;
 }
-
 /* scrollbar formatting */
 ::-webkit-scrollbar-thumb {
     visibility: hidden; /* hide the scrollbar when not in use */
@@ -184,8 +191,8 @@ require(
             history: true,
             transition: "{{reveal_transition}}",
             plugins: [RevealNotes],
-            width: 1600,
-            height: 900
+            width: 1950,
+            height: 1000
         });
 
         var update = function(event){
@@ -197,14 +204,38 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            let scale = 100;
+            let scale = 95;
             let h = $('.reveal').height() * scale / 100;
-            $('section.present').find('section')
+            let slide = $('section.present').find('section')
               .filter(function() {
                 return $(this).height() > h;
               })
-              .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
               .css('overflow', 'scroll');
+
+            if (self !== top) {
+              // in iframe --> speaker mode view
+              slide
+                .css('height', '100%') // alternate values for speaker view (in iframe)
+                .css('margin-top', '-50px')
+                .css('transform', 'scale(0.95)');
+              if (slide.context.location.search.includes('controls=false')) {
+                // scroll presenter view to see fragments that will be coming up
+                slide.scrollTop($('section.present')[0].scrollHeight / 2);
+              }
+            } else {
+              slide
+                .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
+                .css('overflow', 'scroll')
+                .css('margin-bottom', '70px')
+                .css('margin-top', '-20px');
+            }
+
+            // hack to resize plots rendered as SVGs if they hit the height limit
+            $('section.present').find('.jp-RenderedSVG').find('svg')
+              .filter(function() {
+                return $(this).height() >= {{svg_plot_max_height}} && $(this).width() / $(this).height() < 2;
+              })
+              .css('width', '50%');
         }
 
         // check and set the scrolling slide every time the slide change
