@@ -14472,18 +14472,24 @@ all of MD as it is not optimized for dense, information rich UIs.
 a.anchor-link {
    display: none;
 }
-.highlight  {
+.highlight { /* spacing between code block and the code inside it */
     margin: 0.4em 0.4em 0em !important;
 }
 .jp-Notebook {
     padding: 0;
 }
-.jp-RenderedHTMLCommon {
+.jp-RenderedHTMLCommon { /* code output fills space vertically, so don't show scrollbar */
     overflow-y: hidden !important;
+}
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
+    padding-right: 5px !important; /* padding after lead-in text */
 }
 .CodeMirror pre {
     padding: 0.4em !important;
     overflow-x: scroll !important; /* allow scrolling to see full code block */
+}
+.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
+    width: 75%;
 }
 :root {
     --jp-ui-font-size1: 11.5px;       /* size of tables in outputs */
@@ -14736,7 +14742,7 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Let's-get-started">Let's get started<a class="anchor-link" href="#Let's-get-started">&#182;</a></h2><p><em>Be sure to follow along in the <a href="https://github.com/stefmolin/pandas-workshop/tree/main/notebooks">notebooks</a>.</em></p>
-<p><img width="300" src="https://www.pngkey.com/png/detail/42-428839_silhouette-face-bamboo-cartoon-wild-bear-cute-panda.png" alt="Silhouette, Face, Bamboo, Cartoon, Wild, Bear, Cute - Panda Black And White@pngkey.com"></p>
+<p><img width="30%" src="https://www.pngkey.com/png/detail/42-428839_silhouette-face-bamboo-cartoon-wild-bear-cute-panda.png" alt="Silhouette, Face, Bamboo, Cartoon, Wild, Bear, Cute - Panda Black And White@pngkey.com" style="min-width: 300px"></p>
 
 </div>
 </div>
@@ -14787,13 +14793,38 @@ require(
         function setScrollingSlide() {
             let scale = 100;
             let h = $('.reveal').height() * scale / 100;
-            $('section.present').find('section')
+            let slide = $('section.present').find('section')
               .filter(function() {
                 return $(this).height() > h;
               })
-              .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
-              .css('overflow', 'scroll')
-              .css('margin-top', '20px');
+              .css('overflow-y', 'scroll');
+
+            if (self !== top) {
+              // in iframe --> speaker mode view
+              slide
+                .css('height', '100%') // alternate values for speaker view (in iframe)
+                .css('margin-top', '-20px')
+                .css('transform', 'scale(0.75)');
+
+              // hide footer
+              $('div.footer').css('display', 'none');
+
+              if (slide.context.location.search.includes('controls=false')) {
+                // scroll presenter view to see fragments that will be coming up
+                slide.scrollTop($('section.present')[0].scrollHeight);
+              }
+            } else {
+              slide
+                .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
+                .css('margin-top', '20px');
+            }
+
+            // hack to resize plots rendered as SVGs if they hit the height limit
+            $('section.present').find('.jp-RenderedSVG').find('svg')
+              .filter(function() {
+                return $(this).height() >= 300 && $(this).width() / $(this).height() < 2;
+              })
+              .css('width', '50%');
         }
 
         // check and set the scrolling slide every time the slide change

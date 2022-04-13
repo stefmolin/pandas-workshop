@@ -14472,18 +14472,24 @@ all of MD as it is not optimized for dense, information rich UIs.
 a.anchor-link {
    display: none;
 }
-.highlight  {
+.highlight { /* spacing between code block and the code inside it */
     margin: 0.4em 0.4em 0em !important;
 }
 .jp-Notebook {
     padding: 0;
 }
-.jp-RenderedHTMLCommon {
+.jp-RenderedHTMLCommon { /* code output fills space vertically, so don't show scrollbar */
     overflow-y: hidden !important;
+}
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
+    padding-right: 5px !important; /* padding after lead-in text */
 }
 .CodeMirror pre {
     padding: 0.4em !important;
     overflow-x: scroll !important; /* allow scrolling to see full code block */
+}
+.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
+    width: 75%;
 }
 :root {
     --jp-ui-font-size1: 11.5px;       /* size of tables in outputs */
@@ -14679,7 +14685,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Section-1:-Getting-Started-With-Pandas">Section 1: Getting Started With Pandas<a class="anchor-link" href="#Section-1:-Getting-Started-With-Pandas">&#182;</a></h1><p>We will begin by introducing the <code>Series</code>, <code>DataFrame</code>, and <code>Index</code> classes, which are the basic building blocks of the pandas library, and showing how to work with them. By the end of this section, you will be able to create DataFrames and perform operations on them to inspect and filter the data.</p>
 <div style="text-align: center;">
-    <img width="400" src="https://hips.hearstapps.com/elleuk.cdnds.net/16/36/3200x1599/gallery-1473083573-pandas.jpg" alt="Waving panda">
+    <img width="40%" src="https://hips.hearstapps.com/elleuk.cdnds.net/16/36/3200x1599/gallery-1473083573-pandas.jpg" alt="Waving panda" style="min-width: 400px">
     <div><small><em><a href="https://www.elle.com/uk/life-and-culture/culture/news/a31745/10-ways-to-celebrate-pandas-no-longer-being-endangered/">Source</a></em></small></div>
 </div>
 </div>
@@ -14925,7 +14931,7 @@ Name: name, dtype: object</pre>
 
 </div>
 
-</div><div class="fragment">
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14979,7 +14985,7 @@ Name: name, dtype: object</pre>
 
 </div>
 
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15635,7 +15641,7 @@ dtype: object</pre>
 
 </div>
 
-</div><div class="fragment">
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15785,7 +15791,7 @@ dtype: object</pre>
 
 </div>
 
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17319,7 +17325,7 @@ Name: 16392, dtype: object</pre>
 
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17327,12 +17333,14 @@ Name: 16392, dtype: object</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><em>Fun fact: This meteorite landed in Namibia and is a tourist attraction.</em></p>
-<p><img width="125" style="margin-top: -15px; margin-bottom: -8px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Hoba_meteorite_%2815682150765%29.jpg/1280px-Hoba_meteorite_%2815682150765%29.jpg" alt="Hoba meteorite (source: Wikipedia)"/></p>
-<div><small style="font-size: 10px"><em>Source: Wikipedia</em></small></div>
+<div>
+    <img width="25%" style="margin-top: -5px; margin-bottom: -5px; min-width: 200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Hoba_meteorite_%2815682150765%29.jpg/1280px-Hoba_meteorite_%2815682150765%29.jpg" alt="Hoba meteorite (source: Wikipedia)"/>
+    <div><small><em>Source: Wikipedia</em></small></div>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18188,7 +18196,7 @@ Name: 8338, dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Section-1-Complete-%F0%9F%8E%89">Section 1 Complete &#127881;<a class="anchor-link" href="#Section-1-Complete-%F0%9F%8E%89">&#182;</a></h2><p><img width="300" src="https://www.pngkey.com/png/detail/11-115894_giant-panda-bear-cuteness-panda-with-bamboo-cartoon.png" alt="Giant Panda Bear Cuteness - Panda With Bamboo Cartoon@pngkey.com"></p>
+<h2 id="Section-1-Complete-%F0%9F%8E%89">Section 1 Complete &#127881;<a class="anchor-link" href="#Section-1-Complete-%F0%9F%8E%89">&#182;</a></h2><p><img width="30%" src="https://www.pngkey.com/png/detail/11-115894_giant-panda-bear-cuteness-panda-with-bamboo-cartoon.png" alt="Giant Panda Bear Cuteness - Panda With Bamboo Cartoon@pngkey.com" style="min-width: 300px"></p>
 
 </div>
 </div>
@@ -18239,13 +18247,38 @@ require(
         function setScrollingSlide() {
             let scale = 100;
             let h = $('.reveal').height() * scale / 100;
-            $('section.present').find('section')
+            let slide = $('section.present').find('section')
               .filter(function() {
                 return $(this).height() > h;
               })
-              .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
-              .css('overflow', 'scroll')
-              .css('margin-top', '20px');
+              .css('overflow-y', 'scroll');
+
+            if (self !== top) {
+              // in iframe --> speaker mode view
+              slide
+                .css('height', '100%') // alternate values for speaker view (in iframe)
+                .css('margin-top', '-20px')
+                .css('transform', 'scale(0.75)');
+
+              // hide footer
+              $('div.footer').css('display', 'none');
+
+              if (slide.context.location.search.includes('controls=false')) {
+                // scroll presenter view to see fragments that will be coming up
+                slide.scrollTop($('section.present')[0].scrollHeight);
+              }
+            } else {
+              slide
+                .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
+                .css('margin-top', '20px');
+            }
+
+            // hack to resize plots rendered as SVGs if they hit the height limit
+            $('section.present').find('.jp-RenderedSVG').find('svg')
+              .filter(function() {
+                return $(this).height() >= 300 && $(this).width() / $(this).height() < 2;
+              })
+              .css('width', '50%');
         }
 
         // check and set the scrolling slide every time the slide change

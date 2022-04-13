@@ -14472,18 +14472,24 @@ all of MD as it is not optimized for dense, information rich UIs.
 a.anchor-link {
    display: none;
 }
-.highlight  {
+.highlight { /* spacing between code block and the code inside it */
     margin: 0.4em 0.4em 0em !important;
 }
 .jp-Notebook {
     padding: 0;
 }
-.jp-RenderedHTMLCommon {
+.jp-RenderedHTMLCommon { /* code output fills space vertically, so don't show scrollbar */
     overflow-y: hidden !important;
+}
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
+    padding-right: 5px !important; /* padding after lead-in text */
 }
 .CodeMirror pre {
     padding: 0.4em !important;
     overflow-x: scroll !important; /* allow scrolling to see full code block */
+}
+.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
+    width: 75%;
 }
 :root {
     --jp-ui-font-size1: 11.5px;       /* size of tables in outputs */
@@ -14679,7 +14685,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Section-4:-Hands-On-Data-Analysis-Lab">Section 4: Hands-On Data Analysis Lab<a class="anchor-link" href="#Section-4:-Hands-On-Data-Analysis-Lab">&#182;</a></h1><p>We will practice all that you’ve learned in a hands-on lab. This section features a set of analysis tasks that provide opportunities to apply the material from the previous sections.</p>
 <div style="text-align: center;">
-<img width="200" src="https://www.pngkey.com/png/detail/102-1027124_animals-pandas-panda-transparent-background.png" alt="Animals - Pandas - Panda Transparent Background@pngkey.com">
+<img width="20%" src="https://www.pngkey.com/png/detail/102-1027124_animals-pandas-panda-transparent-background.png" alt="Animals - Pandas - Panda Transparent Background@pngkey.com" style="min-width: 200px">
 </div>
 </div>
 </div>
@@ -14718,7 +14724,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Section-4-Complete-%F0%9F%8E%89">Section 4 Complete &#127881;<a class="anchor-link" href="#Section-4-Complete-%F0%9F%8E%89">&#182;</a></h2><p><img width="300" src="https://www.pngkey.com/png/detail/246-2469554_panda-anime-png-png-panda.png" alt="Panda Anime Png - Png Panda@pngkey.com"></p>
+<h2 id="Section-4-Complete-%F0%9F%8E%89">Section 4 Complete &#127881;<a class="anchor-link" href="#Section-4-Complete-%F0%9F%8E%89">&#182;</a></h2><p><img width="30%" src="https://www.pngkey.com/png/detail/246-2469554_panda-anime-png-png-panda.png" alt="Panda Anime Png - Png Panda@pngkey.com" style="min-width: 300px"></p>
 
 </div>
 </div>
@@ -14732,7 +14738,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Thank-you!">Thank you!<a class="anchor-link" href="#Thank-you!">&#182;</a></h1><p><em>I hope you enjoyed the workshop. Note that all the examples were developed exclusively for this workshop &ndash; check out <a href="https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization-dp-1800563450/dp/1800563450/">Hands-On Data Analysis with Pandas</a> and my <a href="https://github.com/stefmolin/python-data-viz-workshop">Beyond the Basics: Data Visualization in Python</a> workshop for more.</em></p>
 <div style="text-align: center;">
-<img width="200" src="https://raw.githubusercontent.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/master/_img/pandas_drawing.PNG"></div>
+<img width="20%" src="https://raw.githubusercontent.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/master/_img/pandas_drawing.PNG" style="min-width: 200px"></div>
 </div>
 </div>
 </div>
@@ -14782,13 +14788,38 @@ require(
         function setScrollingSlide() {
             let scale = 100;
             let h = $('.reveal').height() * scale / 100;
-            $('section.present').find('section')
+            let slide = $('section.present').find('section')
               .filter(function() {
                 return $(this).height() > h;
               })
-              .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
-              .css('overflow', 'scroll')
-              .css('margin-top', '20px');
+              .css('overflow-y', 'scroll');
+
+            if (self !== top) {
+              // in iframe --> speaker mode view
+              slide
+                .css('height', '100%') // alternate values for speaker view (in iframe)
+                .css('margin-top', '-20px')
+                .css('transform', 'scale(0.75)');
+
+              // hide footer
+              $('div.footer').css('display', 'none');
+
+              if (slide.context.location.search.includes('controls=false')) {
+                // scroll presenter view to see fragments that will be coming up
+                slide.scrollTop($('section.present')[0].scrollHeight);
+              }
+            } else {
+              slide
+                .css('height', 'calc(' + scale + 'vh)') // sets height to scale percent of the viewport height (vh)
+                .css('margin-top', '20px');
+            }
+
+            // hack to resize plots rendered as SVGs if they hit the height limit
+            $('section.present').find('.jp-RenderedSVG').find('svg')
+              .filter(function() {
+                return $(this).height() >= 300 && $(this).width() / $(this).height() < 2;
+              })
+              .css('width', '50%');
         }
 
         // check and set the scrolling slide every time the slide change
