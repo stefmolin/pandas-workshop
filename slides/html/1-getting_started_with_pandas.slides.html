@@ -16447,7 +16447,7 @@ Name: name, Length: 45716, dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16511,7 +16511,7 @@ Length: 45716, dtype: bool</pre>
 
 </div>
 
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16530,7 +16530,7 @@ Length: 45716, dtype: bool</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We can use this Boolean mask to select the full row for each of these meteorites:</p>
+<p>We can use a Boolean mask to select the subset of meteorites weighing more than 1 million grams (1,000 kilograms or roughly 2,205 pounds) that were observed falling:</p>
 
 </div>
 </div>
@@ -16543,7 +16543,7 @@ Length: 45716, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">meteorites</span><span class="p">[(</span><span class="n">meteorites</span><span class="p">[</span><span class="s1">&#39;mass (g)&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">meteorites</span><span class="o">.</span><span class="n">fall</span> <span class="o">==</span> <span class="s1">&#39;Found&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">meteorites</span><span class="p">[(</span><span class="n">meteorites</span><span class="p">[</span><span class="s1">&#39;mass (g)&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">1e6</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">meteorites</span><span class="o">.</span><span class="n">fall</span> <span class="o">==</span> <span class="s1">&#39;Fell&#39;</span><span class="p">)]</span>
 </pre></div>
 
      </div>
@@ -16598,151 +16598,72 @@ Length: 45716, dtype: bool</pre>
   </thead>
   <tbody>
     <tr>
-      <th>37</th>
-      <td>Northwest Africa 5815</td>
-      <td>50693</td>
+      <th>29</th>
+      <td>Allende</td>
+      <td>2278</td>
       <td>Valid</td>
-      <td>L5</td>
-      <td>256.80</td>
-      <td>Found</td>
-      <td>NaN</td>
-      <td>0.00000</td>
-      <td>0.00000</td>
-      <td>(0.0, 0.0)</td>
+      <td>CV3</td>
+      <td>2000000.0</td>
+      <td>Fell</td>
+      <td>01/01/1969 12:00:00 AM</td>
+      <td>26.96667</td>
+      <td>-105.31667</td>
+      <td>(26.96667, -105.31667)</td>
     </tr>
     <tr>
-      <th>757</th>
-      <td>Dominion Range 03239</td>
-      <td>32591</td>
-      <td>Valid</td>
-      <td>L6</td>
-      <td>69.50</td>
-      <td>Found</td>
-      <td>01/01/2002 12:00:00 AM</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>804</th>
-      <td>Dominion Range 03240</td>
-      <td>32592</td>
-      <td>Valid</td>
-      <td>LL5</td>
-      <td>290.90</td>
-      <td>Found</td>
-      <td>01/01/2002 12:00:00 AM</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1111</th>
-      <td>Abajo</td>
-      <td>4</td>
+      <th>419</th>
+      <td>Jilin</td>
+      <td>12171</td>
       <td>Valid</td>
       <td>H5</td>
-      <td>331.00</td>
-      <td>Found</td>
-      <td>01/01/1982 12:00:00 AM</td>
-      <td>26.80000</td>
-      <td>-105.41667</td>
-      <td>(26.8, -105.41667)</td>
-    </tr>
-    <tr>
-      <th>1112</th>
-      <td>Abar al' Uj 001</td>
-      <td>51399</td>
-      <td>Valid</td>
-      <td>H3.8</td>
-      <td>194.34</td>
-      <td>Found</td>
-      <td>01/01/2008 12:00:00 AM</td>
-      <td>22.72192</td>
-      <td>48.95937</td>
-      <td>(22.72192, 48.95937)</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>45709</th>
-      <td>Zhongxiang</td>
-      <td>30406</td>
-      <td>Valid</td>
-      <td>Iron</td>
-      <td>100000.00</td>
-      <td>Found</td>
-      <td>01/01/1981 12:00:00 AM</td>
-      <td>31.20000</td>
-      <td>112.50000</td>
-      <td>(31.2, 112.5)</td>
-    </tr>
-    <tr>
-      <th>45710</th>
-      <td>Zillah 001</td>
-      <td>31355</td>
-      <td>Valid</td>
-      <td>L6</td>
-      <td>1475.00</td>
-      <td>Found</td>
-      <td>01/01/1990 12:00:00 AM</td>
-      <td>29.03700</td>
-      <td>17.01850</td>
-      <td>(29.037, 17.0185)</td>
-    </tr>
-    <tr>
-      <th>45711</th>
-      <td>Zillah 002</td>
-      <td>31356</td>
-      <td>Valid</td>
-      <td>Eucrite</td>
-      <td>172.00</td>
-      <td>Found</td>
-      <td>01/01/1990 12:00:00 AM</td>
-      <td>29.03700</td>
-      <td>17.01850</td>
-      <td>(29.037, 17.0185)</td>
-    </tr>
-    <tr>
-      <th>45714</th>
-      <td>Zubkovsky</td>
-      <td>31357</td>
-      <td>Valid</td>
-      <td>L6</td>
-      <td>2167.00</td>
-      <td>Found</td>
-      <td>01/01/2003 12:00:00 AM</td>
-      <td>49.78917</td>
-      <td>41.50460</td>
-      <td>(49.78917, 41.5046)</td>
-    </tr>
-    <tr>
-      <th>45715</th>
-      <td>Zulu Queen</td>
-      <td>30414</td>
-      <td>Valid</td>
-      <td>L3.7</td>
-      <td>200.00</td>
-      <td>Found</td>
+      <td>4000000.0</td>
+      <td>Fell</td>
       <td>01/01/1976 12:00:00 AM</td>
-      <td>33.98333</td>
-      <td>-115.68333</td>
-      <td>(33.98333, -115.68333)</td>
+      <td>44.05000</td>
+      <td>126.16667</td>
+      <td>(44.05, 126.16667)</td>
+    </tr>
+    <tr>
+      <th>506</th>
+      <td>Kunya-Urgench</td>
+      <td>12379</td>
+      <td>Valid</td>
+      <td>H5</td>
+      <td>1100000.0</td>
+      <td>Fell</td>
+      <td>01/01/1998 12:00:00 AM</td>
+      <td>42.25000</td>
+      <td>59.20000</td>
+      <td>(42.25, 59.2)</td>
+    </tr>
+    <tr>
+      <th>707</th>
+      <td>Norton County</td>
+      <td>17922</td>
+      <td>Valid</td>
+      <td>Aubrite</td>
+      <td>1100000.0</td>
+      <td>Fell</td>
+      <td>01/01/1948 12:00:00 AM</td>
+      <td>39.68333</td>
+      <td>-99.86667</td>
+      <td>(39.68333, -99.86667)</td>
+    </tr>
+    <tr>
+      <th>920</th>
+      <td>Sikhote-Alin</td>
+      <td>23593</td>
+      <td>Valid</td>
+      <td>Iron, IIAB</td>
+      <td>23000000.0</td>
+      <td>Fell</td>
+      <td>01/01/1947 12:00:00 AM</td>
+      <td>46.16000</td>
+      <td>134.65333</td>
+      <td>(46.16, 134.65333)</td>
     </tr>
   </tbody>
 </table>
-<p>18854 rows × 10 columns</p>
 </div>
 </div>
 
@@ -16784,7 +16705,7 @@ Length: 45716, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;`mass (g)` &gt; 50 and fall == &#39;Found&#39;&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">meteorites</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;`mass (g)` &gt; 1e6 and fall == &#39;Fell&#39;&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16839,151 +16760,72 @@ Length: 45716, dtype: bool</pre>
   </thead>
   <tbody>
     <tr>
-      <th>37</th>
-      <td>Northwest Africa 5815</td>
-      <td>50693</td>
+      <th>29</th>
+      <td>Allende</td>
+      <td>2278</td>
       <td>Valid</td>
-      <td>L5</td>
-      <td>256.80</td>
-      <td>Found</td>
-      <td>NaN</td>
-      <td>0.00000</td>
-      <td>0.00000</td>
-      <td>(0.0, 0.0)</td>
+      <td>CV3</td>
+      <td>2000000.0</td>
+      <td>Fell</td>
+      <td>01/01/1969 12:00:00 AM</td>
+      <td>26.96667</td>
+      <td>-105.31667</td>
+      <td>(26.96667, -105.31667)</td>
     </tr>
     <tr>
-      <th>757</th>
-      <td>Dominion Range 03239</td>
-      <td>32591</td>
-      <td>Valid</td>
-      <td>L6</td>
-      <td>69.50</td>
-      <td>Found</td>
-      <td>01/01/2002 12:00:00 AM</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>804</th>
-      <td>Dominion Range 03240</td>
-      <td>32592</td>
-      <td>Valid</td>
-      <td>LL5</td>
-      <td>290.90</td>
-      <td>Found</td>
-      <td>01/01/2002 12:00:00 AM</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1111</th>
-      <td>Abajo</td>
-      <td>4</td>
+      <th>419</th>
+      <td>Jilin</td>
+      <td>12171</td>
       <td>Valid</td>
       <td>H5</td>
-      <td>331.00</td>
-      <td>Found</td>
-      <td>01/01/1982 12:00:00 AM</td>
-      <td>26.80000</td>
-      <td>-105.41667</td>
-      <td>(26.8, -105.41667)</td>
-    </tr>
-    <tr>
-      <th>1112</th>
-      <td>Abar al' Uj 001</td>
-      <td>51399</td>
-      <td>Valid</td>
-      <td>H3.8</td>
-      <td>194.34</td>
-      <td>Found</td>
-      <td>01/01/2008 12:00:00 AM</td>
-      <td>22.72192</td>
-      <td>48.95937</td>
-      <td>(22.72192, 48.95937)</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>45709</th>
-      <td>Zhongxiang</td>
-      <td>30406</td>
-      <td>Valid</td>
-      <td>Iron</td>
-      <td>100000.00</td>
-      <td>Found</td>
-      <td>01/01/1981 12:00:00 AM</td>
-      <td>31.20000</td>
-      <td>112.50000</td>
-      <td>(31.2, 112.5)</td>
-    </tr>
-    <tr>
-      <th>45710</th>
-      <td>Zillah 001</td>
-      <td>31355</td>
-      <td>Valid</td>
-      <td>L6</td>
-      <td>1475.00</td>
-      <td>Found</td>
-      <td>01/01/1990 12:00:00 AM</td>
-      <td>29.03700</td>
-      <td>17.01850</td>
-      <td>(29.037, 17.0185)</td>
-    </tr>
-    <tr>
-      <th>45711</th>
-      <td>Zillah 002</td>
-      <td>31356</td>
-      <td>Valid</td>
-      <td>Eucrite</td>
-      <td>172.00</td>
-      <td>Found</td>
-      <td>01/01/1990 12:00:00 AM</td>
-      <td>29.03700</td>
-      <td>17.01850</td>
-      <td>(29.037, 17.0185)</td>
-    </tr>
-    <tr>
-      <th>45714</th>
-      <td>Zubkovsky</td>
-      <td>31357</td>
-      <td>Valid</td>
-      <td>L6</td>
-      <td>2167.00</td>
-      <td>Found</td>
-      <td>01/01/2003 12:00:00 AM</td>
-      <td>49.78917</td>
-      <td>41.50460</td>
-      <td>(49.78917, 41.5046)</td>
-    </tr>
-    <tr>
-      <th>45715</th>
-      <td>Zulu Queen</td>
-      <td>30414</td>
-      <td>Valid</td>
-      <td>L3.7</td>
-      <td>200.00</td>
-      <td>Found</td>
+      <td>4000000.0</td>
+      <td>Fell</td>
       <td>01/01/1976 12:00:00 AM</td>
-      <td>33.98333</td>
-      <td>-115.68333</td>
-      <td>(33.98333, -115.68333)</td>
+      <td>44.05000</td>
+      <td>126.16667</td>
+      <td>(44.05, 126.16667)</td>
+    </tr>
+    <tr>
+      <th>506</th>
+      <td>Kunya-Urgench</td>
+      <td>12379</td>
+      <td>Valid</td>
+      <td>H5</td>
+      <td>1100000.0</td>
+      <td>Fell</td>
+      <td>01/01/1998 12:00:00 AM</td>
+      <td>42.25000</td>
+      <td>59.20000</td>
+      <td>(42.25, 59.2)</td>
+    </tr>
+    <tr>
+      <th>707</th>
+      <td>Norton County</td>
+      <td>17922</td>
+      <td>Valid</td>
+      <td>Aubrite</td>
+      <td>1100000.0</td>
+      <td>Fell</td>
+      <td>01/01/1948 12:00:00 AM</td>
+      <td>39.68333</td>
+      <td>-99.86667</td>
+      <td>(39.68333, -99.86667)</td>
+    </tr>
+    <tr>
+      <th>920</th>
+      <td>Sikhote-Alin</td>
+      <td>23593</td>
+      <td>Valid</td>
+      <td>Iron, IIAB</td>
+      <td>23000000.0</td>
+      <td>Fell</td>
+      <td>01/01/1947 12:00:00 AM</td>
+      <td>46.16000</td>
+      <td>134.65333</td>
+      <td>(46.16, 134.65333)</td>
     </tr>
   </tbody>
 </table>
-<p>18854 rows × 10 columns</p>
 </div>
 </div>
 
@@ -17739,7 +17581,18 @@ Name: 16392, dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Solutions">Solutions<a class="anchor-link" href="#Solutions">&#182;</a></h3><h5 id="1.-Create-a-DataFrame-by-reading-in-the-2019_Yellow_Taxi_Trip_Data.csv-file:">1. Create a DataFrame by reading in the <code>2019_Yellow_Taxi_Trip_Data.csv</code> file:<a class="anchor-link" href="#1.-Create-a-DataFrame-by-reading-in-the-2019_Yellow_Taxi_Trip_Data.csv-file:">&#182;</a></h5>
+<h3 id="Solutions">Solutions<a class="anchor-link" href="#Solutions">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h5 id="1.-Create-a-DataFrame-by-reading-in-the-2019_Yellow_Taxi_Trip_Data.csv-file:">1. Create a DataFrame by reading in the <code>2019_Yellow_Taxi_Trip_Data.csv</code> file:<a class="anchor-link" href="#1.-Create-a-DataFrame-by-reading-in-the-2019_Yellow_Taxi_Trip_Data.csv-file:">&#182;</a></h5>
 </div>
 </div>
 </div>
