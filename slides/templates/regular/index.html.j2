@@ -198,9 +198,12 @@ require(
             { keyCode: 74, key: "J", description: "Jump to slide number" },
             () => {
                 const slides = Reveal.getSlides();
-                const requestedSlideNumber = Math.max(Math.min(prompt("Jump to slide number"), slides.length) - 1, 0);
-                const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
-                Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                const input = prompt("Jump to slide number");
+                if (input !== undefined && input !== "" && input !== null && !isNaN(input)) {
+                    const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
+                    const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
+                    Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                }
             }
         );
 
