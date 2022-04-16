@@ -195,6 +195,17 @@ require(
             height: 1000
         });
 
+        // jump to slide prompt
+        Reveal.addKeyBinding(
+            { keyCode: 74, key: "J", description: "Jump to slide #" },
+            () => {
+                const slides = Reveal.getSlides();
+                const requestedSlideNumber = Math.max(Math.min(prompt("Jump to slide number"), slides.length) - 1, 0);
+                const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
+                Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+            }
+        );
+
         var update = function(event){
           if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
             MathJax.Hub.Rerender(Reveal.getCurrentSlide());
