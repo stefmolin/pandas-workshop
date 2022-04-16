@@ -14689,7 +14689,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_section-3" data-mime-type="text/markdown">
 <h1 id="Section-3:-Data-Visualization">Section 3: Data Visualization<a class="anchor-link" href="#Section-3:-Data-Visualization">&#182;</a></h1><p>The human brain excels at finding patterns in visual representations of the data; so in this section, we will learn how to visualize data using pandas along with the Matplotlib and Seaborn libraries for additional features. We will create a variety of visualizations that will help us better understand our data.</p>
 <div style="text-align: center;">
 <img width="30%" src="https://data.whicdn.com/images/186942641/original.jpg" alt="Panda hug" style="min-width: 300px"/>
@@ -31945,7 +31945,14 @@ require(
             pdfSeparateFragments: false,
             history: true,
             transition: "slide",
-            plugins: [RevealNotes]
+            plugins: [RevealNotes],
+            keyboard: {
+                // map numpad numbers to their top row equivalents
+                97: () => Reveal.triggerKey(49), // 1
+                98: () => Reveal.triggerKey(50), // 2
+                99: () => Reveal.triggerKey(51), // 3
+                100: () => Reveal.triggerKey(52), // 4
+            }
         });
 
         function isVisible(display) {
@@ -31960,6 +31967,20 @@ require(
         Reveal.addKeyBinding(
             { keyCode: 87, key: "W", description: "Toggle slide controls" },
             () => { $('.controls').css('display', (index, value) => isVisible(value)); }
+        );
+
+        // jump to slide prompt
+        Reveal.addKeyBinding(
+            { keyCode: 74, key: "J", description: "Jump to slide number" },
+            () => {
+                const slides = Reveal.getSlides();
+                const input = prompt("Jump to slide number");
+                if (input !== undefined && input !== "" && input !== null && !isNaN(input)) {
+                    const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
+                    const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
+                    Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                }
+            }
         );
 
         var update = function(event){
@@ -32009,6 +32030,28 @@ require(
 
         // check and set the scrolling slide every time the slide change
         Reveal.addEventListener('slidechanged', setScrollingSlide);
+
+        // create links to any tagged cells
+        $('[class*="celltag_"]').each((index, element) => {
+            const tag = $(element).attr('class').split(' ').filter(x => x.includes('celltag_'))[0];
+            const [ attr, value ] = tag.replace('celltag_', '').split('_');
+            $(`.${tag}`).parentsUntil('section').last().parent().attr(attr, value);
+        })
+
+        // add keybindings for section shortcuts (cells must be tagged)
+        const shortcuts = [
+            { name: "section 1", key: "1", id: "section-1", keyCode: 49 },
+            { name: "section 2", key: "2", id: "section-2", keyCode: 50 },
+            { name: "section 3", key: "3", id: "section-3", keyCode: 51 },
+            { name: "section 4", key: "4", id: "section-4", keyCode: 52 }
+        ];
+        for (const shortcut of shortcuts) {
+            const { id, key, name, keyCode } = shortcut;
+            Reveal.addKeyBinding(
+                { keyCode, key, description: `Jump to ${name}` },
+                () => { window.location = `#/${id}`; }
+            );
+        }
     }
 );
 </script>

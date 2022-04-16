@@ -14689,7 +14689,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_section-1" data-mime-type="text/markdown">
 <h1 id="Section-1:-Getting-Started-With-Pandas">Section 1: Getting Started With Pandas<a class="anchor-link" href="#Section-1:-Getting-Started-With-Pandas">&#182;</a></h1><p>We will begin by introducing the <code>Series</code>, <code>DataFrame</code>, and <code>Index</code> classes, which are the basic building blocks of the pandas library, and showing how to work with them. By the end of this section, you will be able to create DataFrames and perform operations on them to inspect and filter the data.</p>
 <div style="text-align: center;">
     <img width="40%" src="https://hips.hearstapps.com/elleuk.cdnds.net/16/36/3200x1599/gallery-1473083573-pandas.jpg" alt="Waving panda" style="min-width: 400px">
@@ -18094,7 +18094,14 @@ require(
             pdfSeparateFragments: false,
             history: true,
             transition: "slide",
-            plugins: [RevealNotes]
+            plugins: [RevealNotes],
+            keyboard: {
+                // map numpad numbers to their top row equivalents
+                97: () => Reveal.triggerKey(49), // 1
+                98: () => Reveal.triggerKey(50), // 2
+                99: () => Reveal.triggerKey(51), // 3
+                100: () => Reveal.triggerKey(52), // 4
+            }
         });
 
         function isVisible(display) {
@@ -18109,6 +18116,20 @@ require(
         Reveal.addKeyBinding(
             { keyCode: 87, key: "W", description: "Toggle slide controls" },
             () => { $('.controls').css('display', (index, value) => isVisible(value)); }
+        );
+
+        // jump to slide prompt
+        Reveal.addKeyBinding(
+            { keyCode: 74, key: "J", description: "Jump to slide number" },
+            () => {
+                const slides = Reveal.getSlides();
+                const input = prompt("Jump to slide number");
+                if (input !== undefined && input !== "" && input !== null && !isNaN(input)) {
+                    const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
+                    const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
+                    Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                }
+            }
         );
 
         var update = function(event){
@@ -18158,6 +18179,28 @@ require(
 
         // check and set the scrolling slide every time the slide change
         Reveal.addEventListener('slidechanged', setScrollingSlide);
+
+        // create links to any tagged cells
+        $('[class*="celltag_"]').each((index, element) => {
+            const tag = $(element).attr('class').split(' ').filter(x => x.includes('celltag_'))[0];
+            const [ attr, value ] = tag.replace('celltag_', '').split('_');
+            $(`.${tag}`).parentsUntil('section').last().parent().attr(attr, value);
+        })
+
+        // add keybindings for section shortcuts (cells must be tagged)
+        const shortcuts = [
+            { name: "section 1", key: "1", id: "section-1", keyCode: 49 },
+            { name: "section 2", key: "2", id: "section-2", keyCode: 50 },
+            { name: "section 3", key: "3", id: "section-3", keyCode: 51 },
+            { name: "section 4", key: "4", id: "section-4", keyCode: 52 }
+        ];
+        for (const shortcut of shortcuts) {
+            const { id, key, name, keyCode } = shortcut;
+            Reveal.addKeyBinding(
+                { keyCode, key, description: `Jump to ${name}` },
+                () => { window.location = `#/${id}`; }
+            );
+        }
     }
 );
 </script>

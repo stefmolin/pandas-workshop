@@ -14689,7 +14689,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_section-2" data-mime-type="text/markdown">
 <h1 id="Section-2:-Data-Wrangling">Section 2: Data Wrangling<a class="anchor-link" href="#Section-2:-Data-Wrangling">&#182;</a></h1><p>To prepare our data for analysis, we need to perform data wrangling. In this section, we will learn how to clean and reformat data (e.g., renaming columns and fixing data type mismatches), restructure/reshape it, and enrich it (e.g., discretizing columns, calculating aggregations, and combining data sources).</p>
 <div style="text-align: center;">
     <img width="30%" src="https://images.ctfassets.net/cnu0m8re1exe/I3pMkGv5UGGmNN1tB4XG0/73edfcdbe6e1637e5e79e0c3a2d25fbb/panda.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill" alt="Panda with bamboo" style="min-width: 300px">
@@ -23559,7 +23559,14 @@ require(
             pdfSeparateFragments: false,
             history: true,
             transition: "slide",
-            plugins: [RevealNotes]
+            plugins: [RevealNotes],
+            keyboard: {
+                // map numpad numbers to their top row equivalents
+                97: () => Reveal.triggerKey(49), // 1
+                98: () => Reveal.triggerKey(50), // 2
+                99: () => Reveal.triggerKey(51), // 3
+                100: () => Reveal.triggerKey(52), // 4
+            }
         });
 
         function isVisible(display) {
@@ -23574,6 +23581,20 @@ require(
         Reveal.addKeyBinding(
             { keyCode: 87, key: "W", description: "Toggle slide controls" },
             () => { $('.controls').css('display', (index, value) => isVisible(value)); }
+        );
+
+        // jump to slide prompt
+        Reveal.addKeyBinding(
+            { keyCode: 74, key: "J", description: "Jump to slide number" },
+            () => {
+                const slides = Reveal.getSlides();
+                const input = prompt("Jump to slide number");
+                if (input !== undefined && input !== "" && input !== null && !isNaN(input)) {
+                    const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
+                    const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
+                    Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                }
+            }
         );
 
         var update = function(event){
@@ -23623,6 +23644,28 @@ require(
 
         // check and set the scrolling slide every time the slide change
         Reveal.addEventListener('slidechanged', setScrollingSlide);
+
+        // create links to any tagged cells
+        $('[class*="celltag_"]').each((index, element) => {
+            const tag = $(element).attr('class').split(' ').filter(x => x.includes('celltag_'))[0];
+            const [ attr, value ] = tag.replace('celltag_', '').split('_');
+            $(`.${tag}`).parentsUntil('section').last().parent().attr(attr, value);
+        })
+
+        // add keybindings for section shortcuts (cells must be tagged)
+        const shortcuts = [
+            { name: "section 1", key: "1", id: "section-1", keyCode: 49 },
+            { name: "section 2", key: "2", id: "section-2", keyCode: 50 },
+            { name: "section 3", key: "3", id: "section-3", keyCode: 51 },
+            { name: "section 4", key: "4", id: "section-4", keyCode: 52 }
+        ];
+        for (const shortcut of shortcuts) {
+            const { id, key, name, keyCode } = shortcut;
+            Reveal.addKeyBinding(
+                { keyCode, key, description: `Jump to ${name}` },
+                () => { window.location = `#/${id}`; }
+            );
+        }
     }
 );
 </script>
