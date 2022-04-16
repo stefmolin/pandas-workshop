@@ -14808,10 +14808,10 @@ require(
 
         // jump to slide prompt
         Reveal.addKeyBinding(
-            { keyCode: 74, key: "J", description: "Jump to slide number" },
+            { keyCode: 71, key: "G", description: "Go to slide number" },
             () => {
                 const slides = Reveal.getSlides();
-                const input = prompt("Jump to slide number");
+                const input = prompt("Go to slide number");
                 if (input !== undefined && input !== "" && input !== null && !isNaN(input)) {
                     const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
                     const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
