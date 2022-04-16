@@ -90,6 +90,13 @@ a.anchor-link {
     padding: 0.4em !important;
     overflow-x: scroll !important; /* allow scrolling to see full code block */
 }
+.slide-number {
+    background-color: transparent !important;
+    color: black !important;
+    font-size: 12pt !important;
+    right: 5px !important;
+    bottom: 5px !important;
+}
 .jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
     width: 75%;
 }
@@ -155,14 +162,29 @@ require(
     function(Reveal, RevealNotes){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true,
+            controls: true, // keybinding added to toggle this
             progress: true,
-            slideNumber: "{{reveal_number}}",
+            slideNumber: "c",
+            showSlideNumber: "print", // keybinding added to toggle this for other views
             pdfSeparateFragments: false,
             history: true,
             transition: "{{reveal_transition}}",
             plugins: [RevealNotes]
         });
+
+        function isVisible(display) {
+            return display === 'none' ? 'block' : 'none';
+        }
+
+        // add custom controls
+        Reveal.addKeyBinding(
+            { keyCode: 81, key: "Q", description: "Toggle slide number" },
+            () => { $('.slide-number').css('display', (index, value) => isVisible(value)); }
+        );
+        Reveal.addKeyBinding(
+            { keyCode: 87, key: "W", description: "Toggle slide controls" },
+            () => { $('.controls').css('display', (index, value) => isVisible(value)); }
+        );
 
         var update = function(event){
           if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
