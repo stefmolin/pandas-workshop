@@ -204,14 +204,20 @@ require(
 
         // jump to slide prompt
         Reveal.addKeyBinding(
-            { keyCode: 71, key: "G", description: "Go to slide number" },
+            { keyCode: 71, key: "G", description: "Go to slide" },
             () => {
                 const slides = Reveal.getSlides();
-                const input = prompt("Go to slide number");
-                if (input !== undefined && input !== "" && input !== null && !isNaN(input)) {
-                    const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
-                    const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
-                    Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                const input = prompt("Go to slide");
+                if (input !== undefined && input !== "" && input !== null){
+                    if (!isNaN(input)) {
+                      const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
+                      const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
+                      Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                    }
+                    else if (typeof input === "string" || input instanceof String) {
+                        const slideName = input.replace(' ', '-');
+                        if (namedSlides.includes(slideName)) window.location = `#/${slideName}`;
+                    }
                 }
             }
         );
@@ -263,10 +269,13 @@ require(
         Reveal.addEventListener('slidechanged', setScrollingSlide);
 
         // create links to any tagged cells
+        let namedSlides = [];
         $('[class*="celltag_"]').each((index, element) => {
             const tag = $(element).attr('class').split(' ').filter(x => x.includes('celltag_'))[0];
             const [ attr, value ] = tag.replace('celltag_', '').split('_');
             $(`.${tag}`).parentsUntil('section').last().parent().attr(attr, value);
+
+            if (attr === "id") namedSlides.push(value);
         })
 
         // add keybindings for section shortcuts (cells must be tagged)
