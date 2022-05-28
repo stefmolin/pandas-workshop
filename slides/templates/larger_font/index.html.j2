@@ -231,9 +231,9 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            let scale = 95;
-            let h = $('.reveal').height() * scale / 100;
-            let slide = $('section.present').find('section')
+            const scale = 95;
+            const h = $('.reveal').height() * scale / 100;
+            const slide = $('section.present').find('section')
               .filter(function() {
                 return $(this).height() > h;
               })
@@ -269,7 +269,7 @@ require(
         Reveal.addEventListener('slidechanged', setScrollingSlide);
 
         // create links to any tagged cells
-        let namedSlides = [];
+        const namedSlides = [];
         $('[class*="celltag_"]').each((index, element) => {
             const tag = $(element).attr('class').split(' ').filter(x => x.includes('celltag_'))[0];
             const [ attr, value ] = tag.replace('celltag_', '').split('_');
