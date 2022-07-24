@@ -1,6 +1,6 @@
 # Workshop Notebooks
 
-This directory contains the notebooks for following along with the session. You should run the cells as we progress through the session. Each section has exercises, which you can complete in the respective notebooks.
+This directory contains the notebooks for following along with the session. You should run the cells as we progress through the session. Each section contains exercises, which you should complete in the `workbook.ipynb` notebook.
 
 | Section | Notebook |
 | --- | --- |
