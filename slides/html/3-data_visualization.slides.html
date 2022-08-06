@@ -14720,7 +14720,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_plotting-with-pandas" data-mime-type="text/markdown">
 <h2 id="Plotting-with-pandas">Plotting with pandas<a class="anchor-link" href="#Plotting-with-pandas">&#182;</a></h2><p>We can create a variety of visualizations using the <code>plot()</code> method. In this section, we will take a brief tour of some of this functionality, which under the hood uses Matplotlib.</p>
 
 </div>
@@ -14893,7 +14893,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_line-plots" data-mime-type="text/markdown">
 <h3 id="Line-plots">Line plots<a class="anchor-link" href="#Line-plots">&#182;</a></h3><p>The <code>plot()</code> method will generate line plots for all numeric columns by default:</p>
 
 </div>
@@ -16838,7 +16838,7 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_bar-plots" data-mime-type="text/markdown">
 <h3 id="Bar-plots">Bar plots<a class="anchor-link" href="#Bar-plots">&#182;</a></h3><p>For our next example, we will plot vertical bars to compare monthly TSA traveler throughput across years. Let's start by creating a pivot table with the information we need:</p>
 
 </div>
@@ -16955,7 +16955,7 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_formatting-with-matplotlib" data-mime-type="text/markdown">
 <p>Pandas offers other plot types via the <code>kind</code> parameter, so we specify <code>kind='bar'</code> when calling the <code>plot()</code> method. Then, we further format the visualization using the <code>Axes</code> object returned by the <code>plot()</code> method:</p>
 
 </div>
@@ -18430,7 +18430,7 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_plotting-distributions" data-mime-type="text/markdown">
 <h3 id="Plotting-distributions">Plotting distributions<a class="anchor-link" href="#Plotting-distributions">&#182;</a></h3><p>Let's now compare the distribution of daily TSA traveler throughput across years. We will create a subplot for each year with both a histogram and a kernel density estimate (KDE) of the distribution.  Pandas has generated the <code>Figure</code> and <code>Axes</code> objects for both examples so far, but we can build custom layouts by creating them ourselves with Matplotlib using the <code>plt.subplots()</code> function. First, we will need to import the <code>pyplot</code> module:</p>
 
 </div>
@@ -18458,7 +18458,7 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_subplots" data-mime-type="text/markdown">
 <p>While pandas lets us specify that we want subplots and their layout (with the <code>subplots</code> and <code>layout</code> parameters, respectively), using Matplotlib to create the subplots directly gives us additional flexibility:</p>
 
 </div>
@@ -21252,7 +21252,7 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_plotting-with-seaborn" data-mime-type="text/markdown">
 <h2 id="Plotting-with-Seaborn">Plotting with Seaborn<a class="anchor-link" href="#Plotting-with-Seaborn">&#182;</a></h2><p>The Seaborn library provides the means to easily visualize long-format data without first pivoting it. In addition, it also offers some additional plot types &ndash; once again building on top of Matplotlib. Here, we will look at a few examples of visualizations we can create with Seaborn.</p>
 
 </div>
@@ -21264,7 +21264,7 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_visualizing-long-format-data" data-mime-type="text/markdown">
 <h3 id="Visualizing-long-format-data">Visualizing long-format data<a class="anchor-link" href="#Visualizing-long-format-data">&#182;</a></h3><p>With Seaborn, we can specify plot colors according to values of a column with the <code>hue</code> parameter. When working with functions that generate subplots, we can also specify how to split the subplots by values of a long-format column with the <code>col</code> and <code>row</code> parameters. Here, we revisit the comparison of the distribution of TSA traveler throughput across years:</p>
 
 </div>
@@ -22718,7 +22718,7 @@ L 523.080666 134.198437
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_heatmaps" data-mime-type="text/markdown">
 <h3 id="Heatmaps">Heatmaps<a class="anchor-link" href="#Heatmaps">&#182;</a></h3><p>We can also use Seaborn to visualize pivot tables as heatmaps:</p>
 
 </div>
@@ -27509,7 +27509,7 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_customizing-plots-with-matplotlib" data-mime-type="text/markdown">
 <h2 id="Customizing-plots-with-Matplotlib">Customizing plots with Matplotlib<a class="anchor-link" href="#Customizing-plots-with-Matplotlib">&#182;</a></h2><p>In this final section, we will discuss how to use Matplotlib to customize plots. Since there is a lot of functionality available, we will only be covering how to add shaded regions and annotations here, but be sure to check out the <a href="https://matplotlib.org/">documentation</a> for more.</p>
 
 </div>
@@ -27521,7 +27521,7 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_adding-shaded-regions" data-mime-type="text/markdown">
 <h3 id="Adding-shaded-regions">Adding shaded regions<a class="anchor-link" href="#Adding-shaded-regions">&#182;</a></h3><p>When looking at a plot of TSA traveler throughput over time, it's helpful to indicate periods during which there was holiday travel. We can do so with the <code>axvspan()</code> method:</p>
 
 </div>
@@ -28956,7 +28956,7 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_adding-annotations" data-mime-type="text/markdown">
 <h3 id="Adding-annotations">Adding annotations<a class="anchor-link" href="#Adding-annotations">&#182;</a></h3><p>We can use the <code>annotate()</code> method to add annotations to the plot. Here, we point out the day in 2019 with the highest TSA traveler throughput, which was the day after Thanksgiving:</p>
 
 </div>
@@ -32250,7 +32250,7 @@ require(
                       Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
                     }
                     else if (typeof input === "string" || input instanceof String) {
-                        const slideName = input.replace(' ', '-');
+                        const slideName = input.replaceAll(' ', '-');
                         if (namedSlides.includes(slideName)) window.location = `#/${slideName}`;
                     }
                 }

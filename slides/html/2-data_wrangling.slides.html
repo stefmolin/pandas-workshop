@@ -14722,7 +14722,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_data-cleaning" data-mime-type="text/markdown">
 <h2 id="Data-cleaning">Data cleaning<a class="anchor-link" href="#Data-cleaning">&#182;</a></h2><p>In this section, we will take a look at creating, renaming, and dropping columns; type conversion; and sorting &ndash; all of which make our analysis easier. We will be working with the 2019 Yellow Taxi Trip Data provided by NYC Open Data.</p>
 
 </div>
@@ -14935,7 +14935,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_dropping-columns" data-mime-type="text/markdown">
 <h3 id="Dropping-columns">Dropping columns<a class="anchor-link" href="#Dropping-columns">&#182;</a></h3><p>Let's start by dropping the ID columns and the <code>store_and_fwd_flag</code> column, which we won't be using.</p>
 
 </div>
@@ -15161,7 +15161,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_renaming-columns" data-mime-type="text/markdown">
 <h3 id="Renaming-columns">Renaming columns<a class="anchor-link" href="#Renaming-columns">&#182;</a></h3><p>Next, let's rename the datetime columns:</p>
 
 </div>
@@ -15236,7 +15236,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_type-conversion" data-mime-type="text/markdown">
 <h3 id="Type-conversion">Type conversion<a class="anchor-link" href="#Type-conversion">&#182;</a></h3><p>Notice anything off with the data types?</p>
 
 </div>
@@ -15382,7 +15382,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_creating-new-columns" data-mime-type="text/markdown">
 <h3 id="Creating-new-columns">Creating new columns<a class="anchor-link" href="#Creating-new-columns">&#182;</a></h3><p>Let's calculate the following for each row:</p>
 <ol>
 <li>elapsed time of the trip</li>
@@ -15587,7 +15587,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_sorting-by-values" data-mime-type="text/markdown">
 <h3 id="Sorting-by-values">Sorting by values<a class="anchor-link" href="#Sorting-by-values">&#182;</a></h3><p>We can use the <code>sort_values()</code> method to sort based on any number of columns:</p>
 
 </div>
@@ -15785,7 +15785,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_nlargest-and-nsmallest" data-mime-type="text/markdown">
 <p>To pick out the largest/smallest rows, use <code>nlargest()</code> / <code>nsmallest()</code> instead. Looking at the 3 trips with the longest elapsed time, we see some possible data integrity issues:</p>
 
 </div>
@@ -16108,7 +16108,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_working-with-the-index" data-mime-type="text/markdown">
 <h2 id="Working-with-the-index">Working with the index<a class="anchor-link" href="#Working-with-the-index">&#182;</a></h2><p>So far, we haven't really worked with the index because it's just been a row number; however, we can change the values we have in the index to access additional features of the pandas library.</p>
 
 </div>
@@ -16120,7 +16120,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_setting-the-index" data-mime-type="text/markdown">
 <h3 id="Setting-and-sorting-the-index">Setting and sorting the index<a class="anchor-link" href="#Setting-and-sorting-the-index">&#182;</a></h3><p>Currently, we have a RangeIndex, but we can switch to a DatetimeIndex by specifying a datetime column when calling <code>set_index()</code>:</p>
 
 </div>
@@ -16293,7 +16293,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_sorting-the-index" data-mime-type="text/markdown">
 <p>Since we have a sample of the full dataset, let's sort the index to order by pickup time:</p>
 
 </div>
@@ -16333,7 +16333,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_working-with-a-datetime-index" data-mime-type="text/markdown">
 <p>We can now select ranges from our data based on the datetime the same way we did with row numbers:</p>
 
 </div>
@@ -16657,7 +16657,7 @@ dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_resetting-the-index" data-mime-type="text/markdown">
 <h3 id="Resetting-the-index">Resetting the index<a class="anchor-link" href="#Resetting-the-index">&#182;</a></h3><p>We will be working with time series later this section, but sometimes we want to reset our index to row numbers and restore the columns. We can make <code>pickup</code> a column again with the <code>reset_index()</code> method:</p>
 
 </div>
@@ -17240,7 +17240,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_reshaping-data" data-mime-type="text/markdown">
 <h2 id="Reshaping-data">Reshaping data<a class="anchor-link" href="#Reshaping-data">&#182;</a></h2><p>The taxi dataset we have be working with is in a format conducive to an analysis. This isn't always the case. Let's now take a look at the TSA traveler throughput data, which compares 2021 throughput to the same day in 2020 and 2019:</p>
 
 </div>
@@ -17494,7 +17494,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_melting" data-mime-type="text/markdown">
 <h3 id="Melting">Melting<a class="anchor-link" href="#Melting">&#182;</a></h3><p>Melting helps convert our data into long format. Now, we have all the traveler throughput numbers in a single column:</p>
 
 </div>
@@ -17718,7 +17718,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_dropna-method" data-mime-type="text/markdown">
 <p>This leaves us with some null values (the dates that aren't present in the dataset):</p>
 
 </div>
@@ -17911,7 +17911,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_pivoting" data-mime-type="text/markdown">
 <h3 id="Pivoting">Pivoting<a class="anchor-link" href="#Pivoting">&#182;</a></h3><p>Using the melted data, we can pivot the data to compare TSA traveler throughput on specific days across years:</p>
 
 </div>
@@ -18064,7 +18064,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_transposing" data-mime-type="text/markdown">
 <h3 id="Transposing">Transposing<a class="anchor-link" href="#Transposing">&#182;</a></h3><p>The <code>T</code> attribute provides a quick way to flip rows and columns.</p>
 
 </div>
@@ -18208,7 +18208,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_merging" data-mime-type="text/markdown">
 <h3 id="Merging">Merging<a class="anchor-link" href="#Merging">&#182;</a></h3><p>We typically observe changes in air travel around the holidays, so adding information about the dates in the TSA dataset provides more context. The <code>holidays.csv</code> file contains a few major holidays in the United States:</p>
 
 </div>
@@ -18450,7 +18450,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_fillna-method" data-mime-type="text/markdown">
 <p>We can take this a step further by marking a few days before and after each holiday as part of the holiday. This would make it easier to compare holiday travel across years and look for any uptick in travel around the holidays:</p>
 
 </div>
@@ -18658,7 +18658,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_aggregations-and-grouping" data-mime-type="text/markdown">
 <h2 id="Aggregations-and-grouping">Aggregations and grouping<a class="anchor-link" href="#Aggregations-and-grouping">&#182;</a></h2><p>After reshaping and cleaning our data, we can perform aggregations to summarize it in a variety of ways. In this section, we will explore using pivot tables, crosstabs, and group by operations to aggregate the data.</p>
 
 </div>
@@ -18670,7 +18670,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_pivot-tables" data-mime-type="text/markdown">
 <h3 id="Pivot-tables">Pivot tables<a class="anchor-link" href="#Pivot-tables">&#182;</a></h3><p>We can build a pivot table to compare holiday travel across the years in our dataset:</p>
 
 </div>
@@ -18800,7 +18800,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_percent-change" data-mime-type="text/markdown">
 <p>We can use the <code>pct_change()</code> method on this result to see which holiday travel periods saw the biggest change in travel:</p>
 
 </div>
@@ -18930,7 +18930,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_set-option" data-mime-type="text/markdown">
 <p>Let's make one last pivot table with column and row subtotals, along with some formatting improvements. First, we set a display option for all floats:</p>
 
 </div>
@@ -18958,7 +18958,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_numpy-where" data-mime-type="text/markdown">
 <p>Next, we group together Christmas Eve and Christmas Day, likewise for New Year's Eve and New Year's Day, and create the pivot table:</p>
 
 </div>
@@ -19102,7 +19102,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_reset-option" data-mime-type="text/markdown">
 <p>Before moving on, let's reset the display option:</p>
 
 </div>
@@ -19290,7 +19290,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_crosstabs" data-mime-type="text/markdown">
 <h3 id="Crosstabs">Crosstabs<a class="anchor-link" href="#Crosstabs">&#182;</a></h3><p>The <code>pd.crosstab()</code> function provides an easy way to create a frequency table. Here, we count the number of low-, medium-, and high-volume travel days per year, using the <code>pd.cut()</code> function to create three travel volume bins of equal width:</p>
 
 </div>
@@ -19423,7 +19423,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_group-by-operations" data-mime-type="text/markdown">
 <h3 id="Group-by-operations">Group by operations<a class="anchor-link" href="#Group-by-operations">&#182;</a></h3><p>Rather than perform aggregations, like <code>mean()</code> or <code>describe()</code>, on the full dataset at once, we can perform these calculations per group by first calling <code>groupby()</code>:</p>
 
 </div>
@@ -19558,7 +19558,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_rank" data-mime-type="text/markdown">
 <p>Groups can also be used to perform separate calculations per subset of the data. For example, we can find the highest-volume travel day per year using <code>rank()</code>:</p>
 
 </div>
@@ -19664,7 +19664,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_agg-method" data-mime-type="text/markdown">
 <p>The previous two examples called a single method on the grouped data, but using the <code>agg()</code> method we can specify any number of them:</p>
 
 </div>
@@ -19807,7 +19807,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_agg-with-dict" data-mime-type="text/markdown">
 <p>In addition, we can specify which aggregations to perform on each column:</p>
 
 </div>
@@ -20106,7 +20106,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_time-series" data-mime-type="text/markdown">
 <h2 id="Time-series">Time series<a class="anchor-link" href="#Time-series">&#182;</a></h2><p>When working with time series data, pandas provides us with additional functionality to not just compare the observations in our dataset, but to use their relationship in time to analyze the data. In this section, we will see a few such operations for selecting date/time ranges, calculating changes over time, performing window calculations, and resampling the data to different date/time intervals.</p>
 
 </div>
@@ -20118,7 +20118,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_selecting-based-on-date-and-time" data-mime-type="text/markdown">
 <h3 id="Selecting-based-on-date-and-time">Selecting based on date and time<a class="anchor-link" href="#Selecting-based-on-date-and-time">&#182;</a></h3><p>Let's switch back to the <code>taxis</code> dataset, which has timestamps of pickups and dropoffs. First, we will set the <code>dropoff</code> column as the index and sort the data:</p>
 
 </div>
@@ -20463,7 +20463,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_between-time" data-mime-type="text/markdown">
 <p>We can pull out the dropoffs that happened between a certain time range on <em>any</em> day with the <code>between_time()</code> method:</p>
 
 </div>
@@ -20647,7 +20647,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_first-and-last" data-mime-type="text/markdown">
 <p>Finally, <code>head()</code> and <code>tail()</code> limit us to a number of rows, but we may be interested in rows within the first/last 2 hours (or any other time interval) of the data, in which case, we should use <code>first()</code> / <code>last()</code>:</p>
 
 </div>
@@ -20899,7 +20899,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_calculating-change-over-time" data-mime-type="text/markdown">
 <h3 id="Calculating-change-over-time">Calculating change over time<a class="anchor-link" href="#Calculating-change-over-time">&#182;</a></h3>
 </div>
 </div>
@@ -21081,7 +21081,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_resampling" data-mime-type="text/markdown">
 <h3 id="Resampling">Resampling<a class="anchor-link" href="#Resampling">&#182;</a></h3><p>We can use resampling to aggregate time series data to a new frequency:</p>
 
 </div>
@@ -21228,7 +21228,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_window-calculations" data-mime-type="text/markdown">
 <h3 id="Window-calculations">Window calculations<a class="anchor-link" href="#Window-calculations">&#182;</a></h3><p>Window calculations are similar to group by calculations except the group over which the calculation is performed isn't static &ndash; it can move or expand. Pandas provides functionality for constructing a variety of windows, including moving/rolling windows, expanding windows (e.g., cumulative sum or mean up to the current date in a time series), and exponentially weighted moving windows (to weight closer observations more than further ones). We will only look at rolling and expanding calculations here.</p>
 
 </div>
@@ -23618,7 +23618,7 @@ require(
                       Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
                     }
                     else if (typeof input === "string" || input instanceof String) {
-                        const slideName = input.replace(' ', '-');
+                        const slideName = input.replaceAll(' ', '-');
                         if (namedSlides.includes(slideName)) window.location = `#/${slideName}`;
                     }
                 }

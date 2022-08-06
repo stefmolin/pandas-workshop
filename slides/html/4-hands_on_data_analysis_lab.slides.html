@@ -14823,7 +14823,7 @@ require(
                       Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
                     }
                     else if (typeof input === "string" || input instanceof String) {
-                        const slideName = input.replace(' ', '-');
+                        const slideName = input.replaceAll(' ', '-');
                         if (namedSlides.includes(slideName)) window.location = `#/${slideName}`;
                     }
                 }
