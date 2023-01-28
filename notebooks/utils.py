@@ -1,4 +1,4 @@
-"""Utility functions for the workshop."""
+"""Utility function for the workshop."""
 
 import datetime as dt
 
