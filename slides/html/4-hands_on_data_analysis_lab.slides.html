@@ -51,6 +51,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14484,6 +14485,12 @@ a.anchor-link {
 .jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
     padding-right: 5px !important; /* padding after lead-in text */
 }
+.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
+    width: 75%;
+}
+.jp-Collapser { /* hide that blue collapse button on the side of cells that does nothing */
+    display: none;
+}
 .CodeMirror pre {
     padding: 0.4em !important;
     overflow-x: scroll !important; /* allow scrolling to see full code block */
@@ -14495,8 +14502,8 @@ a.anchor-link {
     right: 5px !important;
     bottom: 5px !important;
 }
-.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
-    width: 75%;
+.slides { /* pull slides to left */
+    margin-left: -20px !important;
 }
 :root {
     --jp-ui-font-size1: 11.5px;       /* size of tables in outputs */
@@ -14619,17 +14626,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14656,12 +14660,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14683,7 +14687,7 @@ div.jp-OutputPrompt {
         </a>
     </div>
 </div>
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14694,10 +14698,11 @@ div.jp-OutputPrompt {
 <div style="text-align: center;">
 <img width="20%" src="https://www.pngkey.com/png/detail/102-1027124_animals-pandas-panda-transparent-background.png" alt="Animals - Pandas - Panda Transparent Background@pngkey.com" style="min-width: 200px">
 </div>
+
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14709,7 +14714,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14724,32 +14729,33 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Section-4-Complete-%F0%9F%8E%89">Section 4 Complete &#127881;<a class="anchor-link" href="#Section-4-Complete-%F0%9F%8E%89">&#182;</a></h2><p><img width="30%" src="https://www.pngkey.com/png/detail/246-2469554_panda-anime-png-png-panda.png" alt="Panda Anime Png - Png Panda@pngkey.com" style="min-width: 300px"></p>
+<h2 id="Section-4-Complete-%F0%9F%8E%89">Section 4 Complete &#127881;<a class="anchor-link" href="#Section-4-Complete-%F0%9F%8E%89">&#182;</a></h2><img width="30%" src="https://www.pngkey.com/png/detail/246-2469554_panda-anime-png-png-panda.png" alt="Panda Anime Png - Png Panda@pngkey.com" style="min-width: 300px">
 
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_fin" data-mime-type="text/markdown">
-<h1 id="Thank-you!">Thank you!<a class="anchor-link" href="#Thank-you!">&#182;</a></h1><p><em>I hope you enjoyed the workshop. Note that all the examples were developed exclusively for this workshop &ndash; check out <a href="https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization-dp-1800563450/dp/1800563450/">Hands-On Data Analysis with Pandas</a> and my <a href="https://github.com/stefmolin/python-data-viz-workshop">Beyond the Basics: Data Visualization in Python</a> workshop for more.</em></p>
+<h1 id="Thank-you!">Thank you!<a class="anchor-link" href="#Thank-you!">&#182;</a></h1><p><em>I hope you enjoyed the workshop. Note that all the examples were developed exclusively for this workshop – check out <a href="https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization-dp-1800563450/dp/1800563450/">Hands-On Data Analysis with Pandas</a> and my <a href="https://github.com/stefmolin/python-data-viz-workshop">Beyond the Basics: Data Visualization in Python</a> workshop for more.</em></p>
 <div style="text-align: center;">
     <img width="20%" src="https://raw.githubusercontent.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/master/_img/pandas_drawing.PNG" style="min-width: 200px">
     <div><small>
         <a href="https://linktr.ee/stefaniemolin">linktr.ee/stefaniemolin</a>
     </small></div>
 </div>
+
 </div>
 </div>
 </div>
@@ -14820,7 +14826,8 @@ require(
                     if (!isNaN(input)) {
                       const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
                       const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
-                      Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                      // set fragment to large number (100) to ensure the full slide is displayed
+                      Reveal.slide(slideIndices.h, slideIndices.v, 100);
                     }
                     else if (typeof input === "string" || input instanceof String) {
                         const slideName = input.replaceAll(' ', '-');
@@ -14902,6 +14909,26 @@ require(
                 () => { window.location = `#/${id}`; }
             );
         }
+
+        // fix any collisions in the clip-path introduced from reproducible SVG plots
+        // that cause plot components not to render (clipPath objects with duplicate IDs)
+        const clipPathIds = {};
+        $('clipPath').each((index, element) => {
+            const oldId = $(element).attr('id');
+            if (oldId in clipPathIds) {
+                // change this id and grab the parent SVG
+                // and then for all the elements with clip-path switch the id
+                const newId = `${oldId}${clipPathIds[oldId]}`;
+                $(element).attr('id', newId);
+                $(element).closest('svg').find('[clip-path]').each((index, item) => {
+                    if ($(item).attr('clip-path') === `url(#${oldId})`) {
+                        $(item).attr('clip-path', `url(#${newId})`);
+                    }
+                });
+                clipPathIds[oldId] += 1;
+            }
+            else clipPathIds[oldId] = 1;
+        });
     }
 );
 </script>

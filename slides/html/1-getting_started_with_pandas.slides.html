@@ -51,6 +51,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14484,6 +14485,12 @@ a.anchor-link {
 .jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
     padding-right: 5px !important; /* padding after lead-in text */
 }
+.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
+    width: 75%;
+}
+.jp-Collapser { /* hide that blue collapse button on the side of cells that does nothing */
+    display: none;
+}
 .CodeMirror pre {
     padding: 0.4em !important;
     overflow-x: scroll !important; /* allow scrolling to see full code block */
@@ -14495,8 +14502,8 @@ a.anchor-link {
     right: 5px !important;
     bottom: 5px !important;
 }
-.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
-    width: 75%;
+.slides { /* pull slides to left */
+    margin-left: -20px !important;
 }
 :root {
     --jp-ui-font-size1: 11.5px;       /* size of tables in outputs */
@@ -14619,17 +14626,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14656,12 +14660,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14683,7 +14687,7 @@ div.jp-OutputPrompt {
         </a>
     </div>
 </div>
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14695,10 +14699,11 @@ div.jp-OutputPrompt {
     <img width="40%" src="https://hips.hearstapps.com/elleuk.cdnds.net/16/36/3200x1599/gallery-1473083573-pandas.jpg" alt="Waving panda" style="min-width: 400px">
     <div><small><em><a href="https://www.elle.com/uk/life-and-culture/culture/news/a31745/10-ways-to-celebrate-pandas-no-longer-being-endangered/">Source</a></em></small></div>
 </div>
+
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14716,7 +14721,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14753,9 +14758,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 
@@ -14881,7 +14884,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14914,9 +14917,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
@@ -14938,7 +14939,7 @@ Name: name, dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14971,9 +14972,7 @@ Name: name, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
@@ -14992,7 +14991,7 @@ Name: name, dtype: object</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15025,9 +15024,7 @@ Name: name, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
@@ -15044,7 +15041,7 @@ Name: name, dtype: object</pre>
 
 </div>
 
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15062,7 +15059,7 @@ Name: name, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15074,7 +15071,7 @@ Name: name, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15103,7 +15100,7 @@ Name: name, dtype: object</pre>
 </div>
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15142,7 +15139,7 @@ Name: name, dtype: object</pre>
 </div>
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15179,9 +15176,7 @@ Name: name, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
@@ -15277,7 +15272,7 @@ Name: name, dtype: object</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15289,7 +15284,7 @@ Name: name, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15307,7 +15302,7 @@ Name: name, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15319,7 +15314,7 @@ Name: name, dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15331,7 +15326,7 @@ Name: name, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15364,9 +15359,7 @@ Name: name, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
@@ -15383,7 +15376,7 @@ Name: name, dtype: object</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15416,9 +15409,7 @@ Name: name, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
@@ -15437,7 +15428,7 @@ Name: name, dtype: object</pre>
 
 </div>
 
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15470,9 +15461,7 @@ Name: name, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
@@ -15499,7 +15488,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15532,9 +15521,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
@@ -15648,7 +15635,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15682,9 +15669,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
@@ -15798,7 +15783,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15831,9 +15816,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -15864,7 +15847,7 @@ memory usage: 3.5+ MB
 
 </div>
 
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15875,7 +15858,7 @@ memory usage: 3.5+ MB
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15886,15 +15869,14 @@ memory usage: 3.5+ MB
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_solution-1-1" data-mime-type="text/markdown">
-<h5>Exercise 1.1 &ndash; Create a DataFrame by reading in the <code>2019_Yellow_Taxi_Trip_Data.csv</code> file. Examine the first 5 rows:</h5>
-
+<h5 id="Exercise-1.1-%E2%80%93-Create-a-DataFrame-by-reading-in-the-2019_Yellow_Taxi_Trip_Data.csv-file.-Examine-the-first-5-rows:">Exercise 1.1 &#8211; Create a DataFrame by reading in the <code>2019_Yellow_Taxi_Trip_Data.csv</code> file. Examine the first 5 rows:<a class="anchor-link" href="#Exercise-1.1-%E2%80%93-Create-a-DataFrame-by-reading-in-the-2019_Yellow_Taxi_Trip_Data.csv-file.-Examine-the-first-5-rows:">&#182;</a></h5>
 </div>
 </div>
 </div>
@@ -15923,9 +15905,7 @@ memory usage: 3.5+ MB
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
@@ -16099,15 +16079,14 @@ memory usage: 3.5+ MB
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_solution-1-2" data-mime-type="text/markdown">
-<h5>Exercise 1.2 &ndash; Find the dimensions (number of rows and number of columns) in the data:</h5>
-
+<h5 id="Exercise-1.2-%E2%80%93-Find-the-dimensions-(number-of-rows-and-number-of-columns)-in-the-data:">Exercise 1.2 &#8211; Find the dimensions (number of rows and number of columns) in the data:<a class="anchor-link" href="#Exercise-1.2-%E2%80%93-Find-the-dimensions-(number-of-rows-and-number-of-columns)-in-the-data:">&#182;</a></h5>
 </div>
 </div>
 </div>
@@ -16133,9 +16112,7 @@ memory usage: 3.5+ MB
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
@@ -16152,7 +16129,7 @@ memory usage: 3.5+ MB
 
 </div>
 
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16170,7 +16147,7 @@ memory usage: 3.5+ MB
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16182,7 +16159,7 @@ memory usage: 3.5+ MB
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16216,9 +16193,7 @@ memory usage: 3.5+ MB
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
@@ -16246,7 +16221,7 @@ Name: name, Length: 45716, dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16280,9 +16255,7 @@ Name: name, Length: 45716, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
@@ -16379,7 +16352,7 @@ Name: name, Length: 45716, dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16412,9 +16385,7 @@ Name: name, Length: 45716, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
@@ -16515,7 +16486,7 @@ Name: name, Length: 45716, dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16549,9 +16520,7 @@ Name: name, Length: 45716, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
@@ -16622,7 +16591,7 @@ Name: name, Length: 45716, dtype: object</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16656,9 +16625,7 @@ Name: name, Length: 45716, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
@@ -16730,19 +16697,19 @@ Name: name, Length: 45716, dtype: object</pre>
 
 </div>
 
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_filtering-with-boolean-masks" data-mime-type="text/markdown">
-<h4 id="Filtering-with-Boolean-masks">Filtering with Boolean masks<a class="anchor-link" href="#Filtering-with-Boolean-masks">&#182;</a></h4><p>A <strong>Boolean mask</strong> is a array-like structure of Boolean values &ndash; it's a way to specify which rows/columns we want to select (<code>True</code>) and which we don't (<code>False</code>).</p>
+<h4 id="Filtering-with-Boolean-masks">Filtering with Boolean masks<a class="anchor-link" href="#Filtering-with-Boolean-masks">&#182;</a></h4><p>A <strong>Boolean mask</strong> is a array-like structure of Boolean values – it's a way to specify which rows/columns we want to select (<code>True</code>) and which we don't (<code>False</code>).</p>
 
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16776,9 +16743,7 @@ Name: name, Length: 45716, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
@@ -16806,7 +16771,7 @@ Length: 45716, dtype: bool</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16818,7 +16783,7 @@ Length: 45716, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16852,9 +16817,7 @@ Length: 45716, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
@@ -16968,7 +16931,7 @@ Length: 45716, dtype: bool</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16980,7 +16943,7 @@ Length: 45716, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17014,9 +16977,7 @@ Length: 45716, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
@@ -17130,7 +17091,7 @@ Length: 45716, dtype: bool</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17142,7 +17103,7 @@ Length: 45716, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17160,7 +17121,7 @@ Length: 45716, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17172,7 +17133,7 @@ Length: 45716, dtype: bool</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17205,9 +17166,7 @@ Length: 45716, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
@@ -17226,7 +17185,7 @@ Name: fall, dtype: int64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17238,7 +17197,7 @@ Name: fall, dtype: int64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17271,9 +17230,7 @@ Name: fall, dtype: int64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
@@ -17290,7 +17247,7 @@ Name: fall, dtype: int64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17324,9 +17281,7 @@ Name: fall, dtype: int64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
@@ -17347,7 +17302,7 @@ Name: mass (g), dtype: float64</pre>
 
 </div>
 
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17380,9 +17335,7 @@ Name: mass (g), dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 
@@ -17399,7 +17352,7 @@ Name: mass (g), dtype: float64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17433,9 +17386,7 @@ Name: mass (g), dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
@@ -17462,7 +17413,7 @@ Name: 16392, dtype: object</pre>
 
 </div>
 
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17474,10 +17425,11 @@ Name: 16392, dtype: object</pre>
     <img width="25%" style="margin-top: -5px; margin-bottom: -5px; min-width: 200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Hoba_meteorite_%2815682150765%29.jpg/1280px-Hoba_meteorite_%2815682150765%29.jpg" alt="Hoba meteorite (source: Wikipedia)"/>
     <div><small><em>Source: Wikipedia</em></small></div>
 </div>
+
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17510,9 +17462,7 @@ Name: 16392, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 
@@ -17529,7 +17479,7 @@ Name: 16392, dtype: object</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17563,9 +17513,7 @@ Name: 16392, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 
@@ -17591,12 +17539,12 @@ Name: 16392, dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Note: All fields preceded with "rec" are the values recommended by The Meteoritical Society. Check out <a href="https://en.wikipedia.org/wiki/Meteorite_classification">this Wikipedia article</a> for some information on meteorite classes.</em></p>
+<p><em>Note: All fields preceded with &quot;rec&quot; are the values recommended by The Meteoritical Society. Check out <a href="https://en.wikipedia.org/wiki/Meteorite_classification">this Wikipedia article</a> for some information on meteorite classes.</em></p>
 
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17630,9 +17578,7 @@ Name: 16392, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 
@@ -17836,7 +17782,7 @@ Name: 16392, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17851,7 +17797,7 @@ Name: 16392, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17862,7 +17808,7 @@ Name: 16392, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17873,15 +17819,14 @@ Name: 16392, dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_solution-1-3" data-mime-type="text/markdown">
-<h5>Exercise 1.3 &ndash; Using the data in the <code>2019_Yellow_Taxi_Trip_Data.csv</code> file, calculate summary statistics for the <code>fare_amount</code>, <code>tip_amount</code>, <code>tolls_amount</code>, and <code>total_amount</code> columns:</h5>
-
+<h5 id="Exercise-1.3-%E2%80%93-Using-the-data-in-the-2019_Yellow_Taxi_Trip_Data.csv-file,-calculate-summary-statistics-for-the-fare_amount,-tip_amount,-tolls_amount,-and-total_amount-columns:">Exercise 1.3 &#8211; Using the data in the <code>2019_Yellow_Taxi_Trip_Data.csv</code> file, calculate summary statistics for the <code>fare_amount</code>, <code>tip_amount</code>, <code>tolls_amount</code>, and <code>total_amount</code> columns:<a class="anchor-link" href="#Exercise-1.3-%E2%80%93-Using-the-data-in-the-2019_Yellow_Taxi_Trip_Data.csv-file,-calculate-summary-statistics-for-the-fare_amount,-tip_amount,-tolls_amount,-and-total_amount-columns:">&#182;</a></h5>
 </div>
 </div>
 </div>
@@ -17910,9 +17855,7 @@ Name: 16392, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 
@@ -18011,15 +17954,14 @@ Name: 16392, dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_solution-1-4" data-mime-type="text/markdown">
-<h5>Exercise 1.4 &ndash; Isolate the <code>fare_amount</code>, <code>tip_amount</code>, <code>tolls_amount</code>, and <code>total_amount</code> for the longest trip by distance (<code>trip_distance</code>):</h5>
-
+<h5 id="Exercise-1.4-%E2%80%93-Isolate-the-fare_amount,-tip_amount,-tolls_amount,-and-total_amount-for-the-longest-trip-by-distance-(trip_distance):">Exercise 1.4 &#8211; Isolate the <code>fare_amount</code>, <code>tip_amount</code>, <code>tolls_amount</code>, and <code>total_amount</code> for the longest trip by distance (<code>trip_distance</code>):<a class="anchor-link" href="#Exercise-1.4-%E2%80%93-Isolate-the-fare_amount,-tip_amount,-tolls_amount,-and-total_amount-for-the-longest-trip-by-distance-(trip_distance):">&#182;</a></h5>
 </div>
 </div>
 </div>
@@ -18048,9 +17990,7 @@ Name: 16392, dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 
@@ -18071,14 +18011,14 @@ Name: 8338, dtype: object</pre>
 
 </div>
 
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Section-1-Complete-%F0%9F%8E%89">Section 1 Complete &#127881;<a class="anchor-link" href="#Section-1-Complete-%F0%9F%8E%89">&#182;</a></h2><p><img width="30%" src="https://www.pngkey.com/png/detail/11-115894_giant-panda-bear-cuteness-panda-with-bamboo-cartoon.png" alt="Giant Panda Bear Cuteness - Panda With Bamboo Cartoon@pngkey.com" style="min-width: 300px"></p>
+<h2 id="Section-1-Complete-%F0%9F%8E%89">Section 1 Complete &#127881;<a class="anchor-link" href="#Section-1-Complete-%F0%9F%8E%89">&#182;</a></h2><img width="30%" src="https://www.pngkey.com/png/detail/11-115894_giant-panda-bear-cuteness-panda-with-bamboo-cartoon.png" alt="Giant Panda Bear Cuteness - Panda With Bamboo Cartoon@pngkey.com" style="min-width: 300px">
 
 </div>
 </div>
@@ -18150,7 +18090,8 @@ require(
                     if (!isNaN(input)) {
                       const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
                       const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
-                      Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                      // set fragment to large number (100) to ensure the full slide is displayed
+                      Reveal.slide(slideIndices.h, slideIndices.v, 100);
                     }
                     else if (typeof input === "string" || input instanceof String) {
                         const slideName = input.replaceAll(' ', '-');
@@ -18232,6 +18173,26 @@ require(
                 () => { window.location = `#/${id}`; }
             );
         }
+
+        // fix any collisions in the clip-path introduced from reproducible SVG plots
+        // that cause plot components not to render (clipPath objects with duplicate IDs)
+        const clipPathIds = {};
+        $('clipPath').each((index, element) => {
+            const oldId = $(element).attr('id');
+            if (oldId in clipPathIds) {
+                // change this id and grab the parent SVG
+                // and then for all the elements with clip-path switch the id
+                const newId = `${oldId}${clipPathIds[oldId]}`;
+                $(element).attr('id', newId);
+                $(element).closest('svg').find('[clip-path]').each((index, item) => {
+                    if ($(item).attr('clip-path') === `url(#${oldId})`) {
+                        $(item).attr('clip-path', `url(#${newId})`);
+                    }
+                });
+                clipPathIds[oldId] += 1;
+            }
+            else clipPathIds[oldId] = 1;
+        });
     }
 );
 </script>

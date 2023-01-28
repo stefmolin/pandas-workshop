@@ -51,6 +51,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14484,6 +14485,12 @@ a.anchor-link {
 .jp-RenderedHTMLCommon.jp-RenderedHTML.jp-OutputArea-output.jp-OutputArea-executeResult {
     padding-right: 5px !important; /* padding after lead-in text */
 }
+.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
+    width: 75%;
+}
+.jp-Collapser { /* hide that blue collapse button on the side of cells that does nothing */
+    display: none;
+}
 .CodeMirror pre {
     padding: 0.4em !important;
     overflow-x: scroll !important; /* allow scrolling to see full code block */
@@ -14495,8 +14502,8 @@ a.anchor-link {
     right: 5px !important;
     bottom: 5px !important;
 }
-.jp-RenderedSVG > svg, .jp-OutputArea-output > svg { /* scale SVG plots */
-    width: 75%;
+.slides { /* pull slides to left */
+    margin-left: -20px !important;
 }
 :root {
     --jp-ui-font-size1: 11.5px;       /* size of tables in outputs */
@@ -14619,17 +14626,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14656,12 +14660,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14683,7 +14687,7 @@ div.jp-OutputPrompt {
         </a>
     </div>
 </div>
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14695,10 +14699,11 @@ div.jp-OutputPrompt {
     <img width="30%" src="https://images.ctfassets.net/cnu0m8re1exe/I3pMkGv5UGGmNN1tB4XG0/73edfcdbe6e1637e5e79e0c3a2d25fbb/panda.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill" alt="Panda with bamboo" style="min-width: 300px">
     <div><small><em><a href="https://www.discovermagazine.com/planet-earth/how-pandas-survive-on-a-diet-of-only-bamboo">Source</a></em></small></div>
 </div>
+
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14716,14 +14721,14 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_data-cleaning" data-mime-type="text/markdown">
-<h2 id="Data-cleaning">Data cleaning<a class="anchor-link" href="#Data-cleaning">&#182;</a></h2><p>In this section, we will take a look at creating, renaming, and dropping columns; type conversion; and sorting &ndash; all of which make our analysis easier. We will be working with the 2019 Yellow Taxi Trip Data provided by NYC Open Data.</p>
+<h2 id="Data-cleaning">Data cleaning<a class="anchor-link" href="#Data-cleaning">&#182;</a></h2><p>In this section, we will take a look at creating, renaming, and dropping columns; type conversion; and sorting – all of which make our analysis easier. We will be working with the 2019 Yellow Taxi Trip Data provided by NYC Open Data.</p>
 
 </div>
 </div>
@@ -14753,9 +14758,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 
@@ -14929,7 +14932,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14941,7 +14944,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14965,9 +14968,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
@@ -14986,7 +14987,7 @@ div.jp-OutputPrompt {
 
 </div>
 
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div></section><section ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15009,9 +15010,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
@@ -15143,7 +15142,7 @@ div.jp-OutputPrompt {
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15155,7 +15154,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15196,9 +15195,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
@@ -15218,19 +15215,19 @@ div.jp-OutputPrompt {
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Important</strong>: This operation was performed in-place &ndash; be careful with in-place operations.</p>
+<p><strong>Important</strong>: This operation was performed in-place – be careful with in-place operations.</p>
 
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15264,9 +15261,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
@@ -15296,7 +15291,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15332,9 +15327,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
@@ -15376,7 +15369,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15394,7 +15387,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15430,7 +15423,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15464,9 +15457,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
@@ -15565,7 +15556,7 @@ dtype: object</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15581,7 +15572,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15615,9 +15606,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
@@ -15779,7 +15768,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15813,9 +15802,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
@@ -15935,7 +15922,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15946,7 +15933,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15957,7 +15944,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15986,9 +15973,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
@@ -16084,7 +16069,7 @@ dtype: object</pre>
 
 </div>
 
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16102,7 +16087,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16114,7 +16099,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16149,9 +16134,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
@@ -16287,7 +16270,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16315,7 +16298,7 @@ dtype: object</pre>
 </div>
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16327,7 +16310,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16361,9 +16344,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
@@ -16499,7 +16480,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16533,9 +16514,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
@@ -16651,7 +16630,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16686,9 +16665,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
@@ -16850,7 +16827,7 @@ dtype: object</pre>
 
 </div>
 
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16861,7 +16838,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16872,7 +16849,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16900,9 +16877,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
@@ -17016,7 +16991,7 @@ dtype: object</pre>
 
 </div>
 
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17034,7 +17009,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17045,7 +17020,7 @@ dtype: object</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17067,9 +17042,7 @@ dtype: object</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
@@ -17094,7 +17067,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></div><div class="fragment">
+</div></div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17128,9 +17101,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
@@ -17216,7 +17187,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17234,7 +17205,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17246,7 +17217,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17269,9 +17240,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
@@ -17361,7 +17330,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17396,9 +17365,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
@@ -17476,7 +17443,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17488,7 +17455,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17527,9 +17494,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
@@ -17601,7 +17566,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17638,9 +17603,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
@@ -17712,7 +17675,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17746,9 +17709,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
@@ -17808,7 +17769,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17843,9 +17804,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
@@ -17905,7 +17864,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17943,9 +17902,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
@@ -18046,7 +18003,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18058,7 +18015,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18092,9 +18049,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 
@@ -18202,7 +18157,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18237,9 +18192,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
@@ -18315,7 +18268,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18352,9 +18305,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 
@@ -18432,7 +18383,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18444,7 +18395,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18477,7 +18428,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18489,7 +18440,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18526,9 +18477,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 
@@ -18634,7 +18583,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18652,7 +18601,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18664,7 +18613,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18701,9 +18650,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 
@@ -18794,7 +18741,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18831,9 +18778,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 
@@ -18924,7 +18869,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18952,7 +18897,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18998,9 +18943,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 
@@ -19096,7 +19039,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19124,7 +19067,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19136,7 +19079,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19147,7 +19090,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19158,7 +19101,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -19188,9 +19131,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 
@@ -19284,7 +19225,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19325,9 +19266,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 
@@ -19393,7 +19332,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19405,7 +19344,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19417,7 +19356,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19451,9 +19390,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 
@@ -19552,7 +19489,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19588,9 +19525,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
 
@@ -19658,7 +19593,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19696,9 +19631,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 
@@ -19789,7 +19722,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19801,7 +19734,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19841,9 +19774,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
 
@@ -19923,7 +19854,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19932,7 +19863,7 @@ Name: year, dtype: float64</pre>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>We are only scratching the surface; some additional functionalities to be aware of include the following:</p>
 <ul>
-<li>We can group by multiple columns &ndash; this creates a hierarchical index.</li>
+<li>We can group by multiple columns – this creates a hierarchical index.</li>
 <li>Groups can be excluded from calculations with the <code>filter()</code> method.</li>
 <li>We can group on content in the index using the <code>level</code> or <code>name</code> parameters e.g., <code>groupby(level=0)</code> or <code>groupby(name='year')</code>.</li>
 <li>We can group by date ranges if we use a <code>pd.Grouper()</code> object.</li>
@@ -19941,7 +19872,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19953,7 +19884,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19964,7 +19895,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -19975,7 +19906,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -20000,9 +19931,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 
@@ -20082,7 +20011,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20100,7 +20029,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20112,7 +20041,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20141,7 +20070,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20175,9 +20104,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 
@@ -20293,7 +20220,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20327,9 +20254,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
 
@@ -20445,7 +20370,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20457,7 +20382,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20491,9 +20416,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
 
@@ -20629,7 +20552,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20641,7 +20564,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20675,9 +20598,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
 
@@ -20865,7 +20786,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20893,7 +20814,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -20929,9 +20850,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
 
@@ -21075,7 +20994,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -21110,9 +21029,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
 
@@ -21222,19 +21139,19 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_window-calculations" data-mime-type="text/markdown">
-<h3 id="Window-calculations">Window calculations<a class="anchor-link" href="#Window-calculations">&#182;</a></h3><p>Window calculations are similar to group by calculations except the group over which the calculation is performed isn't static &ndash; it can move or expand. Pandas provides functionality for constructing a variety of windows, including moving/rolling windows, expanding windows (e.g., cumulative sum or mean up to the current date in a time series), and exponentially weighted moving windows (to weight closer observations more than further ones). We will only look at rolling and expanding calculations here.</p>
+<h3 id="Window-calculations">Window calculations<a class="anchor-link" href="#Window-calculations">&#182;</a></h3><p>Window calculations are similar to group by calculations except the group over which the calculation is performed isn't static – it can move or expand. Pandas provides functionality for constructing a variety of windows, including moving/rolling windows, expanding windows (e.g., cumulative sum or mean up to the current date in a time series), and exponentially weighted moving windows (to weight closer observations more than further ones). We will only look at rolling and expanding calculations here.</p>
 
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div><div class="fragment" >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -21245,17 +21162,18 @@ Name: year, dtype: float64</pre>
 <img width="30%" src="https://i0.wp.com/www.untoldwanderlust.com/wp-content/uploads/2017/07/Panda-rolling-around-in-bamboo-in-Chengdu-China.jpg?w=700&ssl=1" alt="Panda Rolling" style="min-width: 300px">
     <div><small><em><a href="https://www.untoldwanderlust.com/chengdu-panda-base/">Source</a></em></small></div>
 </div>
+
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Performing a window calculation is very similar to a group by calculation &ndash; we first define the window, and then we specify the aggregation:</p>
+<p>Performing a window calculation is very similar to a group by calculation – we first define the window, and then we specify the aggregation:</p>
 
 </div>
 </div>
@@ -21287,9 +21205,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
 
@@ -21421,7 +21337,7 @@ Name: year, dtype: float64</pre>
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -21441,8 +21357,13 @@ Name: year, dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">config</span> InlineBackend.figure_formats = [&#39;svg&#39;]
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib_inline</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">mpl_svg_config</span>
+
+<span class="n">matplotlib_inline</span><span class="o">.</span><span class="n">backend_inline</span><span class="o">.</span><span class="n">set_matplotlib_formats</span><span class="p">(</span>
+    <span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="c1"># output images using SVG format</span>
+    <span class="o">**</span><span class="n">mpl_svg_config</span><span class="p">(</span><span class="s1">&#39;section-2&#39;</span><span class="p">)</span> <span class="c1"># optional: configure metadata</span>
+<span class="p">)</span>
 </pre></div>
 
      </div>
@@ -21457,12 +21378,12 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Tip: These are IPython magic commands or "magics" for short. Read more about them <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">here</a>.</em></p>
+<p><em>Tip: For most use cases, only the first argument is necessary – we will discuss the second argument in more detail in the next section.</em></p>
 
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -21501,9 +21422,7 @@ Name: year, dtype: float64</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
 <div class="jp-OutputArea-child">
-
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -21513,12 +21432,12 @@ Name: year, dtype: float64</pre>
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="385.78125pt" height="275.309158pt" viewBox="0 0 385.78125 275.309158" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="408.10125pt" height="314.477158pt" viewBox="0 0 408.10125 314.477158" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2022-07-24T19:26:08.451859</dc:date>
+    <dc:date>(c) 2021-2023 Stefanie Molin</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21533,19 +21452,18 @@ Name: year, dtype: float64</pre>
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 275.309158 
-L 385.78125 275.309158 
-L 385.78125 0 
+   <path d="M 0 314.477158 
+L 408.10125 314.477158 
+L 408.10125 0 
 L 0 0 
-L 0 275.309158 
 z
-" style="fill: none"/>
+" style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 43.78125 218.158125 
-L 378.58125 218.158125 
-L 378.58125 22.318125 
+    <path d="M 43.78125 257.326125 
+L 400.90125 257.326125 
+L 400.90125 22.318125 
 L 43.78125 22.318125 
 z
 " style="fill: #ffffff"/>
@@ -21554,17 +21472,17 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m903241f038" d="M 0 0 
+       <path id="mf8cac93d9d" d="M 0 0 
 L 0 3.5 
 " style="stroke: #000000; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m903241f038" x="58.999432" y="218.158125" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mf8cac93d9d" x="60.013977" y="257.326125" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_1">
       <!-- 2020-01 -->
-      <g transform="translate(21.774611 252.629971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(22.789156 291.797971)rotate(-30)scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-32" d="M 1228 531 
 L 3431 531 
@@ -21646,12 +21564,12 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m903241f038" x="109.03181" y="218.158125" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mf8cac93d9d" x="113.381848" y="257.326125" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_2">
       <!-- 2020-03 -->
-      <g transform="translate(71.80699 252.629971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(76.157027 291.797971)rotate(-30)scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-33" d="M 2597 2516 
 Q 3050 2419 3304 2112 
@@ -21699,12 +21617,12 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m903241f038" x="159.898062" y="218.158125" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mf8cac93d9d" x="167.639183" y="257.326125" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_3">
       <!-- 2020-05 -->
-      <g transform="translate(122.673241 252.629971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(130.414362 291.797971)rotate(-30)scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-35" d="M 691 4666 
 L 3169 4666 
@@ -21745,12 +21663,12 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m903241f038" x="210.764314" y="218.158125" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mf8cac93d9d" x="221.896518" y="257.326125" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_4">
       <!-- 2020-07 -->
-      <g transform="translate(173.539493 252.629971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(184.671697 291.797971)rotate(-30)scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-37" d="M 525 4666 
 L 3525 4666 
@@ -21776,12 +21694,12 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m903241f038" x="262.464438" y="218.158125" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mf8cac93d9d" x="277.043317" y="257.326125" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_5">
       <!-- 2020-09 -->
-      <g transform="translate(225.239617 252.629971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(239.818496 291.797971)rotate(-30)scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-39" d="M 703 97 
 L 703 672 
@@ -21827,12 +21745,12 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m903241f038" x="313.33069" y="218.158125" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mf8cac93d9d" x="331.300652" y="257.326125" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_6">
       <!-- 2020-11 -->
-      <g transform="translate(276.105869 252.629971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(294.075831 291.797971)rotate(-30)scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-32"/>
        <use xlink:href="#DejaVuSans-30" x="63.623047"/>
        <use xlink:href="#DejaVuSans-32" x="127.246094"/>
@@ -21846,12 +21764,12 @@ z
     <g id="xtick_7">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#m903241f038" x="364.196941" y="218.158125" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#mf8cac93d9d" x="385.557987" y="257.326125" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_7">
       <!-- 2021-01 -->
-      <g transform="translate(326.97212 252.629971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(348.333166 291.797971)rotate(-30)scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-32"/>
        <use xlink:href="#DejaVuSans-30" x="63.623047"/>
        <use xlink:href="#DejaVuSans-32" x="127.246094"/>
@@ -21864,7 +21782,7 @@ z
     </g>
     <g id="text_8">
      <!-- date -->
-     <g transform="translate(199.90625 266.029471)scale(0.1 -0.1)">
+     <g transform="translate(211.06625 305.197471)scale(0.1 -0.1)">
       <defs>
        <path id="DejaVuSans-64" d="M 2906 2969 
 L 2906 4863 
@@ -21983,17 +21901,17 @@ z
     <g id="ytick_1">
      <g id="line2d_8">
       <defs>
-       <path id="mf9826dbfdb" d="M 0 0 
+       <path id="m7db33de5b5" d="M 0 0 
 L -3.5 0 
 " style="stroke: #000000; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#mf9826dbfdb" x="43.78125" y="215.69593" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m7db33de5b5" x="43.78125" y="254.371491" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_9">
       <!-- 0.0 -->
-      <g transform="translate(20.878125 219.495148)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 258.170709)scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-2e" d="M 684 794 
 L 1344 794 
@@ -22012,12 +21930,12 @@ z
     <g id="ytick_2">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#mf9826dbfdb" x="43.78125" y="178.912378" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m7db33de5b5" x="43.78125" y="210.231228" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_10">
       <!-- 0.5 -->
-      <g transform="translate(20.878125 182.711597)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 214.030447)scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-30"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-35" x="95.410156"/>
@@ -22027,12 +21945,12 @@ z
     <g id="ytick_3">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#mf9826dbfdb" x="43.78125" y="142.128826" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m7db33de5b5" x="43.78125" y="166.090966" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_11">
       <!-- 1.0 -->
-      <g transform="translate(20.878125 145.928045)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 169.890185)scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-31"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-30" x="95.410156"/>
@@ -22042,12 +21960,12 @@ z
     <g id="ytick_4">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#mf9826dbfdb" x="43.78125" y="105.345274" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m7db33de5b5" x="43.78125" y="121.950704" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_12">
       <!-- 1.5 -->
-      <g transform="translate(20.878125 109.144493)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 125.749923)scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-31"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-35" x="95.410156"/>
@@ -22057,12 +21975,12 @@ z
     <g id="ytick_5">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#mf9826dbfdb" x="43.78125" y="68.561722" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m7db33de5b5" x="43.78125" y="77.810442" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_13">
       <!-- 2.0 -->
-      <g transform="translate(20.878125 72.360941)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 81.60966)scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-32"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-30" x="95.410156"/>
@@ -22072,12 +21990,12 @@ z
     <g id="ytick_6">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#mf9826dbfdb" x="43.78125" y="31.77817" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m7db33de5b5" x="43.78125" y="33.670179" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_14">
       <!-- 2.5 -->
-      <g transform="translate(20.878125 35.577389)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 37.469398)scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-32"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-35" x="95.410156"/>
@@ -22086,7 +22004,7 @@ z
     </g>
     <g id="text_15">
      <!-- travelers -->
-     <g transform="translate(14.798438 142.479531)rotate(-90)scale(0.1 -0.1)">
+     <g transform="translate(14.798438 162.063531)rotate(-90)scale(0.1 -0.1)">
       <defs>
        <path id="DejaVuSans-72" d="M 2631 2963 
 Q 2534 3019 2420 3045 
@@ -22207,780 +22125,793 @@ z
     </g>
    </g>
    <g id="line2d_14">
-    <path d="M 58.999432 45.628502 
-L 59.833305 55.418518 
-L 60.667178 37.496394 
-L 61.501051 53.072757 
-L 62.334924 82.798428 
-L 63.168797 82.168694 
-L 64.00267 66.025717 
-L 64.836543 63.224944 
-L 65.670416 91.516571 
-L 66.504289 55.044944 
-L 67.338162 69.116933 
-L 68.172035 91.278876 
-L 69.005908 77.626514 
-L 69.839781 50.710223 
-L 70.673653 43.02842 
-L 71.507526 84.607223 
-L 72.341399 68.542595 
-L 73.175272 46.593408 
-L 74.009145 78.091678 
-L 74.843018 83.168912 
-L 75.676891 61.175511 
-L 76.510764 57.889857 
-L 77.344637 94.663625 
-L 78.17851 58.513633 
-L 79.012383 68.222651 
-L 79.846256 94.793177 
-L 80.680129 84.954606 
-L 81.514002 62.274089 
-L 82.347875 56.861095 
-L 83.181748 93.656491 
-L 84.015621 72.377059 
-L 84.849494 64.535762 
-L 85.683367 92.26519 
-L 86.51724 80.047239 
-L 87.351113 56.212969 
-L 88.184986 48.584502 
-L 89.018859 85.464426 
-L 89.852732 52.021925 
-L 90.686605 56.426755 
-L 91.520478 82.241746 
-L 92.354351 65.738585 
-L 93.188224 38.017764 
-L 94.022097 31.219943 
-L 94.85597 70.603356 
-L 95.689843 53.947102 
-L 96.523716 32.151744 
-L 97.357589 54.561902 
-L 98.191462 59.008151 
-L 99.025335 42.187106 
-L 99.859208 36.96546 
-L 100.693081 72.127152 
-L 101.526954 40.579812 
-L 102.360827 48.891203 
-L 103.1947 74.461583 
-L 104.028573 63.003433 
-L 104.862446 41.729813 
-L 105.696318 36.071326 
-L 106.530191 72.262442 
-L 107.364064 42.5815 
-L 109.03181 61.967093 
-L 109.865683 87.954526 
-L 110.699556 77.580976 
-L 111.533429 58.996895 
-L 112.367302 53.957401 
-L 113.201175 79.978527 
-L 114.035048 59.743454 
-L 114.868921 75.229624 
-L 115.702794 96.721738 
-L 117.37054 84.124402 
-L 118.204413 89.574547 
-L 119.038286 106.408098 
-L 119.872159 103.933374 
-L 120.706032 123.161535 
-L 121.539905 145.535056 
-L 123.207651 170.019366 
-L 124.041524 172.058351 
-L 124.875397 175.371446 
-L 125.70927 182.258504 
-L 126.543143 191.313511 
-L 127.377016 195.169384 
-L 129.044762 200.698687 
-L 129.878635 201.008699 
-L 130.712508 202.157596 
-L 131.546381 202.453704 
-L 132.380254 204.36071 
-L 133.214127 204.929531 
-L 134.881873 206.572064 
-L 135.715746 206.149642 
-L 136.549619 206.992794 
-L 137.383492 206.71861 
-L 138.217365 207.727877 
-L 139.051238 208.550357 
-L 139.885111 208.712131 
-L 140.718983 208.03833 
-L 141.552856 207.678807 
-L 142.386729 208.806738 
-L 143.220602 209.037371 
-L 144.054475 208.178549 
-L 144.888348 209.256307 
-L 146.556094 208.700802 
-L 147.389967 207.869493 
-L 148.22384 208.542559 
-L 149.057713 207.943281 
-L 150.725459 208.864562 
-L 151.559332 208.415141 
-L 153.227078 206.613041 
-L 154.060951 207.275513 
-L 154.894824 206.214969 
-L 156.56257 207.536382 
-L 157.396443 206.895171 
-L 158.230316 204.315467 
-L 159.064189 203.074537 
-L 159.898062 205.818737 
-L 160.731935 203.170836 
-L 161.565808 203.653583 
-L 162.399681 206.087992 
-L 163.233554 205.366446 
-L 164.067427 201.654692 
-L 164.9013 199.846339 
-L 165.735173 203.22042 
-L 166.569046 200.922552 
-L 167.402919 199.831552 
-L 168.236792 203.689411 
-L 169.070665 202.69905 
-L 169.904538 198.412957 
-L 170.738411 197.269798 
-L 171.572284 197.269798 
-L 172.406157 201.472466 
-L 173.24003 197.024084 
-L 174.073903 197.732609 
-L 174.907776 201.683088 
-L 175.741649 198.748497 
-L 176.575521 192.268559 
-L 177.409394 190.045067 
-L 178.243267 197.069475 
-L 179.07714 196.020334 
-L 179.911013 190.626541 
-L 180.744886 196.212197 
-L 181.578759 196.482409 
-L 182.412632 192.023801 
-L 183.246505 191.629702 
-L 184.080378 195.916163 
-L 184.914251 189.730641 
-L 185.748124 189.707541 
-L 186.581997 195.998926 
-L 187.41587 193.299455 
-L 188.249743 186.866306 
-L 189.083616 184.821655 
-L 189.917489 189.725565 
-L 190.751362 183.234077 
-L 191.585235 184.031618 
-L 192.419108 190.802146 
-L 193.252981 187.227741 
-L 194.086854 178.749868 
-L 194.920727 177.492238 
-L 195.7546 183.538351 
-L 196.588473 175.672041 
-L 197.422346 176.372253 
-L 198.256219 184.950471 
-L 199.090092 183.19185 
-L 199.923965 173.283464 
-L 200.757838 172.445241 
-L 201.591711 178.387918 
-L 202.425584 172.257792 
-L 203.259457 171.000971 
-L 204.09333 181.014852 
-L 204.927203 179.293014 
-L 205.761076 169.817718 
-L 206.594949 169.12913 
-L 207.428822 175.505485 
-L 208.262695 169.068364 
-L 209.096568 169.699202 
-L 209.930441 178.908405 
-L 211.598186 159.434678 
-L 212.432059 162.802065 
-L 213.265932 181.364443 
-L 214.099805 161.835761 
-L 214.933678 160.111937 
-L 215.767551 168.483432 
-L 216.601424 169.164884 
-L 217.435297 163.488814 
-L 218.26917 163.380597 
-L 219.103043 167.415017 
-L 219.936916 160.186239 
-L 220.770789 164.347195 
-L 221.604662 175.949978 
-L 222.438535 172.343939 
-L 223.272408 163.745489 
-L 224.106281 162.699807 
-L 224.940154 168.123468 
-L 225.774027 160.710258 
-L 226.6079 164.542515 
-L 227.441773 176.674393 
-L 228.275646 173.692718 
-L 229.109519 163.844731 
-L 229.943392 162.3767 
-L 230.777265 167.948893 
-L 231.611138 160.431954 
-L 232.445011 164.195794 
-L 233.278884 176.208345 
-L 234.112757 173.527266 
-L 234.94663 162.851943 
-L 235.780503 159.24642 
-L 236.614376 163.534425 
-L 237.448249 156.852473 
-L 238.282122 161.459686 
-L 239.115995 175.704779 
-L 239.949868 171.869137 
-L 240.783741 160.991505 
-L 241.617614 159.597555 
-L 242.451487 165.434002 
-L 243.28536 154.503622 
-L 244.119233 159.648022 
-L 244.953106 174.541021 
-L 245.786979 172.236237 
-L 246.620851 159.650965 
-L 247.454724 158.038154 
-L 248.288597 164.942353 
-L 249.12247 152.211271 
-L 249.956343 158.805091 
-L 250.790216 174.060922 
-L 251.624089 172.532786 
-L 252.457962 158.87417 
-L 253.291835 159.456233 
-L 254.125708 169.656018 
-L 254.959581 153.7667 
-L 255.793454 162.228241 
-L 256.627327 177.206651 
-L 257.4612 175.96653 
-L 258.295073 162.649634 
-L 259.128946 161.339183 
-L 259.962819 172.163773 
-L 260.796692 156.276148 
-L 261.630565 163.376624 
-L 262.464438 177.730302 
-L 263.298311 173.164506 
-L 264.132184 151.12623 
-L 264.966057 144.433463 
-L 265.79993 166.80029 
-L 266.633803 164.961848 
-L 267.467676 146.888029 
-L 268.301549 163.899171 
-L 269.135422 170.310691 
-L 269.969295 160.149014 
-L 270.803168 161.892408 
-L 271.637041 170.547577 
-L 272.470914 156.117611 
-L 273.304787 162.024461 
-L 274.13866 177.265725 
-L 274.972533 173.185399 
-L 275.806406 157.964439 
-L 276.640279 155.943698 
-L 277.474152 168.717816 
-L 278.308025 153.31338 
-L 279.141898 159.053968 
-L 279.975771 175.253077 
-L 280.809644 170.913721 
-L 281.643517 154.906255 
-L 282.477389 154.905298 
-L 283.311262 167.18946 
-L 284.145135 151.469053 
-L 284.979008 157.011525 
-L 285.812881 173.859201 
-L 286.646754 169.051002 
-L 287.480627 152.729257 
-L 288.3145 152.635238 
-L 289.148373 165.842373 
-L 289.982246 149.418517 
-L 290.816119 155.603524 
-L 291.649992 172.234986 
-L 292.483865 166.514923 
-L 293.317738 146.769807 
-L 294.151611 144.442879 
-L 294.985484 159.058971 
-L 295.819357 143.288685 
-L 296.65323 145.186275 
-L 297.487103 165.60453 
-L 298.320976 162.879163 
-L 299.154849 145.805416 
-L 299.988722 144.111754 
-L 300.822595 157.670392 
-L 301.656468 139.811094 
-L 302.490341 147.938347 
-L 303.324214 166.958901 
-L 304.158087 164.629325 
-L 304.99196 146.955858 
-L 305.825833 145.186495 
-L 306.659706 160.131653 
-L 307.493579 143.324659 
-L 308.327452 149.578599 
-L 309.161325 167.986412 
-L 309.995198 166.629835 
-L 310.829071 151.425059 
-L 311.662944 150.021693 
-L 312.496817 170.196442 
-L 313.33069 146.830352 
-L 314.164563 153.448008 
-L 314.998436 173.333858 
-L 315.832309 168.86804 
-L 316.666182 151.905526 
-L 317.500054 149.846677 
-L 318.333927 164.938233 
-L 319.1678 144.113666 
-L 320.001673 154.149691 
-L 320.835546 171.814991 
-L 321.669419 166.065134 
-L 322.503292 151.936866 
-L 323.337165 150.840716 
-L 324.171038 164.393174 
-L 325.004911 143.725453 
-L 325.838784 150.724627 
-L 326.672657 170.709866 
-L 327.50653 163.968324 
-L 328.340403 148.946142 
-L 329.174276 140.669549 
-L 330.008149 143.278753 
-L 330.842022 138.60246 
-L 331.675895 148.208853 
-L 332.509768 148.59611 
-L 333.343641 136.907989 
-L 334.177514 174.431994 
-L 335.011387 155.341551 
-L 335.84526 144.730894 
-L 336.679133 129.174321 
-L 338.346879 158.292769 
-L 339.180752 169.17533 
-L 340.014625 161.399729 
-L 340.848498 160.229938 
-L 341.682371 169.390588 
-L 342.516244 154.110185 
-L 343.350117 163.938088 
-L 344.18399 178.801071 
-L 345.017863 174.176716 
-L 345.851736 160.203748 
-L 346.685609 157.762645 
-L 347.519482 166.966552 
-L 348.353355 152.059355 
-L 349.187228 160.340289 
-L 350.021101 175.085123 
-L 350.854974 168.46835 
-L 352.522719 137.218442 
-L 353.356592 136.717009 
-L 354.190465 137.374993 
-L 355.024338 145.455383 
-L 355.858211 142.705077 
-L 356.692084 128.06846 
-L 357.525957 153.419905 
-L 358.35983 170.344091 
-L 359.193703 132.655369 
-L 360.027576 121.191702 
-L 360.861449 133.907629 
-L 361.695322 140.705523 
-L 362.529195 130.086185 
-L 363.363068 151.368413 
-L 363.363068 151.368413 
-" clip-path="url(#pf68e9d3dc4)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 60.013977 50.290577 
+L 60.903442 62.038596 
+L 61.792906 40.532048 
+L 62.682371 59.223683 
+L 63.571835 94.894489 
+L 64.4613 94.138807 
+L 65.350764 74.767235 
+L 66.240229 71.406308 
+L 67.129693 105.356261 
+L 68.019158 61.590308 
+L 68.908622 78.476695 
+L 69.798087 105.071026 
+L 70.687551 88.688191 
+L 71.577016 56.388643 
+L 72.46648 47.170479 
+L 73.355945 97.065042 
+L 74.245409 77.787489 
+L 75.134874 51.448465 
+L 76.024338 89.246389 
+L 76.913803 95.339069 
+L 77.803267 68.946989 
+L 78.692732 65.004204 
+L 79.582196 109.132725 
+L 80.471661 65.752735 
+L 81.361125 77.403557 
+L 82.25059 109.288187 
+L 83.140054 97.481903 
+L 84.029519 70.265282 
+L 84.918983 63.769689 
+L 85.808448 107.924164 
+L 86.697913 82.388846 
+L 87.587377 72.97929 
+L 88.476842 106.254603 
+L 89.366306 91.593062 
+L 90.255771 62.991938 
+L 91.145235 53.837777 
+L 92.0347 98.093687 
+L 92.924164 57.962684 
+L 93.813629 63.248481 
+L 94.703093 94.22647 
+L 95.592558 74.422677 
+L 96.482022 41.157692 
+L 97.371487 33.000307 
+L 98.260951 80.260403 
+L 99.150416 60.272898 
+L 100.03988 34.118468 
+L 100.929345 61.010658 
+L 101.818809 66.346156 
+L 102.708274 46.160903 
+L 103.597738 39.894927 
+L 104.487203 82.088957 
+L 105.376667 44.23215 
+L 106.266132 54.205818 
+L 107.155596 84.890275 
+L 108.045061 71.140495 
+L 108.934525 45.612151 
+L 109.82399 38.821966 
+L 110.713454 82.251305 
+L 111.602919 46.634174 
+L 113.381848 69.896887 
+L 114.271312 101.081806 
+L 115.160777 88.633546 
+L 116.050241 66.332649 
+L 116.939706 60.285257 
+L 117.82917 91.510608 
+L 118.718635 67.22852 
+L 119.608099 85.811924 
+L 120.497564 111.602461 
+L 122.276493 96.485657 
+L 123.165957 103.025831 
+L 124.055422 123.226093 
+L 124.944886 120.256424 
+L 125.834351 143.330216 
+L 126.723815 170.178443 
+L 128.502744 199.559614 
+L 129.392209 202.006397 
+L 130.281673 205.98211 
+L 131.171138 214.24658 
+L 132.060602 225.112588 
+L 132.950067 229.739635 
+L 134.728996 236.374799 
+L 135.61846 236.746814 
+L 136.507925 238.125491 
+L 137.397389 238.48082 
+L 138.286854 240.769227 
+L 139.176318 241.451812 
+L 140.955248 243.422852 
+L 141.844712 242.915945 
+L 142.734177 243.927728 
+L 143.623641 243.598706 
+L 144.513106 244.809827 
+L 145.40257 245.796803 
+L 146.292035 245.990932 
+L 147.181499 245.182371 
+L 148.070964 244.750944 
+L 148.960428 246.104461 
+L 149.849893 246.38122 
+L 150.739357 245.350633 
+L 151.628822 246.643943 
+L 153.407751 245.977337 
+L 154.297215 244.979767 
+L 155.18668 245.787446 
+L 156.076144 245.068312 
+L 157.855073 246.173849 
+L 158.744538 245.634544 
+L 160.523467 243.472024 
+L 161.412931 244.26699 
+L 162.302396 242.994338 
+L 164.081325 244.580033 
+L 164.970789 243.81058 
+L 165.860254 240.714935 
+L 166.749718 239.225819 
+L 167.639183 242.518859 
+L 168.528647 239.341378 
+L 169.418112 239.920675 
+L 170.307576 242.841966 
+L 171.197041 241.97611 
+L 172.086505 237.522005 
+L 172.97597 235.351981 
+L 173.865434 239.400879 
+L 174.754899 236.643437 
+L 175.644363 235.334237 
+L 176.533828 239.963668 
+L 177.423292 238.775235 
+L 178.312757 233.631924 
+L 179.202221 232.260132 
+L 180.091686 232.260132 
+L 180.98115 237.303334 
+L 181.870615 231.965276 
+L 182.760079 232.815505 
+L 183.649544 237.556081 
+L 184.539008 234.034571 
+L 185.428473 226.258646 
+L 186.317937 223.590455 
+L 187.207402 232.019745 
+L 188.096866 230.760776 
+L 188.986331 224.288225 
+L 189.875795 230.991012 
+L 190.76526 231.315266 
+L 191.654724 225.964937 
+L 192.544189 225.492018 
+L 193.433653 230.635771 
+L 194.323118 223.213144 
+L 195.212583 223.185424 
+L 196.102047 230.735086 
+L 196.991512 227.495721 
+L 197.880976 219.775942 
+L 198.770441 217.322362 
+L 199.659905 223.207053 
+L 200.54937 215.417268 
+L 201.438834 216.374317 
+L 202.328299 224.49895 
+L 203.217763 220.209664 
+L 204.107228 210.036217 
+L 204.996692 208.527061 
+L 205.886157 215.782396 
+L 206.775621 206.342824 
+L 207.665086 207.183078 
+L 208.55455 217.476941 
+L 209.444015 215.366595 
+L 210.333479 203.476532 
+L 211.222944 202.470664 
+L 212.112408 209.601877 
+L 213.001873 202.245725 
+L 213.891337 200.737541 
+L 214.780802 212.754197 
+L 215.670266 210.687992 
+L 216.559731 199.317637 
+L 217.449195 198.491331 
+L 218.33866 206.142957 
+L 219.228124 198.418411 
+L 220.117589 199.175417 
+L 221.007053 210.226461 
+L 222.785982 186.857988 
+L 223.675447 190.898853 
+L 224.564911 213.173707 
+L 225.454376 189.739288 
+L 226.34384 187.670699 
+L 227.233305 197.716493 
+L 228.122769 198.534235 
+L 229.012234 191.722952 
+L 229.901698 191.593091 
+L 230.791163 196.434395 
+L 231.680627 187.759862 
+L 232.570092 192.753009 
+L 233.459556 206.676348 
+L 234.349021 202.349102 
+L 235.238485 192.030962 
+L 236.12795 190.776143 
+L 237.017414 197.284536 
+L 237.906879 188.388684 
+L 238.796343 192.987394 
+L 239.685808 207.545647 
+L 240.575272 203.967637 
+L 241.464737 192.150053 
+L 242.354201 190.388415 
+L 243.243666 197.075047 
+L 244.13313 188.054719 
+L 245.022595 192.571327 
+L 245.912059 206.986389 
+L 246.801524 203.769094 
+L 247.690988 190.958707 
+L 248.580453 186.632079 
+L 249.469917 191.777686 
+L 250.359382 183.759342 
+L 251.248847 189.287998 
+L 252.138311 206.382109 
+L 253.027776 201.779339 
+L 253.91724 188.726181 
+L 254.806705 187.053442 
+L 255.696169 194.057177 
+L 256.585634 180.940721 
+L 257.475098 187.114002 
+L 258.364563 204.9856 
+L 259.254027 202.219859 
+L 260.143492 187.117533 
+L 261.032956 185.182159 
+L 261.922421 193.467198 
+L 262.811885 178.1899 
+L 263.70135 186.102484 
+L 264.590814 204.409481 
+L 265.480279 202.575718 
+L 266.369743 186.185379 
+L 267.259208 186.883855 
+L 268.148672 199.123596 
+L 269.038137 180.056415 
+L 269.927601 190.210265 
+L 270.817066 208.184356 
+L 271.70653 206.696211 
+L 272.595995 190.715936 
+L 273.485459 189.143395 
+L 274.374924 202.132903 
+L 275.264388 183.067752 
+L 276.153853 191.588324 
+L 277.043317 208.812737 
+L 277.932782 203.333783 
+L 278.822246 176.887851 
+L 279.711711 168.85653 
+L 280.601175 195.696723 
+L 281.49064 193.490593 
+L 282.380104 171.80201 
+L 283.269569 192.21538 
+L 284.159033 199.909205 
+L 285.048498 187.715192 
+L 285.937962 189.807264 
+L 286.827427 200.193468 
+L 287.716891 182.877508 
+L 288.606356 189.965728 
+L 289.49582 208.255245 
+L 290.385285 203.358854 
+L 291.274749 185.093702 
+L 292.164214 182.668813 
+L 293.053678 197.997755 
+L 293.943143 179.512431 
+L 294.832607 186.401137 
+L 295.722072 205.840067 
+L 296.611536 200.63284 
+L 297.501001 181.423881 
+L 298.390465 181.422733 
+L 299.27993 196.163727 
+L 300.169394 177.299238 
+L 301.058859 183.950205 
+L 301.948323 204.167416 
+L 302.837788 198.397577 
+L 303.727252 178.811483 
+L 304.616717 178.698661 
+L 305.506182 194.547222 
+L 306.395646 174.838595 
+L 307.285111 182.260604 
+L 308.174575 202.218358 
+L 309.06404 195.354283 
+L 309.953504 171.660143 
+L 310.842969 168.86783 
+L 311.732433 186.40714 
+L 312.621898 167.482797 
+L 313.511362 169.759905 
+L 314.400827 194.261811 
+L 315.290291 190.991371 
+L 316.179756 170.502874 
+L 317.06922 168.470479 
+L 317.958685 184.740845 
+L 318.848149 163.309688 
+L 319.737614 173.062391 
+L 320.627078 195.887056 
+L 321.516543 193.091565 
+L 322.406007 171.883404 
+L 323.295472 169.76017 
+L 324.184936 187.694358 
+L 325.074401 167.525966 
+L 325.963865 175.030693 
+L 326.85333 197.12007 
+L 327.742794 195.492177 
+L 328.632259 177.246446 
+L 329.521723 175.562407 
+L 330.411188 199.772105 
+L 331.300652 171.732798 
+L 332.190117 179.673984 
+L 333.079581 203.537004 
+L 333.969046 198.178024 
+L 334.85851 177.823006 
+L 335.747975 175.352388 
+L 336.637439 193.462254 
+L 337.526904 168.472775 
+L 338.416368 180.516004 
+L 339.305833 201.714365 
+L 340.195297 194.814536 
+L 341.084762 177.860614 
+L 341.974226 176.545234 
+L 342.863691 192.808184 
+L 343.753155 168.006918 
+L 344.64262 176.405927 
+L 345.532084 200.388215 
+L 346.421549 192.298364 
+L 347.311013 174.271746 
+L 348.200478 164.339834 
+L 349.089942 167.470879 
+L 349.979407 161.859327 
+L 350.868871 173.386998 
+L 351.758336 173.851707 
+L 352.6478 159.825962 
+L 353.537265 204.854768 
+L 354.426729 181.946237 
+L 355.316194 169.213448 
+L 356.205658 150.54556 
+L 357.984587 185.487698 
+L 358.874052 198.546771 
+L 359.763517 189.21605 
+L 360.652981 187.812301 
+L 361.542446 198.80508 
+L 362.43191 180.468597 
+L 363.321375 192.262081 
+L 364.210839 210.09766 
+L 365.100304 204.548434 
+L 365.989768 187.780873 
+L 366.879233 184.851549 
+L 367.768697 195.896237 
+L 368.658162 178.007601 
+L 369.547626 187.944722 
+L 370.437091 205.638522 
+L 371.326555 197.698395 
+L 373.105484 160.198506 
+L 373.994949 159.596786 
+L 374.884413 160.386367 
+L 375.773878 170.082835 
+L 376.663342 166.782467 
+L 377.552807 149.218527 
+L 378.442271 179.640261 
+L 379.331736 199.949284 
+L 380.2212 154.722818 
+L 381.110665 140.966417 
+L 382.000129 156.225529 
+L 382.889594 164.383003 
+L 383.779058 151.639797 
+L 384.668523 177.17847 
+L 384.668523 177.17847 
+" clip-path="url(#pd6e3d2542f)" style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_15">
-    <path d="M 58.999432 45.628502 
-L 59.833305 50.52351 
-L 60.667178 46.181138 
-L 61.501051 47.904043 
-L 62.334924 54.88292 
-L 63.168797 59.430549 
-L 64.00267 60.372716 
-L 64.836543 62.886493 
-L 65.670416 68.043358 
-L 67.338162 72.842319 
-L 68.172035 74.053811 
-L 69.005908 73.404928 
-L 69.839781 71.217001 
-L 70.673653 68.331783 
-L 71.507526 67.344733 
-L 72.341399 69.272969 
-L 73.175272 66.055323 
-L 74.009145 64.171437 
-L 74.843018 64.963208 
-L 75.676891 66.45825 
-L 76.510764 68.581312 
-L 77.344637 70.017941 
-L 78.17851 68.585232 
-L 79.012383 71.675124 
-L 79.846256 74.061052 
-L 81.514002 74.473091 
-L 83.181748 74.182249 
-L 84.015621 76.162738 
-L 84.849494 75.63604 
-L 85.683367 75.274899 
-L 86.51724 74.573847 
-L 87.351113 73.707972 
-L 89.018859 71.355307 
-L 89.852732 68.44743 
-L 90.686605 67.289001 
-L 91.520478 65.85708 
-L 92.354351 63.812987 
-L 94.022097 58.733021 
-L 94.85597 56.610011 
-L 95.689843 56.885036 
-L 96.523716 53.417177 
-L 97.357589 49.462914 
-L 98.191462 48.501423 
-L 99.025335 49.097044 
-L 99.859208 49.917832 
-L 100.693081 50.135517 
-L 101.526954 48.225904 
-L 102.360827 50.617255 
-L 103.1947 53.460067 
-L 104.028573 54.030821 
-L 106.530191 53.857087 
-L 107.364064 54.143043 
-L 109.03181 52.935935 
-L 109.865683 57.09445 
-L 110.699556 63.069644 
-L 111.533429 66.890572 
-L 112.367302 63.839732 
-L 113.201175 70.07257 
-L 114.035048 68.596982 
-L 114.868921 70.491629 
-L 115.702794 71.744088 
-L 116.536667 73.58027 
-L 117.37054 77.169914 
-L 118.204413 82.258078 
-L 119.038286 86.033731 
-L 120.706032 99.193992 
-L 121.539905 106.167323 
-L 122.373778 115.86825 
-L 124.041524 139.922359 
-L 124.875397 149.774266 
-L 126.543143 170.699567 
-L 127.377016 177.790185 
-L 128.210889 183.469534 
-L 129.878635 191.988058 
-L 130.712508 195.814651 
-L 131.546381 198.69968 
-L 132.380254 200.563565 
-L 133.214127 201.957872 
-L 134.048 203.042577 
-L 135.715746 204.616051 
-L 137.383492 205.916066 
-L 139.885111 207.346211 
-L 142.386729 208.033264 
-L 143.220602 208.364516 
-L 148.22384 208.657471 
-L 149.057713 208.501172 
-L 150.725459 208.475056 
-L 152.393205 208.215196 
-L 155.728697 207.392243 
-L 157.396443 206.985364 
-L 159.064189 206.027236 
-L 159.898062 205.819126 
-L 161.565808 204.92353 
-L 163.233554 204.498228 
-L 166.569046 202.964575 
-L 167.402919 202.41857 
-L 169.070665 201.694859 
-L 170.738411 200.863677 
-L 171.572284 200.013588 
-L 172.406157 200.092147 
-L 173.24003 199.69108 
-L 174.073903 198.840109 
-L 174.907776 198.694971 
-L 175.741649 198.742906 
-L 176.575521 198.028443 
-L 177.409394 196.996338 
-L 178.243267 196.36734 
-L 179.07714 196.223947 
-L 179.911013 195.208794 
-L 180.744886 194.427239 
-L 181.578759 194.103512 
-L 182.412632 194.068546 
-L 183.246505 194.294923 
-L 184.080378 194.130164 
-L 184.914251 193.231637 
-L 186.581997 193.069883 
-L 187.41587 192.615176 
-L 188.249743 191.878391 
-L 190.751362 189.093361 
-L 193.252981 186.67273 
-L 194.920727 184.466179 
-L 195.7546 183.582291 
-L 197.422346 181.407806 
-L 198.256219 180.571852 
-L 199.090092 179.995296 
-L 201.591711 177.757605 
-L 202.425584 177.269856 
-L 203.259457 176.50253 
-L 205.761076 174.888215 
-L 208.262695 173.547076 
-L 209.096568 173.361109 
-L 209.930441 173.060188 
-L 211.598186 170.192889 
-L 212.432059 169.289023 
-L 213.265932 170.126017 
-L 214.099805 169.092788 
-L 215.767551 166.233897 
-L 216.601424 166.171028 
-L 217.435297 166.750191 
-L 218.26917 166.832838 
-L 219.103043 164.840063 
-L 219.936916 164.604417 
-L 220.770789 165.209454 
-L 221.604662 166.276103 
-L 222.438535 166.730254 
-L 223.272408 166.766922 
-L 224.106281 166.669666 
-L 229.109519 167.183984 
-L 234.94663 166.791556 
-L 235.780503 166.344373 
-L 237.448249 165.202381 
-L 238.282122 164.811508 
-L 239.115995 164.73957 
-L 240.783741 164.236918 
-L 241.617614 164.28708 
-L 242.451487 164.558448 
-L 244.119233 163.964089 
-L 244.953106 163.797838 
-L 245.786979 163.850281 
-L 249.956343 162.91787 
-L 252.457962 162.780678 
-L 253.291835 162.983261 
-L 254.125708 163.656641 
-L 254.959581 163.878846 
-L 258.295073 165.847144 
-L 259.962819 166.474388 
-L 260.796692 166.83288 
-L 262.464438 167.071742 
-L 263.298311 166.671453 
-L 264.132184 165.025252 
-L 264.966057 162.610149 
-L 265.79993 161.843937 
-L 266.633803 163.084752 
-L 267.467676 160.729238 
-L 268.301549 158.753362 
-L 269.135422 158.345675 
-L 269.969295 159.634644 
-L 270.803168 162.128779 
-L 271.637041 162.664106 
-L 272.470914 161.400643 
-L 274.13866 165.472498 
-L 274.972533 165.883171 
-L 275.806406 165.571089 
-L 276.640279 164.721273 
-L 277.474152 164.459879 
-L 279.975771 163.347397 
-L 282.477389 162.437645 
-L 284.145135 161.955833 
-L 285.812881 161.46493 
-L 292.483865 159.282688 
-L 293.317738 158.431338 
-L 294.151611 157.261001 
-L 295.819357 155.416253 
-L 296.65323 153.928075 
-L 297.487103 152.980867 
-L 298.320976 152.461473 
-L 300.822595 152.078031 
-L 301.656468 151.581232 
-L 302.490341 151.974385 
-L 305.825833 152.735773 
-L 306.659706 153.087382 
-L 307.493579 153.58932 
-L 309.995198 154.256216 
-L 311.662944 155.585416 
-L 312.496817 157.023243 
-L 314.164563 158.076829 
-L 314.998436 158.84075 
-L 315.832309 159.160493 
-L 317.500054 159.204129 
-L 318.333927 158.452956 
-L 319.1678 158.064858 
-L 320.001673 158.165099 
-L 320.835546 157.948118 
-L 321.669419 157.547703 
-L 322.503292 157.55218 
-L 323.337165 157.694185 
-L 325.004911 157.560861 
-L 325.838784 157.071566 
-L 326.672657 156.913691 
-L 327.50653 156.614147 
-L 328.340403 156.1869 
-L 329.174276 154.733877 
-L 330.008149 151.717531 
-L 330.842022 150.985675 
-L 331.675895 150.626278 
-L 332.509768 147.46717 
-L 333.343641 143.601408 
-L 334.177514 147.242244 
-L 335.011387 149.338244 
-L 335.84526 149.545693 
-L 336.679133 148.198816 
-L 337.513006 147.520338 
-L 338.346879 148.905575 
-L 339.180752 153.515195 
-L 340.014625 151.653443 
-L 340.848498 152.351784 
-L 342.516244 159.436864 
-L 344.18399 165.292133 
-L 345.017863 166.006616 
-L 345.851736 165.835762 
-L 349.187228 164.330054 
-L 350.021101 163.799204 
-L 350.854974 162.983723 
-L 351.688847 162.010252 
-L 352.522719 159.075366 
-L 353.356592 154.754002 
-L 355.024338 150.529821 
-L 355.858211 145.904101 
-L 356.692084 140.132688 
-L 357.525957 140.137039 
-L 358.35983 144.869274 
-L 359.193703 144.28904 
-L 360.027576 141.977141 
-L 360.861449 140.327462 
-L 361.695322 140.041811 
-L 362.529195 140.330058 
-L 363.363068 140.036987 
-L 363.363068 140.036987 
-" clip-path="url(#pf68e9d3dc4)" style="fill: none; stroke: #ff7f0e; stroke-opacity: 0.8; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 60.013977 50.290577 
+L 60.903442 56.164587 
+L 61.792906 50.953741 
+L 62.682371 53.021226 
+L 63.571835 61.395879 
+L 64.4613 66.853034 
+L 65.350764 67.983634 
+L 66.240229 71.000167 
+L 67.129693 77.188404 
+L 68.908622 82.947157 
+L 69.798087 84.400949 
+L 70.687551 83.622289 
+L 71.577016 80.996776 
+L 72.46648 77.534515 
+L 73.355945 76.350055 
+L 74.245409 78.663938 
+L 75.134874 74.802762 
+L 76.024338 72.5421 
+L 76.913803 73.492225 
+L 77.803267 75.286274 
+L 78.692732 77.83395 
+L 79.582196 79.557904 
+L 80.471661 77.838654 
+L 81.361125 81.546524 
+L 82.25059 84.409638 
+L 83.140054 84.715757 
+L 84.029519 84.904084 
+L 85.808448 84.555074 
+L 86.697913 86.931661 
+L 87.587377 86.299623 
+L 88.476842 85.866254 
+L 89.366306 85.024991 
+L 90.255771 83.985942 
+L 92.0347 81.162743 
+L 92.924164 77.673292 
+L 93.813629 76.283176 
+L 94.703093 74.564871 
+L 95.592558 72.111959 
+L 97.371487 66.016 
+L 98.260951 63.468388 
+L 99.150416 63.798418 
+L 100.03988 59.636988 
+L 100.929345 54.891872 
+L 101.818809 53.738083 
+L 102.708274 54.452827 
+L 103.597738 55.437773 
+L 104.487203 55.698995 
+L 105.376667 53.40746 
+L 106.266132 56.277081 
+L 107.155596 59.688455 
+L 108.045061 60.373361 
+L 110.713454 60.16488 
+L 111.602919 60.508026 
+L 113.381848 59.059496 
+L 114.271312 64.049715 
+L 115.160777 71.219947 
+L 116.050241 75.805061 
+L 116.939706 72.144053 
+L 117.82917 79.623459 
+L 118.718635 77.852753 
+L 119.608099 80.12633 
+L 120.497564 81.629281 
+L 121.387028 83.832699 
+L 122.276493 88.140272 
+L 123.165957 94.246068 
+L 124.055422 98.776852 
+L 125.834351 114.569166 
+L 126.723815 122.937163 
+L 127.61328 134.578274 
+L 129.392209 163.443206 
+L 130.281673 175.265494 
+L 131.171138 188.69266 
+L 132.060602 200.375855 
+L 132.950067 208.884597 
+L 133.839531 215.699816 
+L 135.61846 225.922045 
+L 136.507925 230.513956 
+L 137.397389 233.975991 
+L 138.286854 236.212653 
+L 139.176318 237.885822 
+L 140.065783 239.187467 
+L 141.844712 241.075636 
+L 143.623641 242.635654 
+L 146.292035 244.351828 
+L 148.960428 245.176292 
+L 149.849893 245.573794 
+L 154.297215 245.970628 
+L 155.18668 245.92534 
+L 156.076144 245.737781 
+L 157.855073 245.706442 
+L 159.634002 245.39461 
+L 162.302396 244.665728 
+L 164.970789 243.918812 
+L 166.749718 242.769059 
+L 167.639183 242.519326 
+L 169.418112 241.444611 
+L 171.197041 240.934249 
+L 174.754899 239.093865 
+L 175.644363 238.438659 
+L 177.423292 237.570206 
+L 179.202221 236.572787 
+L 180.091686 235.552681 
+L 180.98115 235.646952 
+L 181.870615 235.165672 
+L 182.760079 234.144506 
+L 183.649544 233.970341 
+L 184.539008 234.027862 
+L 185.428473 233.170506 
+L 186.317937 231.931981 
+L 187.207402 231.177183 
+L 188.096866 231.005111 
+L 188.986331 229.786928 
+L 189.875795 228.849061 
+L 190.76526 228.460589 
+L 191.654724 228.418631 
+L 192.544189 228.690282 
+L 193.433653 228.492572 
+L 194.323118 227.414339 
+L 195.212583 227.256796 
+L 196.102047 227.220235 
+L 196.991512 226.674586 
+L 197.880976 225.790444 
+L 200.54937 222.448408 
+L 203.217763 219.543651 
+L 204.996692 216.89579 
+L 205.886157 215.835125 
+L 207.665086 213.225742 
+L 208.55455 212.222597 
+L 209.444015 211.53073 
+L 212.112408 208.845502 
+L 213.001873 208.260202 
+L 213.891337 207.339411 
+L 216.559731 205.402233 
+L 219.228124 203.792867 
+L 220.117589 203.569706 
+L 221.007053 203.208601 
+L 222.785982 199.767842 
+L 223.675447 198.683203 
+L 224.564911 199.687595 
+L 225.454376 198.447721 
+L 227.233305 195.017051 
+L 228.122769 194.941609 
+L 229.012234 195.636604 
+L 229.901698 195.735781 
+L 230.791163 193.34445 
+L 231.680627 193.061675 
+L 232.570092 193.78772 
+L 233.459556 195.067699 
+L 234.349021 195.61268 
+L 235.238485 195.656681 
+L 236.12795 195.539974 
+L 237.906879 195.751255 
+L 239.685808 195.908924 
+L 240.575272 196.140143 
+L 242.354201 196.101766 
+L 246.801524 195.856435 
+L 247.690988 195.686243 
+L 248.580453 195.149623 
+L 250.359382 193.779232 
+L 251.248847 193.310185 
+L 252.138311 193.223859 
+L 253.91724 192.620676 
+L 254.806705 192.680871 
+L 255.696169 193.006513 
+L 257.475098 192.293282 
+L 258.364563 192.09378 
+L 259.254027 192.156712 
+L 263.70135 191.037819 
+L 264.590814 190.955516 
+L 265.480279 191.006353 
+L 266.369743 190.873188 
+L 267.259208 191.116288 
+L 268.148672 191.924345 
+L 269.038137 192.19099 
+L 272.595995 194.552948 
+L 274.374924 195.30564 
+L 275.264388 195.735831 
+L 277.043317 196.022465 
+L 277.932782 195.542118 
+L 278.822246 193.566678 
+L 279.711711 190.668554 
+L 280.601175 189.7491 
+L 281.49064 191.238077 
+L 282.380104 188.411461 
+L 283.269569 186.04041 
+L 284.159033 185.551184 
+L 285.048498 187.097948 
+L 285.937962 190.09091 
+L 286.827427 190.733302 
+L 287.716891 189.217147 
+L 289.49582 194.103373 
+L 290.385285 194.59618 
+L 291.274749 194.221681 
+L 292.164214 193.201903 
+L 293.053678 192.888229 
+L 295.722072 191.553251 
+L 296.611536 191.163821 
+L 297.501001 190.63956 
+L 299.27993 190.199545 
+L 309.06404 186.675601 
+L 309.953504 185.653981 
+L 310.842969 184.249576 
+L 312.621898 182.035879 
+L 313.511362 180.250065 
+L 314.400827 179.113415 
+L 315.290291 178.490142 
+L 317.958685 178.030012 
+L 318.848149 177.433853 
+L 319.737614 177.905637 
+L 323.295472 178.819303 
+L 324.184936 179.241233 
+L 325.074401 179.843558 
+L 327.742794 180.643834 
+L 329.521723 182.238874 
+L 330.411188 183.964266 
+L 332.190117 185.22857 
+L 333.079581 186.145275 
+L 333.969046 186.528967 
+L 334.85851 186.611333 
+L 335.747975 186.58133 
+L 336.637439 185.679923 
+L 337.526904 185.214205 
+L 338.416368 185.334494 
+L 339.305833 185.074116 
+L 340.195297 184.593618 
+L 341.084762 184.598991 
+L 341.974226 184.769397 
+L 343.753155 184.609408 
+L 344.64262 184.022254 
+L 345.532084 183.832804 
+L 346.421549 183.473351 
+L 347.311013 182.960656 
+L 348.200478 181.217027 
+L 349.089942 177.597412 
+L 349.979407 176.719185 
+L 350.868871 176.287909 
+L 351.758336 172.496979 
+L 352.6478 167.858065 
+L 353.537265 172.227068 
+L 354.426729 174.742268 
+L 355.316194 174.991207 
+L 356.205658 173.374954 
+L 357.095123 172.560781 
+L 357.984587 174.223065 
+L 358.874052 179.75461 
+L 359.763517 177.520507 
+L 360.652981 178.358516 
+L 362.43191 186.860612 
+L 364.210839 193.886934 
+L 365.100304 194.744315 
+L 365.989768 194.539289 
+L 369.547626 192.732439 
+L 370.437091 192.09542 
+L 371.326555 191.116843 
+L 372.21602 189.948677 
+L 373.105484 186.426814 
+L 373.994949 181.241178 
+L 375.773878 176.172161 
+L 376.663342 170.621296 
+L 377.552807 163.6956 
+L 378.442271 163.700821 
+L 379.331736 169.379504 
+L 380.2212 168.683223 
+L 381.110665 165.908944 
+L 382.000129 163.929329 
+L 382.889594 163.586549 
+L 383.779058 163.932444 
+L 384.668523 163.58076 
+L 384.668523 163.58076 
+" clip-path="url(#pd6e3d2542f)" style="fill: none; stroke: #ff7f0e; stroke-opacity: 0.8; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_16">
-    <path d="M 58.999432 45.628502 
-L 59.833305 50.52351 
-L 60.667178 46.181138 
-L 61.501051 47.904043 
-L 62.334924 54.88292 
-L 63.168797 59.430549 
-L 64.00267 60.372716 
-L 64.836543 60.729244 
-L 65.670416 64.150058 
-L 66.504289 63.239547 
-L 67.338162 63.773855 
-L 68.172035 66.06594 
-L 69.005908 66.955215 
-L 69.839781 65.794858 
-L 70.673653 64.277096 
-L 71.507526 65.547729 
-L 72.341399 65.723897 
-L 73.175272 64.661092 
-L 74.009145 65.367965 
-L 74.843018 66.258013 
-L 75.676891 66.015989 
-L 76.510764 65.646619 
-L 77.344637 66.908228 
-L 78.17851 66.558453 
-L 79.012383 66.625021 
-L 79.846256 67.708412 
-L 80.680129 68.34716 
-L 81.514002 68.130264 
-L 82.347875 67.741672 
-L 83.181748 68.6055 
-L 84.015621 68.727163 
-L 84.849494 68.596182 
-L 85.683367 69.313424 
-L 86.51724 69.629125 
-L 87.351113 69.245806 
-L 88.184986 68.671881 
-L 89.018859 69.125733 
-L 89.852732 68.675633 
-L 90.686605 68.361559 
-L 91.520478 68.708564 
-L 92.354351 68.636125 
-L 94.022097 67.053927 
-L 94.85597 67.134596 
-L 95.689843 66.84154 
-L 96.523716 66.087414 
-L 98.191462 65.699815 
-L 99.859208 64.654874 
-L 100.693081 64.801389 
-L 101.526954 64.335589 
-L 102.360827 64.044186 
-L 103.1947 64.2371 
-L 104.028573 64.21467 
-L 105.696318 63.326456 
-L 106.530191 63.480525 
-L 107.364064 63.126304 
-L 109.03181 63.106984 
-L 109.865683 63.514321 
-L 110.699556 63.741202 
-L 112.367302 63.5142 
-L 113.201175 63.767498 
-L 114.035048 63.706527 
-L 114.868921 63.878514 
-L 116.536667 64.739368 
-L 118.204413 65.362188 
-L 119.872159 66.452834 
-L 120.706032 67.219167 
-L 122.373778 69.448608 
-L 126.543143 76.161918 
-L 131.546381 84.697697 
-L 134.881873 90.002758 
-L 138.217365 94.924631 
-L 141.552856 99.503228 
-L 144.888348 103.748529 
-L 148.22384 107.665688 
-L 152.393205 112.154669 
-L 156.56257 116.203773 
-L 159.898062 119.140044 
-L 164.067427 122.506975 
-L 169.904538 126.650385 
-L 175.741649 130.255011 
-L 182.412632 133.692229 
-L 188.249743 136.319991 
-L 194.086854 138.445625 
-L 202.425584 140.731296 
-L 213.265932 142.932034 
-L 220.770789 143.921856 
-L 223.272408 144.329338 
-L 227.441773 144.879356 
-L 229.943392 145.197776 
-L 236.614376 145.978822 
-L 239.115995 146.238454 
-L 241.617614 146.483855 
-L 248.288597 147.087923 
-L 249.956343 147.161463 
-L 252.457962 147.437254 
-L 256.627327 147.796442 
-L 258.295073 147.976456 
-L 262.464438 148.349422 
-L 264.132184 148.461584 
-L 265.79993 148.519288 
-L 271.637041 148.907577 
-L 274.13866 149.096279 
-L 275.806406 149.223038 
-L 279.141898 149.375071 
-L 281.643517 149.573377 
-L 285.812881 149.781346 
-L 287.480627 149.862432 
-L 290.816119 149.948943 
-L 292.483865 150.0877 
-L 297.487103 150.101074 
-L 299.154849 150.130527 
-L 302.490341 150.092888 
-L 304.99196 150.188703 
-L 308.327452 150.18023 
-L 310.829071 150.297782 
-L 314.164563 150.360871 
-L 316.666182 150.50011 
-L 320.001673 150.535407 
-L 322.503292 150.656327 
-L 326.672657 150.740789 
-L 328.340403 150.776185 
-L 333.343641 150.629092 
-L 335.011387 150.715241 
-L 339.180752 150.689219 
-L 353.356592 151.166671 
-L 357.525957 151.030332 
-L 359.193703 151.03294 
-L 361.695322 150.875105 
-L 363.363068 150.819501 
-L 363.363068 150.819501 
-" clip-path="url(#pf68e9d3dc4)" style="fill: none; stroke: #2ca02c; stroke-opacity: 0.8; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 60.013977 50.290577 
+L 60.903442 56.164587 
+L 61.792906 50.953741 
+L 62.682371 53.021226 
+L 63.571835 61.395879 
+L 64.4613 66.853034 
+L 65.350764 67.983634 
+L 66.240229 68.411468 
+L 67.129693 72.516445 
+L 68.019158 71.423831 
+L 68.908622 72.065001 
+L 69.798087 74.815503 
+L 70.687551 75.882633 
+L 71.577016 74.490205 
+L 72.46648 72.66889 
+L 73.355945 74.193649 
+L 74.245409 74.405052 
+L 75.134874 73.129686 
+L 76.024338 73.977933 
+L 76.913803 75.04599 
+L 77.803267 74.755561 
+L 78.692732 74.312318 
+L 79.582196 75.826249 
+L 80.471661 75.406519 
+L 81.361125 75.4864 
+L 82.25059 76.786469 
+L 83.140054 77.552967 
+L 84.029519 77.292692 
+L 84.918983 76.826382 
+L 85.808448 77.862974 
+L 86.697913 78.00897 
+L 87.587377 77.851793 
+L 88.476842 78.712484 
+L 89.366306 79.091325 
+L 90.255771 78.631342 
+L 91.145235 77.942632 
+L 92.0347 78.487255 
+L 92.924164 77.947135 
+L 93.813629 77.570246 
+L 94.703093 77.986652 
+L 95.592558 77.899726 
+L 97.371487 76.001087 
+L 98.260951 76.09789 
+L 99.150416 75.746223 
+L 100.03988 74.841272 
+L 100.929345 74.547004 
+L 101.818809 74.376153 
+L 103.597738 73.122223 
+L 104.487203 73.298042 
+L 105.376667 72.739082 
+L 106.266132 72.389398 
+L 107.155596 72.620896 
+L 108.045061 72.593979 
+L 109.82399 71.528122 
+L 110.713454 71.713005 
+L 111.602919 71.28794 
+L 113.381848 71.264756 
+L 114.271312 71.75356 
+L 115.160777 72.025818 
+L 116.939706 71.753416 
+L 117.82917 72.057372 
+L 118.718635 71.984208 
+L 119.608099 72.190592 
+L 121.387028 73.223617 
+L 123.165957 73.971001 
+L 124.944886 75.279775 
+L 125.834351 76.199376 
+L 127.61328 78.874704 
+L 132.060602 86.930676 
+L 137.397389 97.173611 
+L 140.955248 103.539685 
+L 144.513106 109.445932 
+L 148.070964 114.940248 
+L 151.628822 120.03461 
+L 155.18668 124.7352 
+L 158.744538 129.091392 
+L 162.302396 133.081694 
+L 165.860254 136.783959 
+L 171.197041 141.784927 
+L 175.644363 145.441296 
+L 178.312757 147.516837 
+L 184.539008 151.842388 
+L 191.654724 155.96705 
+L 197.880976 159.120364 
+L 204.107228 161.671125 
+L 212.112408 164.192692 
+L 221.896518 166.561595 
+L 223.675447 166.804169 
+L 224.564911 167.054815 
+L 232.570092 168.242602 
+L 235.238485 168.73158 
+L 239.685808 169.391602 
+L 241.464737 169.672654 
+L 245.912059 170.278934 
+L 247.690988 170.535664 
+L 252.138311 171.02252 
+L 253.91724 171.244816 
+L 258.364563 171.683949 
+L 260.143492 171.888258 
+L 264.590814 172.270475 
+L 266.369743 172.46108 
+L 269.927601 172.742562 
+L 272.595995 173.108122 
+L 276.153853 173.41059 
+L 277.932782 173.677224 
+L 282.380104 173.830615 
+L 299.27993 175.126798 
+L 301.058859 175.167373 
+L 302.837788 175.358692 
+L 307.285111 175.475107 
+L 309.06404 175.641615 
+L 314.400827 175.657664 
+L 316.179756 175.693007 
+L 319.737614 175.647841 
+L 322.406007 175.762819 
+L 325.963865 175.752651 
+L 328.632259 175.893713 
+L 332.190117 175.969421 
+L 334.85851 176.136507 
+L 338.416368 176.178863 
+L 341.084762 176.323967 
+L 345.532084 176.425321 
+L 347.311013 176.467797 
+L 352.6478 176.291286 
+L 354.426729 176.394665 
+L 358.874052 176.363438 
+L 370.437091 176.966891 
+L 372.21602 177.033467 
+L 378.442271 176.772773 
+L 379.331736 176.837332 
+L 384.668523 176.519776 
+L 384.668523 176.519776 
+" clip-path="url(#pd6e3d2542f)" style="fill: none; stroke: #2ca02c; stroke-opacity: 0.8; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="patch_3">
-    <path d="M 43.78125 218.158125 
+    <path d="M 43.78125 257.326125 
 L 43.78125 22.318125 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_4">
-    <path d="M 378.58125 218.158125 
-L 378.58125 22.318125 
+    <path d="M 400.90125 257.326125 
+L 400.90125 22.318125 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_5">
-    <path d="M 43.78125 218.158125 
-L 378.58125 218.158125 
+    <path d="M 43.78125 257.326125 
+L 400.90125 257.326125 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_6">
     <path d="M 43.78125 22.318125 
-L 378.58125 22.318125 
+L 400.90125 22.318125 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_17">
     <!-- 2020 TSA Traveler Throughput -->
-    <g transform="translate(119.660625 16.318125)scale(0.12 -0.12)">
+    <g transform="translate(130.820625 16.318125)scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-20" transform="scale(0.015625)"/>
       <path id="DejaVuSans-54" d="M -19 4666 
@@ -23196,27 +23127,27 @@ z
    </g>
    <g id="legend_1">
     <g id="patch_7">
-     <path d="M 288.128125 74.3525 
-L 371.58125 74.3525 
-Q 373.58125 74.3525 373.58125 72.3525 
-L 373.58125 29.318125 
-Q 373.58125 27.318125 371.58125 27.318125 
-L 288.128125 27.318125 
-Q 286.128125 27.318125 286.128125 29.318125 
-L 286.128125 72.3525 
-Q 286.128125 74.3525 288.128125 74.3525 
+     <path d="M 310.448125 74.3525 
+L 393.90125 74.3525 
+Q 395.90125 74.3525 395.90125 72.3525 
+L 395.90125 29.318125 
+Q 395.90125 27.318125 393.90125 27.318125 
+L 310.448125 27.318125 
+Q 308.448125 27.318125 308.448125 29.318125 
+L 308.448125 72.3525 
+Q 308.448125 74.3525 310.448125 74.3525 
 z
 " style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
     </g>
     <g id="line2d_17">
-     <path d="M 290.128125 35.416563 
-L 300.128125 35.416563 
-L 310.128125 35.416563 
+     <path d="M 312.448125 35.416562 
+L 322.448125 35.416562 
+L 332.448125 35.416562 
 " style="fill: none; stroke: #1f77b4; stroke-opacity: 0.8; stroke-width: 1.5; stroke-linecap: square"/>
     </g>
     <g id="text_18">
      <!-- travelers -->
-     <g transform="translate(318.128125 38.916563)scale(0.1 -0.1)">
+     <g transform="translate(340.448125 38.916562)scale(0.1 -0.1)">
       <use xlink:href="#DejaVuSans-74"/>
       <use xlink:href="#DejaVuSans-72" x="39.208984"/>
       <use xlink:href="#DejaVuSans-61" x="80.322266"/>
@@ -23229,14 +23160,14 @@ L 310.128125 35.416563
      </g>
     </g>
     <g id="line2d_18">
-     <path d="M 290.128125 50.094688 
-L 300.128125 50.094688 
-L 310.128125 50.094688 
+     <path d="M 312.448125 50.094688 
+L 322.448125 50.094688 
+L 332.448125 50.094688 
 " style="fill: none; stroke: #ff7f0e; stroke-opacity: 0.8; stroke-width: 1.5; stroke-linecap: square"/>
     </g>
     <g id="text_19">
      <!-- 7D MA -->
-     <g transform="translate(318.128125 53.594688)scale(0.1 -0.1)">
+     <g transform="translate(340.448125 53.594688)scale(0.1 -0.1)">
       <defs>
        <path id="DejaVuSans-44" d="M 1259 4147 
 L 1259 519 
@@ -23282,14 +23213,14 @@ z
      </g>
     </g>
     <g id="line2d_19">
-     <path d="M 290.128125 64.772813 
-L 300.128125 64.772813 
-L 310.128125 64.772813 
+     <path d="M 312.448125 64.772812 
+L 322.448125 64.772812 
+L 332.448125 64.772812 
 " style="fill: none; stroke: #2ca02c; stroke-opacity: 0.8; stroke-width: 1.5; stroke-linecap: square"/>
     </g>
     <g id="text_20">
      <!-- YTD mean -->
-     <g transform="translate(318.128125 68.272813)scale(0.1 -0.1)">
+     <g transform="translate(340.448125 68.272812)scale(0.1 -0.1)">
       <defs>
        <path id="DejaVuSans-59" d="M -13 4666 
 L 666 4666 
@@ -23367,8 +23298,8 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pf68e9d3dc4">
-   <rect x="43.78125" y="22.318125" width="334.8" height="195.84"/>
+  <clipPath id="pd6e3d2542f">
+   <rect x="43.78125" y="22.318125" width="357.12" height="235.008"/>
   </clipPath>
  </defs>
 </svg>
@@ -23381,7 +23312,7 @@ z
 
 </div>
 
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -23397,7 +23328,7 @@ z
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -23408,7 +23339,7 @@ z
 </div>
 </div>
 </div>
-</div></section><section>
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -23419,7 +23350,7 @@ z
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -23449,9 +23380,7 @@ z
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
 
@@ -23536,14 +23465,14 @@ z
 
 </div>
 
-</div></div></section></section><section><section>
+</div></div></section></section><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Section-2-Complete-%F0%9F%8E%89">Section 2 Complete &#127881;<a class="anchor-link" href="#Section-2-Complete-%F0%9F%8E%89">&#182;</a></h2><p><img width="30%" src="https://www.pngkey.com/png/detail/129-1298535_panda-bear-images-cartoon-cute-panda-bear.png" alt="Panda Bear Images - Cartoon Cute Panda Bear@pngkey.com" style="min-width: 300px"></p>
+<h2 id="Section-2-Complete-%F0%9F%8E%89">Section 2 Complete &#127881;<a class="anchor-link" href="#Section-2-Complete-%F0%9F%8E%89">&#182;</a></h2><img width="30%" src="https://www.pngkey.com/png/detail/129-1298535_panda-bear-images-cartoon-cute-panda-bear.png" alt="Panda Bear Images - Cartoon Cute Panda Bear@pngkey.com" style="min-width: 300px">
 
 </div>
 </div>
@@ -23615,7 +23544,8 @@ require(
                     if (!isNaN(input)) {
                       const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
                       const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
-                      Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                      // set fragment to large number (100) to ensure the full slide is displayed
+                      Reveal.slide(slideIndices.h, slideIndices.v, 100);
                     }
                     else if (typeof input === "string" || input instanceof String) {
                         const slideName = input.replaceAll(' ', '-');
@@ -23697,6 +23627,26 @@ require(
                 () => { window.location = `#/${id}`; }
             );
         }
+
+        // fix any collisions in the clip-path introduced from reproducible SVG plots
+        // that cause plot components not to render (clipPath objects with duplicate IDs)
+        const clipPathIds = {};
+        $('clipPath').each((index, element) => {
+            const oldId = $(element).attr('id');
+            if (oldId in clipPathIds) {
+                // change this id and grab the parent SVG
+                // and then for all the elements with clip-path switch the id
+                const newId = `${oldId}${clipPathIds[oldId]}`;
+                $(element).attr('id', newId);
+                $(element).closest('svg').find('[clip-path]').each((index, item) => {
+                    if ($(item).attr('clip-path') === `url(#${oldId})`) {
+                        $(item).attr('clip-path', `url(#${newId})`);
+                    }
+                });
+                clipPathIds[oldId] += 1;
+            }
+            else clipPathIds[oldId] = 1;
+        });
     }
 );
 </script>
