@@ -97,6 +97,9 @@ a.anchor-link {
     width: 900px;
     height: 600px;
 }
+.jp-Collapser { /* hide that blue collapse button on the side of cells that does nothing */
+    display: none;
+}
 .slide-number {
     background-color: transparent !important;
     color: black !important;
@@ -212,7 +215,8 @@ require(
                     if (!isNaN(input)) {
                       const requestedSlideNumber = Math.max(Math.min(input, slides.length) - 1, 0);
                       const slideIndices = Reveal.getIndices(slides[requestedSlideNumber]);
-                      Reveal.slide(slideIndices.h, slideIndices.v, 100); // set fragment to large number to ensure the full slide is displayed
+                      // set fragment to large number to ensure the full slide is displayed
+                      Reveal.slide(slideIndices.h, slideIndices.v, 100);
                     }
                     else if (typeof input === "string" || input instanceof String) {
                         const slideName = input.replaceAll(' ', '-');
@@ -292,6 +296,26 @@ require(
                 () => { window.location = `#/${id}`; }
             );
         }
+
+        // fix any collisions in the clip-path introduced from reproducible SVG plots
+        // that cause plot components not to render (clipPath objects with duplicate IDs)
+        const clipPathIds = {};
+        $('clipPath').each((index, element) => {
+            const oldId = $(element).attr('id');
+            if (oldId in clipPathIds) {
+                // change this id and grab the parent SVG
+                // and then for all the elements with clip-path switch the id
+                const newId = `${oldId}${clipPathIds[oldId]}`;
+                $(element).attr('id', newId);
+                $(element).closest('svg').find('[clip-path]').each((index, item) => {
+                    if ($(item).attr('clip-path') === `url(#${oldId})`) {
+                        $(item).attr('clip-path', `url(#${newId})`);
+                    }
+                });
+                clipPathIds[oldId] += 1;
+            }
+            else clipPathIds[oldId] = 1;
+        });
     }
 );
 </script>
