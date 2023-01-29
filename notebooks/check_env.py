@@ -6,7 +6,11 @@ import importlib
 import json
 import os
 import sys
-import yaml
+
+try:
+    import yaml
+except ImportError:
+    from ruamel import yaml
 
 
 def _print_version_ok(item):

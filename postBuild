@@ -1,4 +1,0 @@
-#!/bin/bash
-# need to install by hand for Binder
-conda install -c conda-forge --freeze-installed -y pyyaml
-
