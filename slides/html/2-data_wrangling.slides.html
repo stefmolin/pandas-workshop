@@ -14679,7 +14679,7 @@ div.jp-OutputPrompt {
 <div class="footer" style="padding: 4px; font-size: 22px;">
     Introduction to Data Analysis Using Pandas &ndash; Stefanie Molin
     <div style="float: right; margin-top: -18px;">
-        <a href="https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab" style="z-index: 1;" target="_blank" rel="noopener noreferrer">
+        <a href="https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab/tree/notebooks" style="z-index: 1;" target="_blank" rel="noopener noreferrer">
             <img src="https://camo.githubusercontent.com/581c077bdbc6ca6899c86d0acc6145ae85e9d80e6f805a1071793dbe48917982/68747470733a2f2f6d7962696e6465722e6f72672f62616467655f6c6f676f2e737667" alt="Binder" data-canonical-src="https://mybinder.org/badge_logo.svg" style="max-width: 100%; margin: 20px 0 0 0;">
         </a>
         <a href="https://github.com/stefmolin/pandas-workshop" style="z-index: 1;" target="_blank" rel="noopener noreferrer">
@@ -15174,12 +15174,11 @@ div.jp-OutputPrompt {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span> <span class="o">=</span> <span class="n">taxis</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
     <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
         <span class="s1">&#39;tpep_pickup_datetime&#39;</span><span class="p">:</span> <span class="s1">&#39;pickup&#39;</span><span class="p">,</span> 
         <span class="s1">&#39;tpep_dropoff_datetime&#39;</span><span class="p">:</span> <span class="s1">&#39;dropoff&#39;</span>
-    <span class="p">},</span>
-    <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">}</span>
 <span class="p">)</span>
 <span class="n">taxis</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
@@ -15215,19 +15214,7 @@ div.jp-OutputPrompt {
 
 </div>
 
-</div><div class="fragment" >
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Important</strong>: This operation was performed in-place – be careful with in-place operations.</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section >
+</div></section><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15311,8 +15298,8 @@ dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;pickup&#39;</span><span class="p">,</span> <span class="s1">&#39;dropoff&#39;</span><span class="p">]]</span> <span class="o">=</span> \
-    <span class="n">taxis</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;pickup&#39;</span><span class="p">,</span> <span class="s1">&#39;dropoff&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="p">[[</span><span class="s1">&#39;pickup&#39;</span><span class="p">,</span> <span class="s1">&#39;dropoff&#39;</span><span class="p">]]</span> <span class="o">=</span> \
+    <span class="n">taxis</span><span class="p">[[</span><span class="s1">&#39;pickup&#39;</span><span class="p">,</span> <span class="s1">&#39;dropoff&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">)</span>
 <span class="n">taxis</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 
@@ -16119,7 +16106,7 @@ dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;pickup&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span> <span class="o">=</span> <span class="n">taxis</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;pickup&#39;</span><span class="p">)</span>
 <span class="n">taxis</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
@@ -16290,7 +16277,7 @@ dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span> <span class="o">=</span> <span class="n">taxis</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16650,7 +16637,7 @@ dtype: object</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span> <span class="o">=</span> <span class="n">taxis</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">taxis</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -20061,8 +20048,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;dropoff&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">taxis</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">taxis</span> <span class="o">=</span> <span class="n">taxis</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;dropoff&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -20806,7 +20792,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span> <span class="o">=</span> <span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -21441,7 +21427,7 @@ Name: year, dtype: float64</pre>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.5.1, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.6.3, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -21482,7 +21468,7 @@ L 0 3.5
      </g>
      <g id="text_1">
       <!-- 2020-01 -->
-      <g transform="translate(22.789156 291.797971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(22.789156 291.797971) rotate(-30) scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-32" d="M 1228 531 
 L 3431 531 
@@ -21569,7 +21555,7 @@ z
      </g>
      <g id="text_2">
       <!-- 2020-03 -->
-      <g transform="translate(76.157027 291.797971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(76.157027 291.797971) rotate(-30) scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-33" d="M 2597 2516 
 Q 3050 2419 3304 2112 
@@ -21622,7 +21608,7 @@ z
      </g>
      <g id="text_3">
       <!-- 2020-05 -->
-      <g transform="translate(130.414362 291.797971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(130.414362 291.797971) rotate(-30) scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-35" d="M 691 4666 
 L 3169 4666 
@@ -21668,7 +21654,7 @@ z
      </g>
      <g id="text_4">
       <!-- 2020-07 -->
-      <g transform="translate(184.671697 291.797971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(184.671697 291.797971) rotate(-30) scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-37" d="M 525 4666 
 L 3525 4666 
@@ -21699,7 +21685,7 @@ z
      </g>
      <g id="text_5">
       <!-- 2020-09 -->
-      <g transform="translate(239.818496 291.797971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(239.818496 291.797971) rotate(-30) scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-39" d="M 703 97 
 L 703 672 
@@ -21750,7 +21736,7 @@ z
      </g>
      <g id="text_6">
       <!-- 2020-11 -->
-      <g transform="translate(294.075831 291.797971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(294.075831 291.797971) rotate(-30) scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-32"/>
        <use xlink:href="#DejaVuSans-30" x="63.623047"/>
        <use xlink:href="#DejaVuSans-32" x="127.246094"/>
@@ -21769,7 +21755,7 @@ z
      </g>
      <g id="text_7">
       <!-- 2021-01 -->
-      <g transform="translate(348.333166 291.797971)rotate(-30)scale(0.1 -0.1)">
+      <g transform="translate(348.333166 291.797971) rotate(-30) scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-32"/>
        <use xlink:href="#DejaVuSans-30" x="63.623047"/>
        <use xlink:href="#DejaVuSans-32" x="127.246094"/>
@@ -21782,7 +21768,7 @@ z
     </g>
     <g id="text_8">
      <!-- date -->
-     <g transform="translate(211.06625 305.197471)scale(0.1 -0.1)">
+     <g transform="translate(211.06625 305.197471) scale(0.1 -0.1)">
       <defs>
        <path id="DejaVuSans-64" d="M 2906 2969 
 L 2906 4863 
@@ -21911,7 +21897,7 @@ L -3.5 0
      </g>
      <g id="text_9">
       <!-- 0.0 -->
-      <g transform="translate(20.878125 258.170709)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 258.170709) scale(0.1 -0.1)">
        <defs>
         <path id="DejaVuSans-2e" d="M 684 794 
 L 1344 794 
@@ -21935,7 +21921,7 @@ z
      </g>
      <g id="text_10">
       <!-- 0.5 -->
-      <g transform="translate(20.878125 214.030447)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 214.030447) scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-30"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-35" x="95.410156"/>
@@ -21950,7 +21936,7 @@ z
      </g>
      <g id="text_11">
       <!-- 1.0 -->
-      <g transform="translate(20.878125 169.890185)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 169.890185) scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-31"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-30" x="95.410156"/>
@@ -21965,7 +21951,7 @@ z
      </g>
      <g id="text_12">
       <!-- 1.5 -->
-      <g transform="translate(20.878125 125.749923)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 125.749923) scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-31"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-35" x="95.410156"/>
@@ -21980,7 +21966,7 @@ z
      </g>
      <g id="text_13">
       <!-- 2.0 -->
-      <g transform="translate(20.878125 81.60966)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 81.60966) scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-32"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-30" x="95.410156"/>
@@ -21995,7 +21981,7 @@ z
      </g>
      <g id="text_14">
       <!-- 2.5 -->
-      <g transform="translate(20.878125 37.469398)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 37.469398) scale(0.1 -0.1)">
        <use xlink:href="#DejaVuSans-32"/>
        <use xlink:href="#DejaVuSans-2e" x="63.623047"/>
        <use xlink:href="#DejaVuSans-35" x="95.410156"/>
@@ -22004,7 +21990,7 @@ z
     </g>
     <g id="text_15">
      <!-- travelers -->
-     <g transform="translate(14.798438 162.063531)rotate(-90)scale(0.1 -0.1)">
+     <g transform="translate(14.798438 162.063531) rotate(-90) scale(0.1 -0.1)">
       <defs>
        <path id="DejaVuSans-72" d="M 2631 2963 
 Q 2534 3019 2420 3045 
@@ -22085,7 +22071,7 @@ z
     </g>
     <g id="text_16">
      <!-- 1e6 -->
-     <g transform="translate(43.78125 19.318125)scale(0.1 -0.1)">
+     <g transform="translate(43.78125 19.318125) scale(0.1 -0.1)">
       <defs>
        <path id="DejaVuSans-36" d="M 2113 2584 
 Q 1688 2584 1439 2293 
@@ -22911,7 +22897,7 @@ L 400.90125 22.318125
    </g>
    <g id="text_17">
     <!-- 2020 TSA Traveler Throughput -->
-    <g transform="translate(130.820625 16.318125)scale(0.12 -0.12)">
+    <g transform="translate(130.820625 16.318125) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-20" transform="scale(0.015625)"/>
       <path id="DejaVuSans-54" d="M -19 4666 
@@ -23147,7 +23133,7 @@ L 332.448125 35.416562
     </g>
     <g id="text_18">
      <!-- travelers -->
-     <g transform="translate(340.448125 38.916562)scale(0.1 -0.1)">
+     <g transform="translate(340.448125 38.916562) scale(0.1 -0.1)">
       <use xlink:href="#DejaVuSans-74"/>
       <use xlink:href="#DejaVuSans-72" x="39.208984"/>
       <use xlink:href="#DejaVuSans-61" x="80.322266"/>
@@ -23167,7 +23153,7 @@ L 332.448125 50.094688
     </g>
     <g id="text_19">
      <!-- 7D MA -->
-     <g transform="translate(340.448125 53.594688)scale(0.1 -0.1)">
+     <g transform="translate(340.448125 53.594688) scale(0.1 -0.1)">
       <defs>
        <path id="DejaVuSans-44" d="M 1259 4147 
 L 1259 519 
@@ -23220,7 +23206,7 @@ L 332.448125 64.772812
     </g>
     <g id="text_20">
      <!-- YTD mean -->
-     <g transform="translate(340.448125 68.272812)scale(0.1 -0.1)">
+     <g transform="translate(340.448125 68.272812) scale(0.1 -0.1)">
       <defs>
        <path id="DejaVuSans-59" d="M -13 4666 
 L 666 4666 

@@ -11,4 +11,4 @@ This directory contains the notebooks for following along with the session. You 
 | 4: Hands-On Data Analysis Lab | `4-hands_on_data_analysis_lab.ipynb` |
 
 
-**NOTE**: The `utils.py` file will be used only in `0-check_your_env.ipynb`, which you will use to check your setup.
+**NOTE**: The `check_env.py` file will be used only in `0-check_your_env.ipynb`, which you will use to check your setup. The `utils.py` file contains a function for configuring our plotting backend.
