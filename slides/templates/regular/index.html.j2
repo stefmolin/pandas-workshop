@@ -220,6 +220,50 @@ require(
             }
         );
 
+        // add exercise timer
+        Reveal.addKeyBinding(
+            { keyCode: 84, key: "T", description: "Setup exercise timer" },
+            () => {
+                const input = prompt("How many minutes?");
+                if (input !== undefined && input !== "" && input !== null){
+                    if (!isNaN(input)) {
+                      const exerciseTime = input * 60 * 1000;
+                      const countDownTime = new Date(new Date().getTime() + exerciseTime).getTime();
+
+                      const getTimeText = (elapsedTime) => {
+                          const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+                          const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+                          return `${minutes}m ${seconds}s`;
+                      }
+
+                      if ($('.exercise-timer').length === 0) {
+                          $('.reveal').append(
+                              `<aside class="exercise-timer" style="display: block; position: absolute; `
+                              + `top: auto; left: 15px; right: auto; bottom: 36px;`
+                              + `font-size: 50px;"></aside>`
+                          )
+                      }
+
+                      const updateFrequency = 1000;
+                      $('.exercise-timer').text(getTimeText(exerciseTime - updateFrequency));
+
+                      const updateTimer = setInterval(function() {
+
+                          const now = new Date().getTime();
+                          const elapsedTime = countDownTime - now;
+
+                          if (elapsedTime >= 1000) $('.exercise-timer').text(getTimeText(elapsedTime));
+                          else if (elapsedTime > -5 * 1000) $('.exercise-timer').text('TIME IS UP');
+                          else {
+                              clearInterval(updateTimer);
+                              $('.exercise-timer').remove();
+                          }
+                        }, updateFrequency);
+                    }
+                }
+            }
+        );
+
         var update = function(event){
           if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
             MathJax.Hub.Rerender(Reveal.getCurrentSlide());
