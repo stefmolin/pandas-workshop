@@ -259,6 +259,11 @@ require(
                           const elapsedTime = countDownTime - now;
 
                           if (elapsedTime >= 1000) $('.exercise-timer').text(getTimeText(elapsedTime));
+                          else if (elapsedTime >= 0) {
+                              $('.exercise-timer').text(getTimeText(0));
+                              const audio = new Audio('../../media/time_is_up.m4a'); // TODO switch to URL of hosted version
+                              audio.play();
+                          }
                           else if (elapsedTime >= -5 * 1000) $('.exercise-timer').text("TIME'S UP");
                           else {
                               clearInterval(updateExerciseTimerInterval);
