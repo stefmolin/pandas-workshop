@@ -148,7 +148,7 @@ a.anchor-link {
             <img alt="View repo on GitHub" src="https://img.shields.io/badge/view-repo-orange?logo=github" style="max-width: 100%; margin: 20px 0 0 0;">
         </a>
     </div>
-    <!-- alternate clock location under title
+    <!-- TODO: decide on a location for this; here's an alternate clock location under title
         <div class="clock" style="margin-right: 5px; position: absolute; top: 40px;"></div>
     -->
     <div class="clock" style="margin-right: 5px; float: right;"></div>
@@ -229,7 +229,7 @@ require(
             () => {
                 const input = prompt("How many minutes?");
                 if (input !== undefined && input !== "" && input !== null){
-                    if (!isNaN(input)) {
+                    if (!isNaN(input) && input >= 0.1) {
                       const exerciseTime = input * 60 * 1000;
                       const countDownTime = new Date(new Date().getTime() + exerciseTime).getTime();
 
