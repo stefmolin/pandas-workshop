@@ -221,6 +221,7 @@ require(
         );
 
         // add exercise timer
+        let updateExerciseTimerInterval;
         Reveal.addKeyBinding(
             { keyCode: 84, key: "T", description: "Setup exercise timer" },
             () => {
@@ -233,32 +234,38 @@ require(
                       const getTimeText = (elapsedTime) => {
                           const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
                           const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
-                          return `${minutes}m ${seconds}s`;
+                          const padInt = (x) => String(x).padStart(2, '0');
+                          return `⏱ ${padInt(minutes)}:${padInt(seconds)}`;
                       }
 
-                      if ($('.exercise-timer').length === 0) {
+                      if ($('.exercise-timer').length === 0) { // add to DOM if not already there
                           $('.reveal').append(
                               `<aside class="exercise-timer" style="display: block; position: absolute; `
                               + `top: auto; left: 15px; right: auto; bottom: 36px;`
                               + `font-size: 50px;"></aside>`
-                          )
+                          );
                       }
 
+                      // in case the key is pressed while a timer is already running, clear the old one
+                      if (!isNaN(updateExerciseTimerInterval)) clearInterval(updateExerciseTimerInterval);
+
+                      // write the starting time minus the 1 second delay before the update
                       const updateFrequency = 1000;
                       $('.exercise-timer').text(getTimeText(exerciseTime - updateFrequency));
 
-                      const updateTimer = setInterval(function() {
-
+                      // update the remaining time each second
+                      const updateTimer = () => {
                           const now = new Date().getTime();
                           const elapsedTime = countDownTime - now;
 
                           if (elapsedTime >= 1000) $('.exercise-timer').text(getTimeText(elapsedTime));
-                          else if (elapsedTime > -5 * 1000) $('.exercise-timer').text('TIME IS UP');
+                          else if (elapsedTime >= -5 * 1000) $('.exercise-timer').text("TIME'S UP");
                           else {
-                              clearInterval(updateTimer);
+                              clearInterval(updateExerciseTimerInterval);
                               $('.exercise-timer').remove();
                           }
-                        }, updateFrequency);
+                      }
+                      updateExerciseTimerInterval = setInterval(updateTimer, updateFrequency);
                     }
                 }
             }
