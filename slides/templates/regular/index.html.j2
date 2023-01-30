@@ -307,6 +307,64 @@ require(
             }
         );
 
+        // show clock in red when 5 minutes from desired time
+        let updateFMWInterval;
+        Reveal.addKeyBinding(
+            { keyCode: 90, key: "Z", description: "Set 5-minute warning" },
+            () => {
+                const input = prompt("What is the ending time? (leave empty to clear)");
+                const cleanup = () => {
+                  clearInterval(updateFMWInterval);
+                  $('.clock').text('').css('color', 'black');
+                  updateFMWInterval = 'cleared';
+                }
+                if (input !== undefined && input !== "" && input !== null && input.includes(':')){
+
+                  if (!isNaN(updateFMWInterval)) cleanup();
+
+                  const endAt = new Date();
+                  const warnAt = new Date();
+
+                  const [time, ampm] = input.split(' ');
+                  let [endHour, endMinute] = time.split(':').map((x) => parseInt(x));
+                  const militaryTime = ampm === undefined;
+                  let shiftHours = militaryTime ? 0 : (ampm.toLowerCase() === 'pm' ? 12 : 0);
+
+                  endAt.setHours(endHour + shiftHours);
+                  endAt.setMinutes(endMinute);
+                  endAt.setSeconds(0);
+
+                  endMinute -= 5;
+                  if (endMinute < 0) {
+                      endMinute += 60;
+                      endHour -= 1;
+                  }
+                  if (endHour === 0 && !militaryTime) {
+                      endHour = 12;
+                      shiftHours = 0;
+                  }
+                  else if (endHour < 0 && militaryTime) {
+                      endHour += 24;
+                      warnAt.setDate(warnAt.getDate() - 1);
+                  }
+
+                  warnAt.setHours(endHour + shiftHours);
+                  warnAt.setMinutes(endMinute);
+                  warnAt.setSeconds(0);
+
+                  const checkTime = () => {
+                      const { now, time } = getCurrentTime();
+                      if (now >= endAt) cleanup();
+                      else if (now >= warnAt) {
+                          $('.clock').text(time).css('color', 'red');
+                      }
+                  }
+                  updateFMWInterval = setInterval(checkTime, 1000);
+                }
+                else cleanup();
+            }
+        );
+
         var update = function(event){
           if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
             MathJax.Hub.Rerender(Reveal.getCurrentSlide());
