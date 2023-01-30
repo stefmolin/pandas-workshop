@@ -185,9 +185,7 @@ require(
             }
         });
 
-        function isVisible(display) {
-            return display === 'none' ? 'block' : 'none';
-        }
+        const isVisible = (display) => display === 'none' ? 'block' : 'none';
 
         // add custom controls
         Reveal.addKeyBinding(
@@ -223,7 +221,7 @@ require(
         // add exercise timer
         let updateExerciseTimerInterval;
         Reveal.addKeyBinding(
-            { keyCode: 84, key: "T", description: "Setup exercise timer" },
+            { keyCode: 84, key: "T", description: "Start the exercise timer" },
             () => {
                 const input = prompt("How many minutes?");
                 if (input !== undefined && input !== "" && input !== null){
@@ -264,7 +262,7 @@ require(
                               const audio = new Audio('../../media/time_is_up.m4a'); // TODO switch to URL of hosted version
                               audio.play();
                           }
-                          else if (elapsedTime >= -5 * 1000) $('.exercise-timer').text("TIME'S UP");
+                          else if (elapsedTime >= -5 * 1000) $('.exercise-timer').text("TIME'S UP").css('color', 'red');
                           else {
                               clearInterval(updateExerciseTimerInterval);
                               $('.exercise-timer').remove();
