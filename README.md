@@ -34,11 +34,11 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 0. Install Python >= version 3.8 and <= version 3.11 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line. Alternatively, you can use [this](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab) Binder environment if you don't want to install anything on your machine.
 1. Fork this repository:
 
-    ![location of fork button in GitHub](./images/fork_button.png)
+    ![location of fork button in GitHub](./media/fork_button.png)
 
 2. Clone your forked repository:
 
-    ![location of clone button in GitHub](./images/clone_button.png)
+    ![location of clone button in GitHub](./media/clone_button.png)
 
 3. Create and activate a Python virtual environment:
     - If you installed Anaconda/Miniconda, use `conda` (on Windows, these commands should be run in **Anaconda Prompt**):
@@ -67,11 +67,11 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 
 5. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
 
-    ![open 0-check_your_env.ipynb](./images/open_env_check_notebook.png)
+    ![open 0-check_your_env.ipynb](./media/open_env_check_notebook.png)
 
 6. Run the notebook to confirm everything is set up properly:
 
-    ![check env](./images/env_check.png)
+    ![check env](./media/env_check.png)
 
 ---
 
