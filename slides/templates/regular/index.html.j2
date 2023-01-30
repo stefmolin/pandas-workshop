@@ -148,6 +148,10 @@ a.anchor-link {
             <img alt="View repo on GitHub" src="https://img.shields.io/badge/view-repo-orange?logo=github" style="max-width: 100%; margin: 20px 0 0 0;">
         </a>
     </div>
+    <!-- alternate clock location under title
+        <div class="clock" style="margin-right: 5px; position: absolute; top: 40px;"></div>
+    -->
+    <div class="clock" style="margin-right: 5px; float: right;"></div>
 </div>
 <div class="slides">
 {%- endblock body_header -%}
@@ -271,6 +275,35 @@ require(
                       updateExerciseTimerInterval = setInterval(updateTimer, updateFrequency);
                     }
                 }
+            }
+        );
+
+        const getCurrentTime = () => {
+          const now = new Date();
+          let hours = now.getHours();
+          let minutes = now.getMinutes();
+          const ampm = hours >= 12 ? 'PM' : 'AM';
+          hours = hours % 12;
+          hours = hours ? hours : 12; // the hour '0' should be '12'
+          minutes = minutes < 10 ? '0' + minutes : minutes;
+          return { now, time: `${hours}:${minutes} ${ampm}`};
+        }
+
+        // add clock
+        let updateClockInterval;
+        Reveal.addKeyBinding(
+            { keyCode: 67, key: "C", description: "Toggle the clock" },
+            () => {
+                  if (!isNaN(updateClockInterval)) {
+                      clearInterval(updateClockInterval);
+                      $('.clock').text('');
+                      updateClockInterval = 'cleared';
+                  }
+                  else {
+                      const updateTime = () => $('.clock').text(getCurrentTime().time);
+                      updateTime();
+                      updateClockInterval = setInterval(updateTime, 1000);
+                  }
             }
         );
 
