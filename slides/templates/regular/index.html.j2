@@ -231,7 +231,11 @@ require(
         Reveal.addKeyBinding(
             { keyCode: 84, key: "T", description: "Start the exercise timer" },
             () => {
-                let exerciseTime = prompt("Timer duration in minutes");
+                let exerciseTime = prompt("Timer duration in minutes (leave empty to cancel)");
+                const cleanup = () => {
+                  clearInterval(updateExerciseTimerInterval);
+                  $('.exercise-timer').remove();
+                }
                 if (exerciseTime !== undefined && exerciseTime !== "" && exerciseTime !== null){
                     if (!isNaN(exerciseTime) && exerciseTime >= 0.1) {
                       exerciseTime = Duration.fromMillis(exerciseTime * 60 * 1000);
@@ -267,14 +271,12 @@ require(
                               audio.play();
                           }
                           else if (secondsRemaining >= -5) $('.exercise-timer').text("TIME'S UP").css('color', 'red');
-                          else {
-                              clearInterval(updateExerciseTimerInterval);
-                              $('.exercise-timer').remove();
-                          }
+                          else cleanup();
                       }
                       updateExerciseTimerInterval = setInterval(updateTimer, updateFrequency);
                     }
                 }
+                else cleanup();
             }
         );
 
