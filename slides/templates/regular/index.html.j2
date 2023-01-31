@@ -278,17 +278,6 @@ require(
             }
         );
 
-        const getCurrentTime = () => {
-          const now = new Date();
-          let hours = now.getHours();
-          let minutes = now.getMinutes();
-          const ampm = hours >= 12 ? 'PM' : 'AM';
-          hours = hours % 12;
-          hours = hours ? hours : 12; // the hour '0' should be '12'
-          minutes = minutes < 10 ? '0' + minutes : minutes;
-          return { now, time: `${hours}:${minutes} ${ampm}`};
-        }
-
         // add clock
         let updateClockInterval;
         Reveal.addKeyBinding(
@@ -300,7 +289,7 @@ require(
                       updateClockInterval = 'cleared';
                   }
                   else {
-                      const updateTime = () => $('.clock').text(getCurrentTime().time);
+                      const updateTime = () => $('.clock').text(DateTime.now().toFormat('hh:mm a'));
                       updateTime();
                       updateClockInterval = setInterval(updateTime, 1000);
                   }
@@ -322,41 +311,22 @@ require(
 
                   if (!isNaN(updateFMWInterval)) cleanup();
 
-                  const endAt = new Date();
-                  const warnAt = new Date();
-
                   const [time, ampm] = input.split(' ');
                   let [endHour, endMinute] = time.split(':').map((x) => parseInt(x));
                   const militaryTime = ampm === undefined;
                   let shiftHours = militaryTime ? 0 : (ampm.toLowerCase() === 'pm' ? 12 : 0);
 
-                  endAt.setHours(endHour + shiftHours);
-                  endAt.setMinutes(endMinute);
-                  endAt.setSeconds(0);
-
-                  endMinute -= 5;
-                  if (endMinute < 0) {
-                      endMinute += 60;
-                      endHour -= 1;
-                  }
-                  if (endHour === 0 && !militaryTime) {
-                      endHour = 12;
-                      shiftHours = 0;
-                  }
-                  else if (endHour < 0 && militaryTime) {
-                      endHour += 24;
-                      warnAt.setDate(warnAt.getDate() - 1);
-                  }
-
-                  warnAt.setHours(endHour + shiftHours);
-                  warnAt.setMinutes(endMinute);
-                  warnAt.setSeconds(0);
+                  const endAt = DateTime.now().startOf('minute').set({
+                      hour: endHour + shiftHours,
+                      minute: endMinute
+                  });
+                  const warnAt = endAt.minus({ minutes: 5 });
 
                   const checkTime = () => {
-                      const { now, time } = getCurrentTime();
+                      const now = DateTime.now();
                       if (now >= endAt) cleanup();
                       else if (now >= warnAt) {
-                          $('.clock').text(time).css('color', 'red');
+                          $('.clock').text(now.toFormat('hh:mm a')).css('color', 'red');
                       }
                   }
                   updateFMWInterval = setInterval(checkTime, 1000);
