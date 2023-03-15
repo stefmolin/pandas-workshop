@@ -37,7 +37,7 @@ else
                 --to slides \
                 --template=$TEMPLATE_TYPE \
                 --TemplateExporter.extra_template_basedirs="$SLIDES_DIR"/templates \
-                --output-dir "$SLIDES_DIR"/html \
+                --output-dir="$SLIDES_DIR"/html \
                 "$SLIDES_DIR"/*.ipynb;
 
             # delete the combined notebook
