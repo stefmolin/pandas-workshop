@@ -1,7 +1,7 @@
 name: pandas_workshop
 channels: 
     - conda-forge
-dependencies: 
+dependencies:
     - python>=3.8.0,<=3.11.10
     - jupyterlab=3.5.2
     - matplotlib=3.6.3
