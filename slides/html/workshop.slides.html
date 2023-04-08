@@ -14686,6 +14686,10 @@ div.jp-OutputPrompt {
             <img alt="View repo on GitHub" src="https://img.shields.io/badge/view-repo-orange?logo=github" style="max-width: 100%; margin: 20px 0 0 0;">
         </a>
     </div>
+    <!-- here's an alternate clock location under title
+        <div class="clock" style="margin-right: 5px; position: absolute; top: 40px;"></div>
+    -->
+    <div class="clock" style="margin-right: 5px; float: right;"></div>
 </div>
 <div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -44676,7 +44680,8 @@ require(
     },
     [
       "https://unpkg.com/reveal.js@4.0.2/dist/reveal.js",
-      "https://unpkg.com/reveal.js@4.0.2/plugin/notes/notes.js"
+      "https://unpkg.com/reveal.js@4.0.2/plugin/notes/notes.js",
+      "https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"
     ],
 
     function(Reveal, RevealNotes){
@@ -44699,9 +44704,7 @@ require(
             }
         });
 
-        function isVisible(display) {
-            return display === 'none' ? 'block' : 'none';
-        }
+        const isVisible = (display) => display === 'none' ? 'block' : 'none';
 
         // add custom controls
         Reveal.addKeyBinding(
@@ -44731,6 +44734,120 @@ require(
                         if (namedSlides.includes(slideName)) window.location = `#/${slideName}`;
                     }
                 }
+            }
+        );
+
+        // for working with dates/times
+        const { DateTime, Duration } = luxon;
+
+        // add exercise timer
+        let updateExerciseTimerInterval;
+        Reveal.addKeyBinding(
+            { keyCode: 84, key: "T", description: "Start the exercise timer" },
+            () => {
+                let exerciseTime = prompt("Timer duration in minutes (leave empty to cancel)");
+                const cleanup = () => {
+                  clearInterval(updateExerciseTimerInterval);
+                  $('.exercise-timer').remove();
+                }
+                if (exerciseTime !== undefined && exerciseTime !== "" && exerciseTime !== null){
+                    if (!isNaN(exerciseTime) && exerciseTime >= 0.1) {
+                      exerciseTime = Duration.fromMillis(exerciseTime * 60 * 1000);
+                      const countDownTime = DateTime.now().plus(exerciseTime);
+
+                      const getTimeText = (elapsedTime) => `⏱ ${elapsedTime.toFormat('mm:ss')}`;
+
+                      if ($('.exercise-timer').length === 0) { // add to DOM if not already there
+                          $('.reveal').append(
+                              `<aside class="exercise-timer" style="display: block; position: absolute; `
+                              + `top: auto; left: 15px; right: auto; bottom: 36px;`
+                              + `font-size: 50px;"></aside>`
+                          );
+                      }
+
+                      // in case the key is pressed while a timer is already running, clear the old one
+                      if (!isNaN(updateExerciseTimerInterval)) clearInterval(updateExerciseTimerInterval);
+
+                      // write the starting time minus the 1 second delay before the update
+                      const updateFrequency = 1000;
+                      $('.exercise-timer').text(getTimeText(exerciseTime.minus({ milliseconds: updateFrequency })));
+
+                      // update the remaining time each second
+                      const updateTimer = () => {
+                          const now = DateTime.now();
+                          const elapsedTime = countDownTime.diff(now);
+                          const secondsRemaining = elapsedTime.as('seconds')
+
+                          if (secondsRemaining >= 1) $('.exercise-timer').text(getTimeText(elapsedTime));
+                          else if (secondsRemaining >= 0) {
+                              $('.exercise-timer').text(getTimeText(Duration.fromMillis(0)));
+                              const audio = new Audio('../../media/time_is_up.m4a'); // TODO: switch to URL of hosted version
+                              audio.play();
+                          }
+                          else if (secondsRemaining >= -5) $('.exercise-timer').text("TIME'S UP").css('color', 'red');
+                          else cleanup();
+                      }
+                      updateExerciseTimerInterval = setInterval(updateTimer, updateFrequency);
+                    }
+                }
+                else cleanup();
+            }
+        );
+
+        // add clock
+        let updateClockInterval;
+        Reveal.addKeyBinding(
+            { keyCode: 67, key: "C", description: "Toggle the clock" },
+            () => {
+                  if (!isNaN(updateClockInterval)) {
+                      clearInterval(updateClockInterval);
+                      $('.clock').text('');
+                      updateClockInterval = 'cleared';
+                  }
+                  else {
+                      const updateTime = () => $('.clock').text(DateTime.now().toFormat('hh:mm a'));
+                      updateTime();
+                      updateClockInterval = setInterval(updateTime, 1000);
+                  }
+            }
+        );
+
+        // show clock in red when 5 minutes from desired time
+        let updateFMWInterval;
+        Reveal.addKeyBinding(
+            { keyCode: 90, key: "Z", description: "Set 5-minute warning" },
+            () => {
+                const input = prompt("What is the ending time? (leave empty to clear)");
+                const cleanup = () => {
+                  clearInterval(updateFMWInterval);
+                  $('.clock').text('').css('color', 'black');
+                  updateFMWInterval = 'cleared';
+                }
+                if (input !== undefined && input !== "" && input !== null && input.includes(':')){
+
+                  if (!isNaN(updateFMWInterval)) cleanup();
+
+                  const [time, ampm] = input.split(' ');
+                  let [endHour, endMinute] = time.split(':').map((x) => parseInt(x));
+                  const militaryTime = ampm === undefined;
+                  let shiftHours = militaryTime ? 0 : (ampm.toLowerCase() === 'pm' ? 12 : 0);
+
+                  const endAt = DateTime.now().startOf('minute').set({
+                      hour: endHour + shiftHours,
+                      minute: endMinute
+                  });
+                  const warnAt = endAt.minus({ minutes: 5 });
+
+                  const checkTime = () => {
+                      const now = DateTime.now();
+                      if (now >= endAt) cleanup();
+                      else if (now >= warnAt) {
+                          $('.clock').text(now.toFormat('hh:mm a')).css('color', 'red');
+                      }
+                  }
+                  updateFMWInterval = setInterval(checkTime, 1000);
+                }
+                else cleanup();
             }
         );
 
