@@ -23588,7 +23588,7 @@ require(
                           if (secondsRemaining >= 1) $('.exercise-timer').text(getTimeText(elapsedTime));
                           else if (secondsRemaining >= 0) {
                               $('.exercise-timer').text(getTimeText(Duration.fromMillis(0)));
-                              const audio = new Audio('../../media/time_is_up.m4a'); // TODO: switch to URL of hosted version
+                              const audio = new Audio('../../media/time_is_up.m4a');
                               audio.play();
                           }
                           else if (secondsRemaining >= -5) $('.exercise-timer').text("TIME'S UP").css('color', 'red');
