@@ -1,6 +1,6 @@
-jupyterlab==3.5.2
-matplotlib==3.6.3
-numpy==1.24.1
-pandas==1.5.3
-requests==2.28.2
+jupyterlab>=3.5.2
+matplotlib==3.7.1
+numpy==1.24.2
+pandas==2.0.0
+requests
 seaborn==0.12.2
