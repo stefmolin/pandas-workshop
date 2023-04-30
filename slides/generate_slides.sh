@@ -30,7 +30,7 @@ else
             # use nbmerge to combine all slide notebooks into a single notebook
             echo "[nbmerge] Creating a combined notebook for all slides..."
             COMBINED_NOTEBOOK="$SLIDES_DIR/workshop.ipynb"
-            nbmerge $SLIDES_DIR/*.ipynb -o $COMBINED_NOTEBOOK;
+            nbmerge -o $COMBINED_NOTEBOOK $SLIDES_DIR/*.ipynb;
 
             # make all slide decks
             jupyter nbconvert \
@@ -38,7 +38,7 @@ else
                 --template=$TEMPLATE_TYPE \
                 --TemplateExporter.extra_template_basedirs="$SLIDES_DIR"/templates \
                 --output-dir="$SLIDES_DIR"/html \
-                "$SLIDES_DIR"/*.ipynb;
+                "$COMBINED_NOTEBOOK";
 
             # delete the combined notebook
             echo "Cleaning up..."
