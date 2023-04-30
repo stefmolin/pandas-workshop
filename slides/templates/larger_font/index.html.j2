@@ -46,6 +46,10 @@
 <link rel="stylesheet" href="{{ reveal_url_prefix }}/dist/reveal.css">
 <!-- Reveal Theme -->
 <link rel="stylesheet" href="{{ reveal_url_prefix }}/dist/theme/{{reveal_theme}}.css" id="theme">
+<!-- Font Awesome icons -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css"
+  rel="stylesheet" type="text/css">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -71,6 +75,9 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     {{ resources.include_css("static/theme-light.css") }}
 {% endif %}
 <style type="text/css">
+.qr-code {
+    min-width: 400px;
+}
 a.anchor-link {
    display: none;
 }
@@ -405,7 +412,8 @@ require(
             { name: "section 1", key: "1", id: "section-1", keyCode: 49 },
             { name: "section 2", key: "2", id: "section-2", keyCode: 50 },
             { name: "section 3", key: "3", id: "section-3", keyCode: 51 },
-            { name: "section 4", key: "4", id: "section-4", keyCode: 52 }
+            { name: "section 4", key: "4", id: "section-4", keyCode: 52 },
+            { name: "outro", key: "E", id: "related-content", keyCode: 69 },
         ];
         for (const shortcut of shortcuts) {
             const { id, key, name, keyCode } = shortcut;
