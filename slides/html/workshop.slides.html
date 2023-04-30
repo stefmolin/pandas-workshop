@@ -12,6 +12,10 @@
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
 <!-- Reveal Theme -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/theme/simple.css" id="theme">
+<!-- Font Awesome icons -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css"
+  rel="stylesheet" type="text/css">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -14983,6 +14987,10 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+.qr-code {
+    min-width: 250px;
+    margin-right: 25px;
+}
 a.anchor-link {
    display: none;
 }
@@ -45150,13 +45158,56 @@ z
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_fin" data-mime-type="text/markdown">
-<h1 id="Thank-you!">Thank you!<a class="anchor-link" href="#Thank-you!">&#182;</a></h1><p><em>I hope you enjoyed the workshop. Note that all the examples were developed exclusively for this workshop – check out <a href="https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization-dp-1800563450/dp/1800563450/">Hands-On Data Analysis with Pandas</a> and my <a href="https://github.com/stefmolin/python-data-viz-workshop">Beyond the Basics: Data Visualization in Python</a> workshop for more.</em></p>
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_related-content" data-mime-type="text/markdown">
+<h1 id="Related-content">Related content<a class="anchor-link" href="#Related-content">&#182;</a></h1><p><em>All examples herein were developed exclusively for this workshop – check out <a href="https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization-dp-1800563450/dp/1800563450/">Hands-On Data Analysis with Pandas</a> and my <a href="https://github.com/stefmolin/python-data-viz-workshop">Beyond the Basics: Data Visualization in Python</a> workshop for more.</em></p>
 <div style="text-align: center;">
     <img width="20%" src="https://raw.githubusercontent.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/master/_img/pandas_drawing.PNG" style="min-width: 200px">
     <div><small>
         <a href="https://linktr.ee/stefaniemolin">linktr.ee/stefaniemolin</a>
     </small></div>
+</div>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput  celltag_id_fin" data-mime-type="text/markdown">
+<h1 id="Thank-you!">Thank you!<a class="anchor-link" href="#Thank-you!">&#182;</a></h1><p><em>I hope you enjoyed the session. You can follow my work on the following platforms:</em></p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div style="text-align: center; flex-basis: auto; flex-shrink: 2;">
+        <img class="qr-code" width="20%" src="https://raw.githubusercontent.com/stefmolin/pandas-workshop/main/media/qr-code.png">
+    </div>
+<div style="flex-basis: 45em; flex-grow: 2;">
+    <p>
+        <i class="fab fa-github-square fa-2x" style="position: relative; top: 2px;"></i>
+      <a style="padding-left: 2px; font-size: 2em;" href="https://github.com/stefmolin" target="_blank" rel="noopener noreferrer">
+        github.com/stefmolin
+      </a>
+    </p>
+    <p>
+        <i class="fab fa-twitter-square fa-2x" style="position: relative; top: 2px;"></i>
+        <a style="padding-left: 2px; font-size: 2em;" href="https://twitter.com/StefanieMolin" target="_blank" rel="noopener noreferrer">
+        twitter.com/StefanieMolin                      
+        </a>
+    </p>
+    <p>
+        <i class="fab fa-medium fa-2x" style="position: relative; top: 3px;"></i>
+      <a style="padding-left: 2px; font-size: 2em;" href="https://medium.com/@stefaniemolin" target="_blank" rel="noopener noreferrer">
+         medium.com/@stefaniemolin                   
+      </a>
+    </p>
+    <p>
+        <i class="fab fa-linkedin fa-2x" style="position: relative; top: 2px;"></i>
+        <a style="padding-left: 2px; font-size: 2em;" href="https://linkedin.com/in/stefanie-molin" target="_blank" rel="noopener noreferrer">
+         linkedin.com/in/stefanie-molin
+        </a>
+    </p>
+</div>
 </div>
 
 </div>
@@ -45416,7 +45467,8 @@ require(
             { name: "section 1", key: "1", id: "section-1", keyCode: 49 },
             { name: "section 2", key: "2", id: "section-2", keyCode: 50 },
             { name: "section 3", key: "3", id: "section-3", keyCode: 51 },
-            { name: "section 4", key: "4", id: "section-4", keyCode: 52 }
+            { name: "section 4", key: "4", id: "section-4", keyCode: 52 },
+            { name: "outro", key: "E", id: "related-content", keyCode: 69 },
         ];
         for (const shortcut of shortcuts) {
             const { id, key, name, keyCode } = shortcut;
