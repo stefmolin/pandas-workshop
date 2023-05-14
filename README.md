@@ -30,8 +30,9 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 ---
 
 ## Setup Instructions
+**Warning**: It is highly recommended that you use your personal laptop for the installation.
 
-0. Install Python >= version 3.8 and <= version 3.11 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line. Alternatively, you can use [this](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab) Binder environment if you don't want to install anything on your machine.
+0. Install Python >= version 3.8 and <= version 3.11 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line. Alternatively, depending on server availability, you can use [this](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab) Binder environment if you don't want to install anything on your machine.
 1. Fork this repository:
 
     ![location of fork button in GitHub](./media/fork_button.png)
