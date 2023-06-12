@@ -1,6 +1,6 @@
 # Pandas Workshop
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab/tree/notebooks) [![Nbviewer](https://img.shields.io/badge/render-nbviewer-lightgrey?logo=jupyter)](https://nbviewer.jupyter.org/github/stefmolin/pandas-workshop/tree/main/) [![Env Build Workflow Status](https://img.shields.io/github/actions/workflow/status/stefmolin/pandas-workshop/env-checks.yml?label=env%20build&logo=github&logoColor=white)](https://github.com/stefmolin/pandas-workshop/actions/workflows/env-checks.yml) ![GitHub repo size](https://img.shields.io/github/repo-size/stefmolin/pandas-workshop?logo=git&logoColor=white) [![View slides in browser](https://img.shields.io/badge/view-slides-orange?logo=reveal.js&logoColor=white)](https://stefmolin.github.io/pandas-workshop/slides/html/workshop.slides.html#/)
+[![Nbviewer](https://img.shields.io/badge/render-nbviewer-lightgrey?logo=jupyter)](https://nbviewer.jupyter.org/github/stefmolin/pandas-workshop/tree/main/) [![Env Build Workflow Status](https://img.shields.io/github/actions/workflow/status/stefmolin/pandas-workshop/env-checks.yml?label=env%20build&logo=github&logoColor=white)](https://github.com/stefmolin/pandas-workshop/actions/workflows/env-checks.yml) ![GitHub repo size](https://img.shields.io/github/repo-size/stefmolin/pandas-workshop?logo=git&logoColor=white) [![View slides in browser](https://img.shields.io/badge/view-slides-orange?logo=reveal.js&logoColor=white)](https://stefmolin.github.io/pandas-workshop/slides/html/workshop.slides.html#/)
 
 Working with data can be challenging: it often doesn’t come in the best format for analysis, and understanding it well enough to extract insights requires both time and the skills to filter, aggregate, reshape, and visualize it. This session will equip you with the knowledge you need to effectively use pandas – a powerful library for data analysis in Python – to make this process easier.
 
@@ -30,6 +30,9 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 ---
 
 ## Setup Instructions
+You can work through the notebooks locally or in your browser. Pick the installation option that makes sense for you.
+
+### Local Installation
 **Warning**: It is highly recommended that you use your personal laptop for the installation.
 
 0. Install Python >= version 3.8 and <= version 3.11 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line. Alternatively, depending on server availability, you can use [this](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab) Binder environment if you don't want to install anything on your machine.
@@ -37,11 +40,15 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
 
     ![location of fork button in GitHub](./media/fork_button.png)
 
-2. Clone your forked repository:
+2. Navigate to your fork, and click the **Code** button:
 
-    ![location of clone button in GitHub](./media/clone_button.png)
+    ![location of code button in GitHub](./media/code_button.png)
 
-3. Create and activate a Python virtual environment:
+3. Clone your forked repository using the desired method from the **Local** tab:
+
+    <img width="400px" src="./media/clone_options.png" alt="local cloning options">
+
+4. Create and activate a Python virtual environment:
     - If you installed Anaconda/Miniconda, use `conda` (on Windows, these commands should be run in **Anaconda Prompt**):
 
         ```shell
@@ -60,19 +67,56 @@ You should have basic knowledge of Python and be comfortable working in Jupyter 
         (pandas_workshop) ~/pandas-workshop$ pip3 install -r requirements.txt
         ```
 
-4. Launch JupyterLab:
+5. Launch JupyterLab:
 
     ```shell
     (pandas_workshop) ~/pandas-workshop$ jupyter lab
     ```
 
-5. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
+6. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
 
     ![open 0-check_your_env.ipynb](./media/open_env_check_notebook.png)
 
-6. Run the notebook to confirm everything is set up properly:
+7. Run the notebook to confirm everything is set up properly:
 
     ![check env](./media/env_check.png)
+
+
+### Cloud Options
+
+#### GitHub Codespaces
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/stefmolin/pandas-workshop)
+
+The [GitHub Codespaces](https://github.com/features/codespaces) setup provides a pre-configured machine accessible via your browser. You will need a GitHub account and available quota (all users get more than enough free monthly quota to be able to run this workshop). Note that this will take a while to build. It's recommended that you click the badge above to build the codespace in advance of the workshop and then [stop the codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/stopping-and-starting-a-codespace) until the workshop, at which point you can simply resume and pick up where you left off.
+
+Note that if you want to save your changes, you will need to fork the repository before creating the codespace. You will then be able to commit your changes directly from the codespace. Be sure to create your codespace in advance of the session and resume when we start.
+
+1. Fork this repository:
+
+    ![location of fork button in GitHub](./media/fork_button.png)
+
+2. Navigate to your fork, and click the **Code** button:
+
+    ![location of code button in GitHub](./media/code_button.png)
+
+3. Launch the codespace from your fork by clicking on the **+** or **Create codespace on main** button in the **Codespaces** tab:
+
+    <img width="400px" src="./media/create_codespace.png" alt="location of create codespace button">
+
+4. Stop the codespace until the session starts by selecting **Stop codespace** from the **...** menu.
+
+    <img width="400px" src="./media/stop-codespace.png" alt="stop codespace">
+
+5. To resume the codespace, click **Open in ...** and then select your preferred method. If you aren't sure, select JupyterLab.
+
+    <img width="400px" src="./media/resume-codespace.png" alt="resuming a codespace">
+
+#### Binder
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab/tree/notebooks)
+
+Depending on server availability, you can use [this](https://mybinder.org/v2/gh/stefmolin/pandas-workshop/main?urlpath=lab) Binder environment, which does not require the creation of a GitHub account. **There is no guarantee that you will be able to access this during the workshop.**
 
 ---
 
