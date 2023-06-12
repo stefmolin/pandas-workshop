@@ -26,7 +26,7 @@
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
 			"settings": {
-				"python.defaultInterpreterPath": "/home/vscode/.conda/envs/pandas_workshop"
+				"python.defaultInterpreterPath": "/opt/conda/envs/pandas_workshop"
 			},
 
 			// Add the IDs of extensions you want installed when the container is created.
@@ -36,10 +36,4 @@
 			]
 		}
 	}
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": ""
 }
