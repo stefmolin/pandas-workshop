@@ -3,6 +3,7 @@
 {% set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] %}
 {% set repo_name = 'pandas-workshop' %}
 {% set svg_plot_max_height = 300 %}
+{% set description = "Working with data can be challenging: it often doesn't come in the best format for analysis, and understanding it well enough to extract insights requires both time and the skills to filter, aggregate, reshape, and visualize it. This session will equip you with the knowledge you need to effectively use pandas - a powerful library for data analysis in Python - to make this process easier." %}
 
 {% from 'mathjax.html.j2' import mathjax %}
 {% from 'jupyter_widgets.html.j2' import jupyter_widgets %}
@@ -19,13 +20,61 @@
 <head>
 
 {%- block html_head -%}
+<!-- Google tag (gtag.js) -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-25389D1SR4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+    dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-25389D1SR4");
+</script>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1" />
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>{{title}} {{nb_title}} slides &ndash; Stefanie Molin</title>
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@StefanieMolin" />
+<meta name="twitter:creator" content="@StefanieMolin" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Stefanie Molin" />
+<meta name="author" content="Stefanie Molin" />
+<meta name="referrer" content="origin" />
+<meta
+  name="keywords"
+  content="technology, workshop, data visualization, Python, data science, slides" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<meta
+  property="og:url"
+  content="https://stefaniemolin.com/{{repo_name}}/" />
+<meta name="robots" content="index,follow" />
+<meta
+  name="description"
+  content="{{description}}" />
+<meta
+  property="og:title"
+  content="{{title}} {{nb_title}} slides | Stefanie Molin" />
+<meta
+  property="og:description"
+  content="{{description}}" />
+<meta
+  property="og:image"
+  content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/stefaniemolin.com/Introduction%20to%20Data%20Analysis%20Using%20Pandas%20workshop%20slides/https%3A%2F%2Fhips.hearstapps.com%2Felleuk.cdnds.net%2F16%2F36%2F3200x1599%2Fgallery-1473083573-pandas.jpg/og.png" />
+<meta
+  property="og:image:alt"
+  content="{{title}} {{nb_title}} slides" />
+<meta property="og:image:width" content="3200" />
+<meta property="og:image:height" content="1599" />
+
+<title>{{title}} {{nb_title}} slides | Stefanie Molin</title>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico">
 
 {%- block html_head_js -%}

@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
+<head><!-- Google tag (gtag.js) -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-25389D1SR4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+    dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-25389D1SR4");
+</script>
+<meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1" />
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>Introduction to Data Analysis Using Pandas workshop slides &ndash; Stefanie Molin</title>
-<link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<meta name="theme-color" content="#000" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@StefanieMolin" />
+<meta name="twitter:creator" content="@StefanieMolin" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Stefanie Molin" />
+<meta name="author" content="Stefanie Molin" />
+<meta name="referrer" content="origin" />
+<meta
+  name="keywords"
+  content="technology, workshop, data visualization, Python, data science, slides" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<meta
+  property="og:url"
+  content="https://stefaniemolin.com/pandas-workshop/" />
+<meta name="robots" content="index,follow" />
+<meta
+  name="description"
+  content="Working with data can be challenging: it often doesn't come in the best format for analysis, and understanding it well enough to extract insights requires both time and the skills to filter, aggregate, reshape, and visualize it. This session will equip you with the knowledge you need to effectively use pandas - a powerful library for data analysis in Python - to make this process easier." />
+<meta
+  property="og:title"
+  content="Introduction to Data Analysis Using Pandas workshop slides | Stefanie Molin" />
+<meta
+  property="og:description"
+  content="Working with data can be challenging: it often doesn't come in the best format for analysis, and understanding it well enough to extract insights requires both time and the skills to filter, aggregate, reshape, and visualize it. This session will equip you with the knowledge you need to effectively use pandas - a powerful library for data analysis in Python - to make this process easier." />
+<meta
+  property="og:image"
+  content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/stefaniemolin.com/Introduction%20to%20Data%20Analysis%20Using%20Pandas%20workshop%20slides/https%3A%2F%2Fhips.hearstapps.com%2Felleuk.cdnds.net%2F16%2F36%2F3200x1599%2Fgallery-1473083573-pandas.jpg/og.png" />
+<meta
+  property="og:image:alt"
+  content="Introduction to Data Analysis Using Pandas workshop slides" />
+<meta property="og:image:width" content="3200" />
+<meta property="og:image:height" content="1599" />
+
+<title>Introduction to Data Analysis Using Pandas workshop slides | Stefanie Molin</title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -45191,32 +45237,32 @@ z
     <div style="text-align: center; flex-basis: auto; flex-shrink: 2;">
         <img class="qr-code" width="20%" src="https://raw.githubusercontent.com/stefmolin/pandas-workshop/main/media/qr-code.png">
     </div>
-    <div style="flex-basis: 45em; flex-grow: 2; font-size: 80%;">
-      <div style="display: flex; justify-content: flex-start; align-items: center;">
-        <i class="fa fa-globe fa-2x fa-fw" style="padding-right: 4px"></i>
-        <a href="https://stefaniemolin.com" rel="noopener noreferrer" style="font-size: 2em;">
-          stefaniemolin.com
-        </a>
-      </div>
+  <div style="flex-basis: 45em; flex-grow: 2; font-size: 80%;">
     <div style="display: flex; justify-content: flex-start; align-items: center;">
-      <i class="fab fa-github fa-2x fa-fw" style="padding-right: 4px"></i>
-      <a href="https://github.com/stefmolin" rel="noopener noreferrer" style="font-size: 2em;" target="_blank">
-        github.com/stefmolin
+      <i class="fa fa-globe fa-2x fa-fw" style="padding-right: 4px"></i>
+      <a href="https://stefaniemolin.com" rel="noopener noreferrer" style="font-size: 2em;">
+        stefaniemolin.com
       </a>
     </div>
-    <div style="display: flex; justify-content: flex-start; align-items: center;">
-      <i class="fab fa-twitter fa-2x fa-fw" style="padding-right: 4px"></i>
-      <a href="https://twitter.com/StefanieMolin" rel="noopener noreferrer" style="font-size: 2em;" target="_blank">
-        twitter.com/StefanieMolin
-      </a>
-    </div>
-    <div style="display: flex; justify-content: flex-start; align-items: center;">
-      <i class="fab fa-linkedin-in fa-2x fa-fw" style="padding-right: 4px"></i>
-      <a href="https://linkedin.com/in/stefanie-molin" rel="noopener noreferrer" style="font-size: 2em;" target="_blank">
-        linkedin.com/in/stefanie-molin
-      </a>
-    </div>
+  <div style="display: flex; justify-content: flex-start; align-items: center;">
+    <i class="fab fa-github fa-2x fa-fw" style="padding-right: 4px"></i>
+    <a href="https://github.com/stefmolin" rel="noopener noreferrer" style="font-size: 2em;" target="_blank">
+      github.com/stefmolin
+    </a>
   </div>
+  <div style="display: flex; justify-content: flex-start; align-items: center;">
+    <i class="fab fa-twitter fa-2x fa-fw" style="padding-right: 4px"></i>
+    <a href="https://twitter.com/StefanieMolin" rel="noopener noreferrer" style="font-size: 2em;" target="_blank">
+      twitter.com/StefanieMolin
+    </a>
+  </div>
+  <div style="display: flex; justify-content: flex-start; align-items: center;">
+    <i class="fab fa-linkedin-in fa-2x fa-fw" style="padding-right: 4px"></i>
+    <a href="https://linkedin.com/in/stefanie-molin" rel="noopener noreferrer" style="font-size: 2em;" target="_blank">
+      linkedin.com/in/stefanie-molin
+    </a>
+  </div>
+</div>
 </div>
 
 </div>
