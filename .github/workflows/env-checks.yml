@@ -1,6 +1,6 @@
 # This workflow builds the workshop environment on Mac, Linux, and Windows for
 # multiple versions of Python to confirm it can be properly installed.
-# 
+#
 # Author: Stefanie Molin
 
 name: Env Build
@@ -33,7 +33,7 @@ jobs:
 
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
-    
+
     defaults:
       run:
         shell: bash -el {0}
@@ -42,13 +42,13 @@ jobs:
         fail-fast: false
         matrix:
             os: [macos-latest, ubuntu-latest, windows-latest]
-            python-version: ["3.8", "3.9", "3.10", "3.11"]
+            python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      
+      - uses: actions/checkout@v4
+
       # remove the Python version from the file for testing
       - name: strip hardcoded Python version from environment for testing
         run: |
@@ -59,12 +59,13 @@ jobs:
           fi;
 
       # create the conda env
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: conda-incubator/setup-miniconda@v3
         with:
           python-version: ${{ matrix.python-version }}
           auto-update-conda: true
           miniforge-variant: Mambaforge
-          use-mamba: true
+          mamba-version: "*"
+          channels: conda-forge
           channel-priority: true
           activate-environment: pandas_workshop
           environment-file: environment.yml
