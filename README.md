@@ -41,7 +41,7 @@ You can work through the notebooks locally or in your browser. Pick the installa
 **Warning**: It is highly recommended that you use your personal laptop for the installation.
 
 0. Install the following, if not already installed:
-   - Python >= version 3.8 and <= version 3.13 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
+   - Python >= version 3.9 and <= version 3.13 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
    - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 1. Fork this repository:
