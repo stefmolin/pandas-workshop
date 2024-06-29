@@ -12820,7 +12820,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b06e3e74-cf37-418e-966d-4b98d3c4ec71">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b06e3e74-cf37-418e-966d-4b98d3c4ec71">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12920,7 +12920,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c5f42086-13f3-452d-8878-57f6cf0f97d1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -13020,7 +13020,7 @@ Name: year, dtype: float64</pre>
 </div>
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6e24d581-09cb-47f5-8ca6-8b71bc41d1d4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -13028,6 +13028,204 @@ Name: year, dtype: float64</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Now, we can work on reshaping it.</p>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fa35300e-9a40-4ea2-8c20-adf98c2e1568">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Starting with long format data:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=00789ab3-9d92-4c68-aefe-c9097df8ff13">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">highlight_long_format</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'2021'</span><span class="p">:</span> <span class="s1">'pink'</span><span class="p">,</span> <span class="s1">'2020'</span><span class="p">:</span> <span class="s1">'skyblue'</span><span class="p">,</span> <span class="s1">'2019'</span><span class="p">:</span> <span class="s1">'lightgreen'</span><span class="p">}</span>
+<span class="n">highlight_long_format</span><span class="p">(</span><span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">(),</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_1188d_row0_col1, #T_1188d_row1_col1, #T_1188d_row2_col1, #T_1188d_row3_col1, #T_1188d_row4_col1 {
+  background-color: pink;
+}
+#T_1188d_row0_col2, #T_1188d_row1_col2, #T_1188d_row2_col2, #T_1188d_row3_col2, #T_1188d_row4_col2 {
+  background-color: skyblue;
+}
+#T_1188d_row0_col3, #T_1188d_row1_col3, #T_1188d_row2_col3, #T_1188d_row3_col3, #T_1188d_row4_col3 {
+  background-color: lightgreen;
+}
+#T_1188d_level0_col1 {
+  background-color: pink;
+}
+#T_1188d_level0_col2 {
+  background-color: skyblue;
+}
+#T_1188d_level0_col3 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_1188d">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_1188d_level0_col0">date</th>
+<th class="col_heading level0 col1" id="T_1188d_level0_col1">2021</th>
+<th class="col_heading level0 col2" id="T_1188d_level0_col2">2020</th>
+<th class="col_heading level0 col3" id="T_1188d_level0_col3">2019</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_1188d_level0_row0">0</th>
+<td class="data row0 col0" id="T_1188d_row0_col0">2021-05-14 00:00:00</td>
+<td class="data row0 col1" id="T_1188d_row0_col1">1716561.000000</td>
+<td class="data row0 col2" id="T_1188d_row0_col2">250467</td>
+<td class="data row0 col3" id="T_1188d_row0_col3">2664549</td>
+</tr>
+<tr>
+<th class="row_heading level0 row1" id="T_1188d_level0_row1">1</th>
+<td class="data row1 col0" id="T_1188d_row1_col0">2021-05-13 00:00:00</td>
+<td class="data row1 col1" id="T_1188d_row1_col1">1743515.000000</td>
+<td class="data row1 col2" id="T_1188d_row1_col2">234928</td>
+<td class="data row1 col3" id="T_1188d_row1_col3">2611324</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_1188d_level0_row2">2</th>
+<td class="data row2 col0" id="T_1188d_row2_col0">2021-05-12 00:00:00</td>
+<td class="data row2 col1" id="T_1188d_row2_col1">1424664.000000</td>
+<td class="data row2 col2" id="T_1188d_row2_col2">176667</td>
+<td class="data row2 col3" id="T_1188d_row2_col3">2343675</td>
+</tr>
+<tr>
+<th class="row_heading level0 row3" id="T_1188d_level0_row3">3</th>
+<td class="data row3 col0" id="T_1188d_row3_col0">2021-05-11 00:00:00</td>
+<td class="data row3 col1" id="T_1188d_row3_col1">1315493.000000</td>
+<td class="data row3 col2" id="T_1188d_row3_col2">163205</td>
+<td class="data row3 col3" id="T_1188d_row3_col3">2191387</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_1188d_level0_row4">4</th>
+<td class="data row4 col0" id="T_1188d_row4_col0">2021-05-10 00:00:00</td>
+<td class="data row4 col1" id="T_1188d_row4_col1">1657722.000000</td>
+<td class="data row4 col2" id="T_1188d_row4_col2">215645</td>
+<td class="data row4 col3" id="T_1188d_row4_col3">2512315</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=55d4ae45-0a86-46af-89b6-4c78ce1cd688">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We want to transform it into wide format so that we can look at the evolution of the throughput over time:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b0a77c53-3ba9-4bf1-a8cf-b128962e6b8f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">highlight_wide_format</span>
+
+<span class="n">highlight_wide_format</span><span class="p">(</span><span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">(),</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_ae0e3_row0_col1, #T_ae0e3_row0_col2, #T_ae0e3_row3_col1, #T_ae0e3_row3_col2 {
+  background-color: pink;
+}
+#T_ae0e3_row1_col1, #T_ae0e3_row1_col2, #T_ae0e3_row2_col1, #T_ae0e3_row2_col2 {
+  background-color: skyblue;
+}
+#T_ae0e3_row4_col1, #T_ae0e3_row4_col2 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_ae0e3">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_ae0e3_level0_col0">date</th>
+<th class="col_heading level0 col1" id="T_ae0e3_level0_col1">year</th>
+<th class="col_heading level0 col2" id="T_ae0e3_level0_col2">travelers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_ae0e3_level0_row0">3</th>
+<td class="data row0 col0" id="T_ae0e3_row0_col0">2021-05-11 00:00:00</td>
+<td class="data row0 col1" id="T_ae0e3_row0_col1">2021</td>
+<td class="data row0 col2" id="T_ae0e3_row0_col2">1315493.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row1" id="T_ae0e3_level0_row1">7</th>
+<td class="data row1 col0" id="T_ae0e3_row1_col0">2020-05-12 00:00:00</td>
+<td class="data row1 col1" id="T_ae0e3_row1_col1">2020</td>
+<td class="data row1 col2" id="T_ae0e3_row1_col2">176667.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_ae0e3_level0_row2">6</th>
+<td class="data row2 col0" id="T_ae0e3_row2_col0">2020-05-13 00:00:00</td>
+<td class="data row2 col1" id="T_ae0e3_row2_col1">2020</td>
+<td class="data row2 col2" id="T_ae0e3_row2_col2">234928.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row3" id="T_ae0e3_level0_row3">2</th>
+<td class="data row3 col0" id="T_ae0e3_row3_col0">2021-05-12 00:00:00</td>
+<td class="data row3 col1" id="T_ae0e3_row3_col1">2021</td>
+<td class="data row3 col2" id="T_ae0e3_row3_col2">1424664.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_ae0e3_level0_row4">10</th>
+<td class="data row4 col0" id="T_ae0e3_row4_col0">2019-05-14 00:00:00</td>
+<td class="data row4 col1" id="T_ae0e3_row4_col1">2019</td>
+<td class="data row4 col2" id="T_ae0e3_row4_col2">2664549.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -13047,7 +13245,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted</span> <span class="o">=</span> <span class="n">tsa</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
@@ -13066,7 +13264,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -13145,7 +13343,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted</span> <span class="o">=</span> <span class="n">tsa_melted</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
@@ -13162,7 +13360,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -13241,7 +13439,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'date'</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -13255,7 +13453,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -13322,7 +13520,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted</span> <span class="o">=</span> <span class="n">tsa_melted</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
@@ -13337,7 +13535,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -13404,7 +13602,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_pivoted</span> <span class="o">=</span> <span class="n">tsa_melted</span>\
@@ -13422,7 +13620,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -13541,7 +13739,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_pivoted</span><span class="o">.</span><span class="n">T</span>
@@ -13555,7 +13753,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -13670,7 +13868,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">holidays</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/holidays.csv'</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">'date'</span><span class="p">)</span>
@@ -13685,7 +13883,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -13768,7 +13966,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holidays</span> <span class="o">=</span> <span class="n">tsa_melted</span>\
@@ -13785,7 +13983,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -13881,7 +14079,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span> <span class="o">=</span> <span class="n">tsa_melted_holidays</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
@@ -13922,7 +14120,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
@@ -13939,7 +14137,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -14080,7 +14278,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
@@ -14097,7 +14295,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -14195,7 +14393,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
@@ -14212,7 +14410,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -14310,7 +14508,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.float_format'</span><span class="p">,</span> <span class="s1">'</span><span class="si">{:,.0f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
@@ -14335,7 +14533,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -14361,7 +14559,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -14464,7 +14662,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">reset_option</span><span class="p">(</span><span class="s1">'display.float_format'</span><span class="p">)</span>
@@ -14511,7 +14709,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14533,7 +14731,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -14634,7 +14832,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span>
@@ -14655,7 +14853,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -14750,7 +14948,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'year'</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
@@ -14764,7 +14962,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -14870,7 +15068,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
@@ -14886,7 +15084,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -14961,7 +15159,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
@@ -14979,7 +15177,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -15088,7 +15286,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
@@ -15108,7 +15306,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -15234,7 +15432,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -15251,7 +15449,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -15366,7 +15564,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">taxis</span> <span class="o">=</span> <span class="n">taxis</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'dropoff'</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
@@ -15391,7 +15589,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="p">[</span><span class="s1">'2019-10-24 12'</span><span class="p">:</span><span class="s1">'2019-10-24 13'</span><span class="p">]</span>
@@ -15405,7 +15603,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -15528,7 +15726,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2019-10-24 12'</span><span class="p">]</span>
@@ -15542,7 +15740,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -15676,7 +15874,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">between_time</span><span class="p">(</span><span class="s1">'12:00'</span><span class="p">,</span> <span class="s1">'13:00'</span><span class="p">)</span>
@@ -15690,7 +15888,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -15844,7 +16042,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span> <span class="o">=</span> <span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'date'</span><span class="p">)</span>
@@ -15869,7 +16067,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2020'</span><span class="p">]</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
@@ -15886,7 +16084,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -16036,7 +16234,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="p">[</span><span class="s1">'2019'</span><span class="p">:</span><span class="s1">'2021-Q1'</span><span class="p">]</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">'number'</span><span class="p">)</span>\
@@ -16051,7 +16249,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -16193,7 +16391,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2020'</span><span class="p">]</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
@@ -16212,7 +16410,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -16351,7 +16549,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib_inline</span>
@@ -16393,7 +16591,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">tsa_melted_holiday_travel</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2020'</span><span class="p">]</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
@@ -16461,7 +16659,7 @@ Name: year, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -16483,7 +16681,7 @@ Name: year, dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -18167,6 +18365,837 @@ Name: year, dtype: float64</pre>
     </a>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=651de5b5-68aa-484d-b608-de6fe9159404">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">tsa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/tsa_passenger_throughput.csv'</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">])</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>date</th>
+<th>2021</th>
+<th>2020</th>
+<th>2019</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>2021-05-14</td>
+<td>1716561.0</td>
+<td>250467</td>
+<td>2664549</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2021-05-13</td>
+<td>1743515.0</td>
+<td>234928</td>
+<td>2611324</td>
+</tr>
+<tr>
+<th>2</th>
+<td>2021-05-12</td>
+<td>1424664.0</td>
+<td>176667</td>
+<td>2343675</td>
+</tr>
+<tr>
+<th>3</th>
+<td>2021-05-11</td>
+<td>1315493.0</td>
+<td>163205</td>
+<td>2191387</td>
+</tr>
+<tr>
+<th>4</th>
+<td>2021-05-10</td>
+<td>1657722.0</td>
+<td>215645</td>
+<td>2512315</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3ba66b86-afa5-46a7-b146-66b13b1ca69c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">year_2021</span> <span class="o">=</span> <span class="s1">'pink'</span>
+<span class="n">year_2020</span> <span class="o">=</span> <span class="s1">'skyblue'</span>
+<span class="n">year_2019</span> <span class="o">=</span> <span class="s1">'lightgreen'</span>
+
+<span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_table_styles</span><span class="p">([</span>
+    <span class="p">{</span>
+        <span class="s1">'selector'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'.col</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+        <span class="s1">'props'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'background-color: </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">;'</span>
+    <span class="p">}</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">year_2021</span><span class="p">,</span> <span class="n">year_2020</span><span class="p">,</span> <span class="n">year_2019</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[75]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_80228 .col1 {
+  background-color: pink;
+}
+#T_80228 .col2 {
+  background-color: skyblue;
+}
+#T_80228 .col3 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_80228">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_80228_level0_col0">date</th>
+<th class="col_heading level0 col1" id="T_80228_level0_col1">2021</th>
+<th class="col_heading level0 col2" id="T_80228_level0_col2">2020</th>
+<th class="col_heading level0 col3" id="T_80228_level0_col3">2019</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_80228_level0_row0">0</th>
+<td class="data row0 col0" id="T_80228_row0_col0">2021-05-14 00:00:00</td>
+<td class="data row0 col1" id="T_80228_row0_col1">1716561.000000</td>
+<td class="data row0 col2" id="T_80228_row0_col2">250467</td>
+<td class="data row0 col3" id="T_80228_row0_col3">2664549</td>
+</tr>
+<tr>
+<th class="row_heading level0 row1" id="T_80228_level0_row1">1</th>
+<td class="data row1 col0" id="T_80228_row1_col0">2021-05-13 00:00:00</td>
+<td class="data row1 col1" id="T_80228_row1_col1">1743515.000000</td>
+<td class="data row1 col2" id="T_80228_row1_col2">234928</td>
+<td class="data row1 col3" id="T_80228_row1_col3">2611324</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_80228_level0_row2">2</th>
+<td class="data row2 col0" id="T_80228_row2_col0">2021-05-12 00:00:00</td>
+<td class="data row2 col1" id="T_80228_row2_col1">1424664.000000</td>
+<td class="data row2 col2" id="T_80228_row2_col2">176667</td>
+<td class="data row2 col3" id="T_80228_row2_col3">2343675</td>
+</tr>
+<tr>
+<th class="row_heading level0 row3" id="T_80228_level0_row3">3</th>
+<td class="data row3 col0" id="T_80228_row3_col0">2021-05-11 00:00:00</td>
+<td class="data row3 col1" id="T_80228_row3_col1">1315493.000000</td>
+<td class="data row3 col2" id="T_80228_row3_col2">163205</td>
+<td class="data row3 col3" id="T_80228_row3_col3">2191387</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_80228_level0_row4">4</th>
+<td class="data row4 col0" id="T_80228_row4_col0">2021-05-10 00:00:00</td>
+<td class="data row4 col1" id="T_80228_row4_col1">1657722.000000</td>
+<td class="data row4 col2" id="T_80228_row4_col2">215645</td>
+<td class="data row4 col3" id="T_80228_row4_col3">2512315</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3799dddc-0504-4c5f-9819-dcebd7a271e6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [98]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'2021'</span><span class="p">:</span> <span class="s1">'pink'</span><span class="p">,</span>
+    <span class="s1">'2020'</span><span class="p">:</span> <span class="s1">'skyblue'</span><span class="p">,</span>
+    <span class="s1">'2019'</span><span class="p">:</span> <span class="s1">'lightgreen'</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">get_style</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">color</span> <span class="o">:=</span> <span class="n">colors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'background-color: </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">'</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">highlight_column</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">get_style</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">)]</span> <span class="o">*</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">style</span>\
+    <span class="o">.</span><span class="n">apply_index</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_style</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">highlight_column</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[98]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_92f12_row0_col1, #T_92f12_row1_col1, #T_92f12_row2_col1, #T_92f12_row3_col1, #T_92f12_row4_col1 {
+  background-color: pink;
+}
+#T_92f12_row0_col2, #T_92f12_row1_col2, #T_92f12_row2_col2, #T_92f12_row3_col2, #T_92f12_row4_col2 {
+  background-color: skyblue;
+}
+#T_92f12_row0_col3, #T_92f12_row1_col3, #T_92f12_row2_col3, #T_92f12_row3_col3, #T_92f12_row4_col3 {
+  background-color: lightgreen;
+}
+#T_92f12_level0_col1 {
+  background-color: pink;
+}
+#T_92f12_level0_col2 {
+  background-color: skyblue;
+}
+#T_92f12_level0_col3 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_92f12">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_92f12_level0_col0">date</th>
+<th class="col_heading level0 col1" id="T_92f12_level0_col1">2021</th>
+<th class="col_heading level0 col2" id="T_92f12_level0_col2">2020</th>
+<th class="col_heading level0 col3" id="T_92f12_level0_col3">2019</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_92f12_level0_row0">0</th>
+<td class="data row0 col0" id="T_92f12_row0_col0">2021-05-14 00:00:00</td>
+<td class="data row0 col1" id="T_92f12_row0_col1">1716561.000000</td>
+<td class="data row0 col2" id="T_92f12_row0_col2">250467</td>
+<td class="data row0 col3" id="T_92f12_row0_col3">2664549</td>
+</tr>
+<tr>
+<th class="row_heading level0 row1" id="T_92f12_level0_row1">1</th>
+<td class="data row1 col0" id="T_92f12_row1_col0">2021-05-13 00:00:00</td>
+<td class="data row1 col1" id="T_92f12_row1_col1">1743515.000000</td>
+<td class="data row1 col2" id="T_92f12_row1_col2">234928</td>
+<td class="data row1 col3" id="T_92f12_row1_col3">2611324</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_92f12_level0_row2">2</th>
+<td class="data row2 col0" id="T_92f12_row2_col0">2021-05-12 00:00:00</td>
+<td class="data row2 col1" id="T_92f12_row2_col1">1424664.000000</td>
+<td class="data row2 col2" id="T_92f12_row2_col2">176667</td>
+<td class="data row2 col3" id="T_92f12_row2_col3">2343675</td>
+</tr>
+<tr>
+<th class="row_heading level0 row3" id="T_92f12_level0_row3">3</th>
+<td class="data row3 col0" id="T_92f12_row3_col0">2021-05-11 00:00:00</td>
+<td class="data row3 col1" id="T_92f12_row3_col1">1315493.000000</td>
+<td class="data row3 col2" id="T_92f12_row3_col2">163205</td>
+<td class="data row3 col3" id="T_92f12_row3_col3">2191387</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_92f12_level0_row4">4</th>
+<td class="data row4 col0" id="T_92f12_row4_col0">2021-05-10 00:00:00</td>
+<td class="data row4 col1" id="T_92f12_row4_col1">1657722.000000</td>
+<td class="data row4 col2" id="T_92f12_row4_col2">215645</td>
+<td class="data row4 col3" id="T_92f12_row4_col3">2512315</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4753886a-33dd-4203-837d-02f1ad2b75eb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [99]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">highlight_long_format</span>
+<span class="n">highlight_long_format</span><span class="p">(</span><span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">(),</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[99]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_974af_row0_col1, #T_974af_row1_col1, #T_974af_row2_col1, #T_974af_row3_col1, #T_974af_row4_col1 {
+  background-color: pink;
+}
+#T_974af_row0_col2, #T_974af_row1_col2, #T_974af_row2_col2, #T_974af_row3_col2, #T_974af_row4_col2 {
+  background-color: skyblue;
+}
+#T_974af_row0_col3, #T_974af_row1_col3, #T_974af_row2_col3, #T_974af_row3_col3, #T_974af_row4_col3 {
+  background-color: lightgreen;
+}
+#T_974af_level0_col1 {
+  background-color: pink;
+}
+#T_974af_level0_col2 {
+  background-color: skyblue;
+}
+#T_974af_level0_col3 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_974af">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_974af_level0_col0">date</th>
+<th class="col_heading level0 col1" id="T_974af_level0_col1">2021</th>
+<th class="col_heading level0 col2" id="T_974af_level0_col2">2020</th>
+<th class="col_heading level0 col3" id="T_974af_level0_col3">2019</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_974af_level0_row0">0</th>
+<td class="data row0 col0" id="T_974af_row0_col0">2021-05-14 00:00:00</td>
+<td class="data row0 col1" id="T_974af_row0_col1">1716561.000000</td>
+<td class="data row0 col2" id="T_974af_row0_col2">250467</td>
+<td class="data row0 col3" id="T_974af_row0_col3">2664549</td>
+</tr>
+<tr>
+<th class="row_heading level0 row1" id="T_974af_level0_row1">1</th>
+<td class="data row1 col0" id="T_974af_row1_col0">2021-05-13 00:00:00</td>
+<td class="data row1 col1" id="T_974af_row1_col1">1743515.000000</td>
+<td class="data row1 col2" id="T_974af_row1_col2">234928</td>
+<td class="data row1 col3" id="T_974af_row1_col3">2611324</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_974af_level0_row2">2</th>
+<td class="data row2 col0" id="T_974af_row2_col0">2021-05-12 00:00:00</td>
+<td class="data row2 col1" id="T_974af_row2_col1">1424664.000000</td>
+<td class="data row2 col2" id="T_974af_row2_col2">176667</td>
+<td class="data row2 col3" id="T_974af_row2_col3">2343675</td>
+</tr>
+<tr>
+<th class="row_heading level0 row3" id="T_974af_level0_row3">3</th>
+<td class="data row3 col0" id="T_974af_row3_col0">2021-05-11 00:00:00</td>
+<td class="data row3 col1" id="T_974af_row3_col1">1315493.000000</td>
+<td class="data row3 col2" id="T_974af_row3_col2">163205</td>
+<td class="data row3 col3" id="T_974af_row3_col3">2191387</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_974af_level0_row4">4</th>
+<td class="data row4 col0" id="T_974af_row4_col0">2021-05-10 00:00:00</td>
+<td class="data row4 col1" id="T_974af_row4_col1">1657722.000000</td>
+<td class="data row4 col2" id="T_974af_row4_col2">215645</td>
+<td class="data row4 col3" id="T_974af_row4_col3">2512315</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ca8083b1-c751-49df-9171-452dbd43ec63">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [100]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+    <span class="n">id_vars</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="c1"># column that uniquely identifies a row (can be multiple)</span>
+    <span class="n">var_name</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span> <span class="c1"># name for the new column created by melting</span>
+    <span class="n">value_name</span><span class="o">=</span><span class="s1">'travelers'</span> <span class="c1"># name for new column containing values from melted columns</span>
+<span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">highlight_melt</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'year'</span><span class="p">,</span> <span class="s1">'travelers'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[100]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_78c2e_row0_col1, #T_78c2e_row0_col2, #T_78c2e_row3_col1, #T_78c2e_row3_col2 {
+  background-color: pink;
+}
+#T_78c2e_row1_col1, #T_78c2e_row1_col2, #T_78c2e_row2_col1, #T_78c2e_row2_col2 {
+  background-color: skyblue;
+}
+#T_78c2e_row4_col1, #T_78c2e_row4_col2 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_78c2e">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_78c2e_level0_col0">date</th>
+<th class="col_heading level0 col1" id="T_78c2e_level0_col1">year</th>
+<th class="col_heading level0 col2" id="T_78c2e_level0_col2">travelers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_78c2e_level0_row0">3</th>
+<td class="data row0 col0" id="T_78c2e_row0_col0">2021-05-11 00:00:00</td>
+<td class="data row0 col1" id="T_78c2e_row0_col1">2021</td>
+<td class="data row0 col2" id="T_78c2e_row0_col2">1315493.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row1" id="T_78c2e_level0_row1">7</th>
+<td class="data row1 col0" id="T_78c2e_row1_col0">2021-05-12 00:00:00</td>
+<td class="data row1 col1" id="T_78c2e_row1_col1">2020</td>
+<td class="data row1 col2" id="T_78c2e_row1_col2">176667.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_78c2e_level0_row2">6</th>
+<td class="data row2 col0" id="T_78c2e_row2_col0">2021-05-13 00:00:00</td>
+<td class="data row2 col1" id="T_78c2e_row2_col1">2020</td>
+<td class="data row2 col2" id="T_78c2e_row2_col2">234928.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row3" id="T_78c2e_level0_row3">2</th>
+<td class="data row3 col0" id="T_78c2e_row3_col0">2021-05-12 00:00:00</td>
+<td class="data row3 col1" id="T_78c2e_row3_col1">2021</td>
+<td class="data row3 col2" id="T_78c2e_row3_col2">1424664.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_78c2e_level0_row4">10</th>
+<td class="data row4 col0" id="T_78c2e_row4_col0">2021-05-14 00:00:00</td>
+<td class="data row4 col1" id="T_78c2e_row4_col1">2019</td>
+<td class="data row4 col2" id="T_78c2e_row4_col2">2664549.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=82a09e74-f2b6-4ee5-9828-8dfbab5c5a33">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [109]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+        <span class="n">id_vars</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span>
+        <span class="n">var_name</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span>
+        <span class="n">value_name</span><span class="o">=</span><span class="s1">'travelers'</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[109]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>date</th>
+<th>year</th>
+<th>travelers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>3</th>
+<td>2021-05-11</td>
+<td>2021</td>
+<td>1315493.0</td>
+</tr>
+<tr>
+<th>7</th>
+<td>2021-05-12</td>
+<td>2020</td>
+<td>176667.0</td>
+</tr>
+<tr>
+<th>6</th>
+<td>2021-05-13</td>
+<td>2020</td>
+<td>234928.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>2021-05-12</td>
+<td>2021</td>
+<td>1424664.0</td>
+</tr>
+<tr>
+<th>10</th>
+<td>2021-05-14</td>
+<td>2019</td>
+<td>2664549.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8dd0c169-e9a3-418d-a41e-60096b40d928">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [130]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">highlight_wide_format</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Highlight wide format columns in the melted data."""</span>
+
+    <span class="k">def</span> <span class="nf">highlight_melt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">year</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"background-color: </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">;"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">'travelers'</span><span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">date</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span>
+<span class="p">)</span>\
+        <span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">highlight_melt</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">highlight_wide_format</span><span class="p">(</span><span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">(),</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[130]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_e4be1_row0_col1, #T_e4be1_row0_col2, #T_e4be1_row3_col1, #T_e4be1_row3_col2 {
+  background-color: pink;
+}
+#T_e4be1_row1_col1, #T_e4be1_row1_col2, #T_e4be1_row2_col1, #T_e4be1_row2_col2 {
+  background-color: skyblue;
+}
+#T_e4be1_row4_col1, #T_e4be1_row4_col2 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_e4be1">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_e4be1_level0_col0">date</th>
+<th class="col_heading level0 col1" id="T_e4be1_level0_col1">year</th>
+<th class="col_heading level0 col2" id="T_e4be1_level0_col2">travelers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_e4be1_level0_row0">3</th>
+<td class="data row0 col0" id="T_e4be1_row0_col0">2021-05-11 00:00:00</td>
+<td class="data row0 col1" id="T_e4be1_row0_col1">2021</td>
+<td class="data row0 col2" id="T_e4be1_row0_col2">1315493.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row1" id="T_e4be1_level0_row1">7</th>
+<td class="data row1 col0" id="T_e4be1_row1_col0">2020-05-12 00:00:00</td>
+<td class="data row1 col1" id="T_e4be1_row1_col1">2020</td>
+<td class="data row1 col2" id="T_e4be1_row1_col2">176667.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_e4be1_level0_row2">6</th>
+<td class="data row2 col0" id="T_e4be1_row2_col0">2020-05-13 00:00:00</td>
+<td class="data row2 col1" id="T_e4be1_row2_col1">2020</td>
+<td class="data row2 col2" id="T_e4be1_row2_col2">234928.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row3" id="T_e4be1_level0_row3">2</th>
+<td class="data row3 col0" id="T_e4be1_row3_col0">2021-05-12 00:00:00</td>
+<td class="data row3 col1" id="T_e4be1_row3_col1">2021</td>
+<td class="data row3 col2" id="T_e4be1_row3_col2">1424664.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_e4be1_level0_row4">10</th>
+<td class="data row4 col0" id="T_e4be1_row4_col0">2019-05-14 00:00:00</td>
+<td class="data row4 col1" id="T_e4be1_row4_col1">2019</td>
+<td class="data row4 col2" id="T_e4be1_row4_col2">2664549.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7b2ccbe4-2c56-455a-a936-4c884f8aa538">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [121]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">highlight_long_format</span><span class="p">(</span><span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">(),</span> <span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[121]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_a9abb_row0_col1, #T_a9abb_row1_col1, #T_a9abb_row2_col1, #T_a9abb_row3_col1, #T_a9abb_row4_col1 {
+  background-color: pink;
+}
+#T_a9abb_row0_col2, #T_a9abb_row1_col2, #T_a9abb_row2_col2, #T_a9abb_row3_col2, #T_a9abb_row4_col2 {
+  background-color: skyblue;
+}
+#T_a9abb_row0_col3, #T_a9abb_row1_col3, #T_a9abb_row2_col3, #T_a9abb_row3_col3, #T_a9abb_row4_col3 {
+  background-color: lightgreen;
+}
+#T_a9abb_level0_col1 {
+  background-color: pink;
+}
+#T_a9abb_level0_col2 {
+  background-color: skyblue;
+}
+#T_a9abb_level0_col3 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_a9abb">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_a9abb_level0_col0">date</th>
+<th class="col_heading level0 col1" id="T_a9abb_level0_col1">2021</th>
+<th class="col_heading level0 col2" id="T_a9abb_level0_col2">2020</th>
+<th class="col_heading level0 col3" id="T_a9abb_level0_col3">2019</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_a9abb_level0_row0">0</th>
+<td class="data row0 col0" id="T_a9abb_row0_col0">2021-05-14 00:00:00</td>
+<td class="data row0 col1" id="T_a9abb_row0_col1">1716561.000000</td>
+<td class="data row0 col2" id="T_a9abb_row0_col2">250467</td>
+<td class="data row0 col3" id="T_a9abb_row0_col3">2664549</td>
+</tr>
+<tr>
+<th class="row_heading level0 row1" id="T_a9abb_level0_row1">1</th>
+<td class="data row1 col0" id="T_a9abb_row1_col0">2021-05-13 00:00:00</td>
+<td class="data row1 col1" id="T_a9abb_row1_col1">1743515.000000</td>
+<td class="data row1 col2" id="T_a9abb_row1_col2">234928</td>
+<td class="data row1 col3" id="T_a9abb_row1_col3">2611324</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_a9abb_level0_row2">2</th>
+<td class="data row2 col0" id="T_a9abb_row2_col0">2021-05-12 00:00:00</td>
+<td class="data row2 col1" id="T_a9abb_row2_col1">1424664.000000</td>
+<td class="data row2 col2" id="T_a9abb_row2_col2">176667</td>
+<td class="data row2 col3" id="T_a9abb_row2_col3">2343675</td>
+</tr>
+<tr>
+<th class="row_heading level0 row3" id="T_a9abb_level0_row3">3</th>
+<td class="data row3 col0" id="T_a9abb_row3_col0">2021-05-11 00:00:00</td>
+<td class="data row3 col1" id="T_a9abb_row3_col1">1315493.000000</td>
+<td class="data row3 col2" id="T_a9abb_row3_col2">163205</td>
+<td class="data row3 col3" id="T_a9abb_row3_col3">2191387</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_a9abb_level0_row4">4</th>
+<td class="data row4 col0" id="T_a9abb_row4_col0">2021-05-10 00:00:00</td>
+<td class="data row4 col1" id="T_a9abb_row4_col1">1657722.000000</td>
+<td class="data row4 col2" id="T_a9abb_row4_col2">215645</td>
+<td class="data row4 col3" id="T_a9abb_row4_col3">2512315</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cfabaddd-b22e-4bde-a607-ee345c20db79">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [122]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">highlight_wide_format</span><span class="p">(</span><span class="n">tsa</span><span class="o">.</span><span class="n">head</span><span class="p">(),</span> <span class="n">colors</span><span class="p">,</span> <span class="s1">'date'</span><span class="p">,</span> <span class="s1">'year'</span><span class="p">,</span> <span class="s1">'travelers'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[122]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_d22fa_row0_col1, #T_d22fa_row0_col2, #T_d22fa_row3_col1, #T_d22fa_row3_col2 {
+  background-color: pink;
+}
+#T_d22fa_row1_col1, #T_d22fa_row1_col2, #T_d22fa_row2_col1, #T_d22fa_row2_col2 {
+  background-color: skyblue;
+}
+#T_d22fa_row4_col1, #T_d22fa_row4_col2 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_d22fa">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_d22fa_level0_col0">date</th>
+<th class="col_heading level0 col1" id="T_d22fa_level0_col1">year</th>
+<th class="col_heading level0 col2" id="T_d22fa_level0_col2">travelers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_d22fa_level0_row0">3</th>
+<td class="data row0 col0" id="T_d22fa_row0_col0">2021-05-11 00:00:00</td>
+<td class="data row0 col1" id="T_d22fa_row0_col1">2021</td>
+<td class="data row0 col2" id="T_d22fa_row0_col2">1315493.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row1" id="T_d22fa_level0_row1">7</th>
+<td class="data row1 col0" id="T_d22fa_row1_col0">2021-05-12 00:00:00</td>
+<td class="data row1 col1" id="T_d22fa_row1_col1">2020</td>
+<td class="data row1 col2" id="T_d22fa_row1_col2">176667.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_d22fa_level0_row2">6</th>
+<td class="data row2 col0" id="T_d22fa_row2_col0">2021-05-13 00:00:00</td>
+<td class="data row2 col1" id="T_d22fa_row2_col1">2020</td>
+<td class="data row2 col2" id="T_d22fa_row2_col2">234928.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row3" id="T_d22fa_level0_row3">2</th>
+<td class="data row3 col0" id="T_d22fa_row3_col0">2021-05-12 00:00:00</td>
+<td class="data row3 col1" id="T_d22fa_row3_col1">2021</td>
+<td class="data row3 col2" id="T_d22fa_row3_col2">1424664.000000</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_d22fa_level0_row4">10</th>
+<td class="data row4 col0" id="T_d22fa_row4_col0">2021-05-14 00:00:00</td>
+<td class="data row4 col1" id="T_d22fa_row4_col1">2019</td>
+<td class="data row4 col2" id="T_d22fa_row4_col2">2664549.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f2a64cd8-5fc1-4626-948e-35816920e465">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 </div>
 </div>
 </div>
