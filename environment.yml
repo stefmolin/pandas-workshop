@@ -1,11 +1,11 @@
 name: pandas_workshop
-channels: 
+channels:
     - conda-forge
 dependencies:
-    - python>=3.8.0,<=3.11.30
-    - jupyterlab>=3.5.2
-    - matplotlib=3.7.1
-    - numpy=1.24.2
-    - pandas=2.0.0
+    - python>=3.9.0,<=3.12.30
+    - jupyterlab>=4.2.3
+    - matplotlib=3.8.4
+    - numpy=2.0.0
+    - pandas=2.2.2
     - requests
-    - seaborn=0.12.2
+    - seaborn=0.13.2
