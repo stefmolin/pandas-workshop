@@ -42,5 +42,5 @@ def highlight_wide_format(df, colors):
         .assign(
             date=lambda x: pd.to_datetime(x.year + x.date.dt.strftime('-%m-%d'))
         )\
-        .sample(5, random_state=1)\
+        .sort_values('date', ascending=False)\
         .style.apply(highlight_melt, subset=['year', 'travelers'], axis=1)
