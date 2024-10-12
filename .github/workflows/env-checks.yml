@@ -59,7 +59,7 @@ jobs:
           fi;
 
       # create the conda env
-      - uses: conda-incubator/setup-miniconda@v3
+      - uses: conda-incubator/setup-miniconda@a4260408e20b96e80095f42ff7f1a15b27dd94ca  # v3.0.4
         with:
           python-version: ${{ matrix.python-version }}
           auto-update-conda: true
