@@ -63,8 +63,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           auto-update-conda: true
-          miniforge-variant: Mambaforge
-          mamba-version: "*"
           channels: conda-forge
           channel-priority: true
           activate-environment: pandas_workshop
