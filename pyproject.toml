@@ -1,0 +1,24 @@
+[project]
+name = "pandas-workshop"
+version = "3.0.0"
+description = "An introductory workshop on pandas created by Stefanie Molin"
+readme = "README.md"
+license-files = [ "LICENSE" ]
+authors = [
+  { name = "Stefanie Molin", email = "pandas-workshop@stefaniemolin.com" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "jupyterlab>=4.2.3",
+    "matplotlib==3.10.3",
+    "numpy==2.2.6",
+    "pandas==2.3.0",
+    "requests>=2.32.3",
+    "scipy>=1.15.3",
+    "seaborn==0.13.2",
+]
+
+[dependency-groups]
+slides = [
+    "nbmerge>=0.0.4",
+]

@@ -45,30 +45,39 @@ Pick the installation option that makes sense for you:
 ### Local Installation
 **Warning**: It is highly recommended that you use your personal laptop for the installation.
 
-0. Install the following, if not already installed:
-   - Python >= version 3.9 and <= version 3.12 OR install [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
-   - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), if not already installed on your computer.
 
-1. Fork this repository:
+2. Fork this repository:
 
     ![location of fork button in GitHub](./media/fork_button.png)
 
-2. Navigate to your fork, and click the **Code** button:
+3. Navigate to your fork, and click the **Code** button:
 
     ![location of code button in GitHub](./media/code_button.png)
 
-3. Clone your forked repository using the desired method from the **Local** tab:
+4. Clone your forked repository using the desired method from the **Local** tab:
 
     <img width="400px" src="./media/clone_options.png" alt="local cloning options">
 
-4. Create and activate a Python virtual environment:
+5. Install one of the following:
+    - [uv](https://docs.astral.sh/uv/getting-started/installation/) (recommended)
+    - Python >= version 3.10 and <= version 3.13 via [python.org](https://www.python.org/downloads/) or [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
+
+6. Set up your environment and launch JupyterLab:
+    - Using `uv`:
+
+        ```shell
+        $ cd pandas-workshop
+        ~/pandas-workshop$ uv run jupyter lab
+        ```
+
     - If you installed Anaconda/Miniconda, use `conda` (on Windows, these commands should be run in **Anaconda Prompt**):
 
         ```shell
         $ cd pandas-workshop
         ~/pandas-workshop$ conda env create --file environment.yml
         ~/pandas-workshop$ conda activate pandas_workshop
-        (pandas_workshop) ~/pandas-workshop$
+        (pandas_workshop) ~/pandas-workshop$ jupyter lab
         ```
 
     - Otherwise, use `venv`:
@@ -78,19 +87,14 @@ Pick the installation option that makes sense for you:
         ~/pandas-workshop$ python3 -m venv pandas_workshop
         ~/pandas-workshop$ source pandas_workshop/bin/activate
         (pandas_workshop) ~/pandas-workshop$ pip3 install -r requirements.txt
+        (pandas_workshop) ~/pandas-workshop$ jupyter lab
         ```
 
-5. Launch JupyterLab:
-
-    ```shell
-    (pandas_workshop) ~/pandas-workshop$ jupyter lab
-    ```
-
-6. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
+7. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
 
     ![open 0-check_your_env.ipynb](./media/open_env_check_notebook.png)
 
-7. Run the notebook to confirm everything is set up properly:
+8. Run the notebook to confirm everything is set up properly:
 
     ![check env](./media/env_check.png)
 
