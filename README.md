@@ -61,7 +61,7 @@ Pick the installation option that makes sense for you:
 
 5. Install one of the following:
     - [uv](https://docs.astral.sh/uv/getting-started/installation/) (recommended)
-    - Python >= version 3.10 and <= version 3.13 via <python.org> or [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
+    - Python >= version 3.10 and <= version 3.13 via [python.org](https://www.python.org/downloads/) or [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
 
 6. Set up your environment and launch JupyterLab:
     - Using `uv`:
