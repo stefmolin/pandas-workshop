@@ -183,3 +183,4 @@ cython_debug/
 
 # Misc
 .DS_Store
+html/
