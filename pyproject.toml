@@ -1,6 +1,6 @@
 [project]
 name = "pandas-workshop"
-version = "3.0.0"
+version = "4.0.0"
 description = "An introductory workshop on pandas created by Stefanie Molin"
 readme = "README.md"
 license-files = [ "LICENSE" ]
