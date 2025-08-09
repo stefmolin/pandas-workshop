@@ -59,7 +59,7 @@ Pick the installation option that makes sense for you:
 
     <img width="400px" src="./media/clone_options.png" alt="local cloning options">
 
-5. Install one of the following:
+5. Install one of the following, if not already installed:
     - [uv](https://docs.astral.sh/uv/getting-started/installation/) (recommended)
     - Python >= version 3.10 and <= version 3.13 via [python.org](https://www.python.org/downloads/) or [Anaconda](https://docs.anaconda.com/anaconda/install/)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html). Note that Anaconda/Miniconda is recommended if you are working on a Windows machine and are not very comfortable with the command line.
 
@@ -68,26 +68,26 @@ Pick the installation option that makes sense for you:
 
         ```shell
         $ cd pandas-workshop
-        ~/pandas-workshop$ uv run jupyter lab
+        $ uv run jupyter lab
         ```
 
     - If you installed Anaconda/Miniconda, use `conda` (on Windows, these commands should be run in **Anaconda Prompt**):
 
         ```shell
         $ cd pandas-workshop
-        ~/pandas-workshop$ conda env create --file environment.yml
-        ~/pandas-workshop$ conda activate pandas_workshop
-        (pandas_workshop) ~/pandas-workshop$ jupyter lab
+        $ conda env create --file environment.yml
+        $ conda activate pandas_workshop
+        (pandas_workshop) $ jupyter lab
         ```
 
     - Otherwise, use `venv`:
 
         ```shell
         $ cd pandas-workshop
-        ~/pandas-workshop$ python3 -m venv pandas_workshop
-        ~/pandas-workshop$ source pandas_workshop/bin/activate
-        (pandas_workshop) ~/pandas-workshop$ pip3 install -r requirements.txt
-        (pandas_workshop) ~/pandas-workshop$ jupyter lab
+        $ python3 -m venv pandas_workshop
+        $ source pandas_workshop/bin/activate
+        (pandas_workshop) $ pip3 install -r requirements.txt
+        (pandas_workshop) $ jupyter lab
         ```
 
 7. Navigate to the `0-check_your_env.ipynb` notebook in the `notebooks/` folder:
@@ -120,13 +120,13 @@ Pick the installation option that makes sense for you:
 
     ```shell
     $ cd pandas-workshop
-    ~/pandas-workshop$ docker compose build
+    $ docker compose build
     ```
 
 5. Launch JupyterLab from within a Docker container:
 
     ```shell
-    ~/pandas-workshop$ docker compose up
+    $ docker compose up
     ```
 
     You should be able to access the environment at <http://localhost:8888>
