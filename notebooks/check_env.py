@@ -74,6 +74,8 @@ def run_env_check(raise_exc=False):
                 pkg, versions = line.split('>=')
                 if ',<=' in versions:
                     version = versions.split(',<=')
+                elif ',<' in versions:
+                    version = versions.split(',<')
                 else:
                     version = [versions, None]
             else:
