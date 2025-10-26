@@ -7,7 +7,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "yearly"
     ignore: # only update minor or major version changes
       - dependency-name: "*"
         update-types: ["version-update:semver-patch"]
