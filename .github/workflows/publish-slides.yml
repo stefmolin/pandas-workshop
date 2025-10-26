@@ -34,7 +34,8 @@ jobs:
         run: ./slides/generate_slides.sh regular
       - name: Package files
         run: |
-          mkdir public && \
+          mkdir -p public/media && \
+            cp slides/media/* public/media/ && \
             cp slides/html/workshop.slides.html public/index.html;
       - name: Upload artifact
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b  # v4.0.0
