@@ -72,7 +72,7 @@ Pick the installation option that makes sense for you:
 
 4. Clone your forked repository using the desired method from the **Local** tab:
 
-<img width="400px" src="./media/clone_options.png" alt="local cloning options">
+   <img width="400px" src="./media/clone_options.png" alt="local cloning options">
 
 5. Install one of the following, if not already installed:
    - [uv](https://docs.astral.sh/uv/getting-started/installation/) (recommended)
@@ -129,7 +129,7 @@ Pick the installation option that makes sense for you:
 
 3. Clone your forked repository using the desired method from the **Local** tab:
 
-<img width="400px" src="./media/clone_options.png" alt="local cloning options">
+    <img width="400px" src="./media/clone_options.png" alt="local cloning options">
 
 4. Build the Docker image needed to run the Jupyter environment:
 
@@ -176,15 +176,15 @@ Note that if you want to save your changes, you will need to fork the repository
 
 3. Launch the codespace from your fork by clicking on the **+** or **Create codespace on main** button in the **Codespaces** tab:
 
-<img width="400px" src="./media/create_codespace.png" alt="location of create codespace button">
+    <img width="400px" src="./media/create_codespace.png" alt="location of create codespace button">
 
 4. Stop the codespace until the session starts by selecting **Stop codespace** from the **...** menu.
 
-<img width="400px" src="./media/stop-codespace.png" alt="stop codespace">
+    <img width="400px" src="./media/stop-codespace.png" alt="stop codespace">
 
 5. To resume the codespace, click **Open in ...** and then select your preferred method. If you aren't sure, select JupyterLab.
 
-<img width="400px" src="./media/resume-codespace.png" alt="resuming a codespace">
+    <img width="400px" src="./media/resume-codespace.png" alt="resuming a codespace">
 
 #### Binder
 
