@@ -14,6 +14,7 @@ dependencies = [
     "numpy>=2.4.6",
     "pandas==3.0.6",
     "requests>=2.34.2",
+    "scipy>=1.17.1",      # for plotting the kde in section 3
     "seaborn==0.13.2",
 ]
 
