@@ -9,7 +9,7 @@ name: Env Build
 on:
   # Triggers the workflow on push events
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
   # Trigger on pull request always (note the trailing colon)
   pull_request:
@@ -39,15 +39,15 @@ jobs:
         shell: bash -el {0}
 
     strategy:
-        fail-fast: false
-        matrix:
-            os: [macos-latest, ubuntu-latest, windows-latest]
-            python-version: ["3.10", "3.11", "3.12", "3.13"]
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       # remove the Python version from the file for testing
       - name: strip hardcoded Python version from environment for testing
@@ -59,7 +59,7 @@ jobs:
           fi;
 
       # create the conda env
-      - uses: conda-incubator/setup-miniconda@505e6394dae86d6a5c7fbb6e3fb8938e3e863830  # v3.1.1
+      - uses: conda-incubator/setup-miniconda@505e6394dae86d6a5c7fbb6e3fb8938e3e863830 # v3.1.1
         with:
           python-version: ${{ matrix.python-version }}
           auto-update-conda: true

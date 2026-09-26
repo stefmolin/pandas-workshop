@@ -1,24 +1,22 @@
 [project]
 name = "pandas-workshop"
-version = "4.0.0"
+version = "5.0.0"
 description = "An introductory workshop on pandas created by Stefanie Molin"
 readme = "README.md"
-license-files = [ "LICENSE" ]
+license-files = ["LICENSE"]
 authors = [
-  { name = "Stefanie Molin", email = "pandas-workshop@stefaniemolin.com" },
+    { name = "Stefanie Molin", email = "pandas-workshop@stefaniemolin.com" },
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
-    "jupyterlab>=4.2.3",
-    "matplotlib==3.10.3",
-    "numpy==2.2.6",
-    "pandas==2.3.0",
-    "requests>=2.32.3",
-    "scipy>=1.15.3",
+    "jupyterlab>=4.6.4",
+    "matplotlib==3.11.2",
+    "numpy>=2.4.6",
+    "pandas==3.0.6",
+    "requests>=2.34.2",
+    "scipy>=1.17.1",      # for plotting the kde in section 3
     "seaborn==0.13.2",
 ]
 
 [dependency-groups]
-slides = [
-    "nbmerge>=0.0.4",
-]
+slides = ["nbmerge>=0.0.4"]
