@@ -35,9 +35,9 @@ To prepare our data for analysis, we need to perform data wrangling. In this sec
 
 The human brain excels at finding patterns in visual representations of the data; so in this section, we will learn how to visualize data using pandas along with the Matplotlib and Seaborn libraries for additional features. We will create a variety of visualizations that will help us better understand our data.
 
-### Section 4: Hands-On Data Analysis Lab
+## Extra Practice Exercises
 
-We will practice all that you’ve learned in a hands-on lab. This section features a set of analysis tasks that provide opportunities to apply the material from the previous sections.
+Practice all that you’ve learned with a set of analysis tasks that provide opportunities to apply the material from the workshop. This is not part of the workshop itself and serves as a standalone way to practice. Access this bonus material in the [extra-practice/](./extra-practice/) directory.
 
 ---
 
